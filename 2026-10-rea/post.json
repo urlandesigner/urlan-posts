@@ -39,5 +39,12 @@
   "closing": {
     "title": "Você usaria o REA?",
     "body": "Comenta e manda pra quem trabalha com produto."
-  }
+  },
+  "sources": [
+    "https://hyper.ai/fr/stories/5466749b77edd4705dba0e65415bad4d",
+    "https://www.kucoin.com/news/flash/ai-tool-rea-sparks-software-reverse-engineering-boom-on-github",
+    "https://www.inside.com.tw/article/42615-rea-reverse-engineer-anything-open-source-mcp-ai-agent-github"
+  ],
+  "instagramUrl": "https://www.instagram.com/p/De2N6J5iMMy/",
+  "caption": "Saiu uma ferramenta que deixa a IA analisar um app pronto e mostrar como cada função foi programada. Mesmo sem acesso ao código.\n\nEla se chama REA e foi o projeto mais popular do GitHub em outubro.\n\nAinda não copia um app inteiro. Mas entender e refazer uma função específica ficou bem mais rápido.\n\nPra quem desenha produto, isso muda uma coisa: uma função exclusiva deixa de ser vantagem rápido. O que continua difícil de copiar é a experiência de usar o produto.\n\nVocê usaria? Comenta aqui.\n\n#productdesign #uxdesign #inteligenciaartificial #designdeproduto"
 }
