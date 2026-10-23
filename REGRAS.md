@@ -46,6 +46,7 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 - Fontes: DM Sans (títulos, selo, @) e Inter (texto corrido), arquivos em `template/fonts/`.
 - Formato 1080 × 1350 px, margem lateral de 96 px.
 - Não mexer no layout por post. Mudança de visual se faz no template e vale para todos.
+- Estilo único por enquanto: todos os posts usam este padrão (capa roxa flat). Os outros estilos de capa do documento de marca (aurora escura, citação, foto) não estão em uso até o Urlan liberar.
 
 ## Publicação
 
