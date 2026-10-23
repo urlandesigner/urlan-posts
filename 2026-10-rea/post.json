@@ -2,42 +2,42 @@
   "tag": "IA NO DESIGN",
   "cover": {
     "title": "Uma IA que desmonta qualquer app",
-    "subtitle": "O que é o REA, o projeto mais comentado do GitHub, e o que ele muda pra quem desenha produto."
+    "subtitle": "O projeto mais comentado do GitHub e o que ele muda pra quem desenha produto."
   },
   "slides": [
     {
       "title": "O que é o REA?",
-      "body": "Ferramenta open source que liga agentes de IA, como o Claude Code, a ferramentas de engenharia reversa. A IA passa a analisar sites, apps e programas sem acesso ao código.",
-      "takeaway": "entender como algo foi feito ficou barato"
+      "body": "Um conector que deixa agentes como o Claude Code usarem ferramentas de engenharia reversa. Sem acesso ao código.",
+      "takeaway": "ver como algo foi feito ficou fácil"
     },
     {
-      "title": "Por que explodiu?",
-      "body": "Criado em abril, passou meses quase invisível. Em outubro virou o projeto mais popular do GitHub, com mais de 290 mil estrelas em cerca de duas semanas.",
-      "takeaway": "poucos projetos cresceram tão rápido"
+      "title": "Por que todo mundo falou?",
+      "body": "Ficou meses parado. Em outubro, passou de 290 mil estrelas em duas semanas.",
+      "takeaway": "o projeto que mais cresceu no mês"
     },
     {
-      "title": "O que já fizeram com ele?",
-      "body": "Recriaram partes de um editor de slides, controlaram um aparelho doméstico conectado e estudaram algoritmos de jogos.",
-      "takeaway": "deixou de ser trabalho só de especialista"
+      "title": "O que já fizeram?",
+      "body": "Recriaram partes de um editor de slides e controlaram um aparelho conectado.",
+      "takeaway": "antes isso era coisa de especialista"
     },
     {
-      "title": "Qual o limite real?",
-      "body": "Em testes rigorosos, ele identifica funções isoladas. Não reconstrói um produto inteiro de forma confiável.",
-      "takeaway": "a demo viral impressiona mais que o dia a dia"
+      "title": "Funciona mesmo?",
+      "body": "Em parte. Ele acerta funções isoladas, mas não reconstrói um produto inteiro.",
+      "takeaway": "a demo é melhor que o uso real"
     },
     {
-      "title": "O que muda no design?",
-      "body": "Quando entender uma funcionalidade fica fácil, ela sozinha deixa de ser diferencial. O peso vai pra fluxo, contexto e acabamento.",
-      "takeaway": "o que não aparece no código vira o diferencial"
+      "title": "E o design com isso?",
+      "body": "Se dá pra copiar uma função em uma tarde, ela não te diferencia. O que segura o usuário é o caminho até ela.",
+      "takeaway": "copiável não é diferencial"
     },
     {
-      "title": "Antes de testar",
-      "body": "Use só em software que você tem autorização pra analisar. Já apareceu cópia falsa com instalador infectado: instale só pelo repositório oficial, morluto/rea.",
-      "takeaway": "autorização primeiro, repositório oficial sempre"
+      "title": "Vai testar?",
+      "body": "Só em software que você pode analisar. E só pelo repositório oficial: já tem cópia com vírus.",
+      "takeaway": "morluto/rea, nenhum outro"
     }
   ],
   "closing": {
     "title": "Você usaria o REA?",
-    "body": "Comenta sua resposta e manda pra quem trabalha com produto."
+    "body": "Comenta e manda pra quem trabalha com produto."
   }
 }
