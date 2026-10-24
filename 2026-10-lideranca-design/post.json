@@ -1,0 +1,48 @@
+{
+  "tag": "LIDERANÇA",
+  "cover": {
+    "title": "O que mudou pra quem lidera design",
+    "subtitle": "Dados de uma pesquisa de 2026 com mais de 900 designers de 60 países."
+  },
+  "slides": [
+    {
+      "title": "Quem lidera programa?",
+      "body": "Segundo a pesquisa, líderes e gestores de design programam tanto quanto os designers do time. Às vezes mais.",
+      "takeaway": "liderar não é mais só revisar"
+    },
+    {
+      "title": "O que pesa na contratação?",
+      "body": "50% dos líderes dão mais peso à fluência em IA. Depois vêm pensamento sistêmico e visão estratégica.",
+      "takeaway": "execução continua contando"
+    },
+    {
+      "title": "A empresa acompanhou?",
+      "body": "73% dos designers sentem mais cobrança por velocidade e qualidade. Só 28% dos líderes viram mudanças formais na empresa.",
+      "takeaway": "a cobrança subiu antes das regras"
+    },
+    {
+      "title": "E a avaliação do time?",
+      "body": "Só 8% dos líderes dizem que as métricas de desempenho mudaram. Só 4% viram ajuste na remuneração.",
+      "takeaway": "o time segue nos critérios de antes"
+    },
+    {
+      "title": "Com quem o time aprende?",
+      "body": "Aprender com colegas subiu de 24% para 80% em um ano. Indicação da liderança caiu de 32% para 16%.",
+      "takeaway": "o líder deixou de ser a fonte principal"
+    },
+    {
+      "title": "O que dá pra fazer?",
+      "body": "Atualizar os critérios de avaliação do time e criar um horário fixo pra todos mostrarem o que aprenderam com IA.",
+      "takeaway": "o que se espera precisa estar escrito"
+    }
+  ],
+  "closing": {
+    "title": "Seu time já mudou a avaliação?",
+    "body": "Comenta como é aí e manda pra quem lidera design."
+  },
+  "caption": "Uma pesquisa com mais de 900 designers, feita pela Designer Fund e pela Foundation Capital, mostra que o trabalho de quem lidera design mudou rápido em 2026.\n\nLíderes estão programando, contratam olhando fluência em IA e veem o time aprender mais com os colegas do que com eles.\n\nO que quase não mudou foi a empresa: poucas atualizaram avaliação e remuneração.\n\nSeu time já mudou a forma de avaliar? Comenta aqui.\n\n#designleadership #productdesign #uxdesign #liderança #designdeproduto",
+  "sources": [
+    "https://designerfund.com/blog/ai-in-design-2026",
+    "https://rosenfeldmedia.com/designing-with-ai/?p=10234"
+  ]
+}
