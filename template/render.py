@@ -63,16 +63,28 @@ def e(t):
 def cover(p, folder):
     c = p["cover"]
     img = c.get("image")
+    bg = PURPLE
     if img:
-        # Capa com imagem: título menor e mais alto, imagem em bloco arredondado acima do rodapé.
-        src = (folder / img).as_uri()
+        # Capa ilustrada: a imagem ocupa a capa inteira (sangrada na parte de baixo) e o fundo
+        # assume a cor do topo da imagem, com degradê para esconder a emenda.
+        path = folder / img
+        src = path.as_uri()
+        from PIL import Image
+        im = Image.open(path).convert("RGB")
+        top = im.crop((0, 0, im.width, max(1, im.height // 40))).resize((1, 1)).getpixel((0, 0))
+        bg = "#%02x%02x%02x" % top
+        w = 1120  # um pouco além da largura da capa, para a cena sangrar nas laterais
+        img_h = round(w * im.height / im.width)
+        lift = 150  # a cena termina acima do rodapé, que fica livre para o @ e a seta
         text_block = f"""
-  <div style="position:absolute;top:210px;left:96px;right:110px">
+  <img src="{src}" alt="" style="position:absolute;left:{(1080 - w) // 2}px;width:{w}px;bottom:{lift}px;height:{img_h}px">
+  <div style="position:absolute;left:0;right:0;bottom:{lift + img_h - 200}px;height:210px;background:linear-gradient({bg},rgba(0,0,0,0))"></div>
+  <div style="position:absolute;left:0;right:0;bottom:0;height:{lift + 120}px;background:linear-gradient(rgba(0,0,0,0),{bg} 45%)"></div>
+  <div style="position:absolute;top:220px;left:96px;right:110px">
     <h1 class="h" style="font-size:96px;line-height:1.04">{e(c['title'])}</h1>
     <div class="rule" style="background:#B794F6;margin:40px 0 34px"></div>
-    <p style="font-size:34px;line-height:1.4;color:#EADDFF;max-width:820px">{e(c.get('subtitle'))}</p>
-  </div>
-  <img src="{src}" alt="" style="position:absolute;left:96px;right:96px;width:888px;top:650px;height:500px;object-fit:cover;object-position:center;border-radius:28px">"""
+    <p style="font-size:36px;line-height:1.4;color:#EADDFF;max-width:820px">{e(c.get('subtitle'))}</p>
+  </div>"""
     else:
         text_block = f"""
   <div style="position:absolute;top:330px;left:96px;right:110px">
@@ -81,8 +93,8 @@ def cover(p, folder):
     <p style="font-size:38px;line-height:1.4;color:#EADDFF;max-width:780px">{e(c.get('subtitle'))}</p>
   </div>"""
     return f"""
-<div class="s" style="background:{PURPLE};color:#fff">
-  <div class="pill" style="background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.22);color:#fff"><i></i>{e(p['tag'])}</div>{text_block}
+<div class="s" style="background:{bg};color:#fff;overflow:hidden">{text_block}
+  <div class="pill" style="background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.22);color:#fff"><i></i>{e(p['tag'])}</div>
   <div class="foot" style="color:#fff"><span>@urlan.design</span>
     <span class="arrow" style="background:#fff">{arrow_svg(PURPLE)}</span></div>
 </div>"""
