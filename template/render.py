@@ -73,6 +73,23 @@ def cover(p, folder):
         im = Image.open(path).convert("RGB")
         top = im.crop((0, 0, im.width, max(1, im.height // 40))).resize((1, 1)).getpixel((0, 0))
         bg = "#%02x%02x%02x" % top
+        if im.height / im.width > 1.1:
+            # Foto vertical: ocupa a capa inteira, com sombra no topo (título) e na base (rodapé).
+            text_block = f"""
+  <img src="{src}" alt="" style="position:absolute;left:0;top:{c.get('image_top', 270)}px;width:1080px;height:{round(1080 * im.height / im.width)}px">
+  <div style="position:absolute;left:0;right:0;top:0;height:{c.get('image_top', 270) + 380}px;background:linear-gradient({bg} {c.get('image_top', 270)}px,rgba(22,5,56,.5) 85%,rgba(22,5,56,0))"></div>
+  <div style="position:absolute;left:0;right:0;bottom:0;height:300px;background:linear-gradient(rgba(22,5,56,0),rgba(22,5,56,.8))"></div>
+  <div style="position:absolute;top:220px;left:96px;right:110px">
+    <h1 class="h" style="font-size:96px;line-height:1.04">{e(c['title'])}</h1>
+    <div class="rule" style="background:#B794F6;margin:40px 0 34px"></div>
+    <p style="font-size:36px;line-height:1.4;color:#EADDFF;max-width:820px">{e(c.get('subtitle'))}</p>
+  </div>"""
+            return f"""
+<div class="s" style="background:{bg};color:#fff;overflow:hidden">{text_block}
+  <div class="pill" style="background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.22);color:#fff"><i></i>{e(p['tag'])}</div>
+  <div class="foot" style="color:#fff"><span>@urlan.design</span>
+    <span class="arrow" style="background:#fff">{arrow_svg(PURPLE)}</span></div>
+</div>"""
         w = 1120  # um pouco além da largura da capa, para a cena sangrar nas laterais
         img_h = round(w * im.height / im.width)
         lift = 150  # a cena termina acima do rodapé, que fica livre para o @ e a seta
