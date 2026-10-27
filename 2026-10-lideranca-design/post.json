@@ -2,7 +2,8 @@
   "tag": "LIDERANÇA",
   "cover": {
     "title": "O que mudou pra quem lidera design",
-    "subtitle": "Dados de uma pesquisa de 2026 com mais de 900 designers de 60 países."
+    "subtitle": "Dados de uma pesquisa de 2026 com mais de 900 designers de 60 países.",
+    "image": "cover-image.png"
   },
   "slides": [
     {

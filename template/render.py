@@ -60,16 +60,29 @@ def e(t):
     return html.escape(t or "")
 
 
-def cover(p):
+def cover(p, folder):
     c = p["cover"]
-    return f"""
-<div class="s" style="background:{PURPLE};color:#fff">
-  <div class="pill" style="background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.22);color:#fff"><i></i>{e(p['tag'])}</div>
+    img = c.get("image")
+    if img:
+        # Capa com imagem: título menor e mais alto, imagem em bloco arredondado acima do rodapé.
+        src = (folder / img).as_uri()
+        text_block = f"""
+  <div style="position:absolute;top:210px;left:96px;right:110px">
+    <h1 class="h" style="font-size:96px;line-height:1.04">{e(c['title'])}</h1>
+    <div class="rule" style="background:#B794F6;margin:40px 0 34px"></div>
+    <p style="font-size:34px;line-height:1.4;color:#EADDFF;max-width:820px">{e(c.get('subtitle'))}</p>
+  </div>
+  <img src="{src}" alt="" style="position:absolute;left:96px;right:96px;width:888px;top:650px;height:500px;object-fit:cover;object-position:center;border-radius:28px">"""
+    else:
+        text_block = f"""
   <div style="position:absolute;top:330px;left:96px;right:110px">
     <h1 class="h" style="font-size:120px;line-height:1.04">{e(c['title'])}</h1>
     <div class="rule" style="background:#B794F6;margin:52px 0 44px"></div>
     <p style="font-size:38px;line-height:1.4;color:#EADDFF;max-width:780px">{e(c.get('subtitle'))}</p>
-  </div>
+  </div>"""
+    return f"""
+<div class="s" style="background:{PURPLE};color:#fff">
+  <div class="pill" style="background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.22);color:#fff"><i></i>{e(p['tag'])}</div>{text_block}
   <div class="foot" style="color:#fff"><span>@urlan.design</span>
     <span class="arrow" style="background:#fff">{arrow_svg(PURPLE)}</span></div>
 </div>"""
@@ -117,7 +130,7 @@ def closing(p):
 def main(folder):
     folder = pathlib.Path(folder).resolve()
     p = json.loads((folder / "post.json").read_text())
-    pages = [cover(p)] + [content(p, i, s) for i, s in enumerate(p["slides"], 1)] + [closing(p)]
+    pages = [cover(p, folder)] + [content(p, i, s) for i, s in enumerate(p["slides"], 1)] + [closing(p)]
     head = f"<!doctype html><html lang='pt-BR'><head><meta charset='utf-8'><style>{font_faces()}{BASE_CSS}</style></head><body>"
     tmp = folder / "_render.html"
     with sync_playwright() as pw:
