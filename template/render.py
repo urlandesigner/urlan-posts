@@ -33,6 +33,11 @@ def font_faces():
             for sub, rng in (("latin", latin), ("latin-ext", ext)):
                 f = TPL / "fonts" / f"{slug}-{sub}-{w}-normal.woff2"
                 css.append(f"@font-face{{font-family:'{fam}';font-weight:{w};src:url('{f.as_uri()}') format('woff2');unicode-range:{rng};}}")
+    # Google Sans Flex: fonte variável (peso 1 a 1000), usada quando o post pede "font": "Google Sans Flex".
+    for sub, rng in (("latin", latin), ("latin-ext", ext)):
+        f = TPL / "fonts" / f"google-sans-flex-{sub}-full-normal.woff2"
+        if f.exists():
+            css.append(f"@font-face{{font-family:'Google Sans Flex';font-weight:1 1000;font-stretch:25% 151%;src:url('{f.as_uri()}') format('woff2');unicode-range:{rng};}}")
     return "".join(css)
 
 
@@ -211,7 +216,11 @@ def main(folder):
         pages = [text_slide(s) for s in p["slides"]] + [text_closing(p)]
     else:
         pages = [cover(p, folder)] + [content(p, i, s) for i, s in enumerate(p["slides"], 1)] + [closing(p)]
-    head = f"<!doctype html><html lang='pt-BR'><head><meta charset='utf-8'><style>{font_faces()}{BASE_CSS}</style></head><body>"
+    override = ""
+    if p.get("font"):
+        # Troca a fonte do post inteiro (títulos, textos, @ e card), mantendo tamanhos e layout.
+        override = f"*{{font-family:'{p['font']}',sans-serif !important}}"
+    head = f"<!doctype html><html lang='pt-BR'><head><meta charset='utf-8'><style>{font_faces()}{BASE_CSS}{override}</style></head><body>"
     tmp = folder / "_render.html"
     with sync_playwright() as pw:
         b = pw.chromium.launch()
