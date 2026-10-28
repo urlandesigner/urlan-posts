@@ -178,8 +178,8 @@ def text_slide(s, last=False):
     pos = s.get("pos", "middle")
     place = {"top": "top:180px", "middle": "top:50%;transform:translateY(-55%)", "bottom": "bottom:230px"}[pos]
     align = "right" if s.get("align") == "right" else "left"
-    sub = (f'<p style="margin-top:40px;font-family:\'DM Sans\',sans-serif;font-weight:700;font-size:56px;line-height:1.12;'
-           f'letter-spacing:-1.5px;color:{DARK_MUTED}">{rich(s["sub"])}</p>') if s.get("sub") else ""
+    sub = (f'<p style="margin-top:40px;font-family:\'DM Sans\',sans-serif;font-weight:500;font-size:56px;line-height:1.12;'
+           f'letter-spacing:0;color:{DARK_MUTED}">{rich(s["sub"])}</p>') if s.get("sub") else ""
     return f"""
 <div class="s" style="background:{DARK};color:#fff">
   <div style="position:absolute;left:96px;right:96px;{place};text-align:{align}">
@@ -192,7 +192,8 @@ def text_slide(s, last=False):
 
 def text_closing(p):
     c = p["closing"]
-    avatar = (TPL / "assets" / "avatar.png").as_uri()
+    hd = TPL / "assets" / "avatar-hd.webp"
+    avatar = (hd if hd.exists() else TPL / "assets" / "avatar.png").as_uri()
     return f"""
 <div class="s" style="background:{DARK};color:#fff">
   <div style="position:absolute;top:300px;left:96px;right:96px">
@@ -217,6 +218,8 @@ def main(folder):
     else:
         pages = [cover(p, folder)] + [content(p, i, s) for i, s in enumerate(p["slides"], 1)] + [closing(p)]
     override = ""
+    if p.get("style") == "texto" and not p.get("font"):
+        p["font"] = "Google Sans Flex"  # padrão visual do post só de texto (aprovado em 27/10/2026)
     if p.get("font"):
         # Troca a fonte do post inteiro (títulos, textos, @ e card), mantendo tamanhos e layout.
         override = f"*{{font-family:'{p['font']}',sans-serif !important}}"

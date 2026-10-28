@@ -46,6 +46,7 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 - Fontes: DM Sans (títulos, selo, @) e Inter (texto corrido), arquivos em `template/fonts/`.
 - Formato 1080 × 1350 px, margem lateral de 96 px.
 - Não mexer no layout por post. Mudança de visual se faz no template e vale para todos.
+- **Post só de texto** (`"style": "texto"` no `post.json`): fundo #15131A, fonte **Google Sans Flex** (padrão desse estilo), frase principal em negrito com uma palavra em lilás (`**palavra**`), frase de apoio em peso médio e cinza #8E8999, texto alternando entre topo, meio e base, card de perfil com a foto em alta (`template/assets/avatar-hd.webp`) no fechamento. Usar para posts de opinião. Referência aprovada: `2026-10-cliente-sistema-gsf/`.
 - Estilo único por enquanto: todos os posts usam este padrão (capa roxa flat). Os outros estilos de capa do documento de marca (aurora escura, citação, foto) não estão em uso até o Urlan liberar.
 
 ## Publicação
