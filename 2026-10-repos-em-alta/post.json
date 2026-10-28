@@ -8,12 +8,14 @@
     ],
     "tag": "(GITHUB, OUTUBRO 2026)",
     "subtitle": "O que eles fazem e por que importam pra quem desenha produto.",
-    "image": "cover-image.png",
+    "image": "cover-image-shift.png",
     "top_right": "REPOS EM ALTA",
-    "foot_right": "OPEN SOURCE\nPRA DESIGNERS",
-    "image_top": 190,
+    "foot_right": "",
+    "image_top": 150,
     "sub_top": 670,
-    "sub_width": 300
+    "sub_width": 300,
+    "image_width": 1287,
+    "image_left": 0
   },
   "footer": {
     "right": "OPEN SOURCE\nPRA DESIGNERS",
