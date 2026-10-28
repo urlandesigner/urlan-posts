@@ -293,8 +293,8 @@ def ed_item(i, it, total):
     <div style="display:flex;align-items:center;gap:18px;margin-top:30px;{MONO};font-size:28px">
       <span>{e(it['ref'])}</span><span style="opacity:.4">·</span>{star}<span>{e(it['stat'])}</span></div>
     <div style="height:2px;background:rgba(21,19,26,.15);margin-top:44px"></div>
-    {block('O QUE FAZ', it['what'])}
-    {block('POR QUE IMPORTA', it['why'])}
+    {block(p_foot.get('label_what', 'O QUE FAZ'), it['what'])}
+    {block(p_foot.get('label_why', 'POR QUE IMPORTA'), it['why'])}
   </div>"""
     return ed_frame(inner, foot_left=p_foot.get("left", ""), foot_right=p_foot.get("right", ""), top_right=p_foot.get("top_right", ""))
 
@@ -348,6 +348,8 @@ def main(folder):
     override = ""
     if p.get("style") == "texto" and not p.get("font"):
         p["font"] = "Google Sans Flex"  # padrão visual do post só de texto (aprovado em 27/10/2026)
+    if p.get("style") == "editorial" and p.get("case") == "sentence":
+        override += ".s *{text-transform:none !important}"
     if p.get("font"):
         # Troca a fonte do post inteiro (títulos, textos, @ e card), mantendo tamanhos e layout.
         override = f"*{{font-family:'{p['font']}',sans-serif !important}}"
@@ -356,6 +358,8 @@ def main(folder):
     with sync_playwright() as pw:
         b = pw.chromium.launch()
         pg = b.new_page(viewport={"width": W, "height": H})
+        if p.get("style") == "editorial" and p.get("case") == "sentence":
+            pages = [pg_.replace("font-weight:900;font-stretch:72%", "font-weight:700;font-stretch:100%").replace("line-height:.9;letter-spacing:-2px", "line-height:1.02;letter-spacing:-3px").replace("line-height:.92;margin-top:14px;letter-spacing:-1px", "line-height:1;margin-top:14px;letter-spacing:-3px").replace("letter-spacing:2px", "letter-spacing:0").replace("letter-spacing:3px", "letter-spacing:0") for pg_ in pages]
         for n, body in enumerate(pages, 1):
             tmp.write_text(head + body + "</body></html>")
             pg.goto(tmp.as_uri())
