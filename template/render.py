@@ -156,10 +156,61 @@ def closing(p):
 </div>"""
 
 
+# ---------- Estilo "texto": só tipografia em fundo escuro ----------
+# post.json: {"style": "texto", "slides": [{"text": "...", "sub": "...", "pos": "top|middle|bottom"}],
+#             "closing": {"title": "...", "body": "..."}}
+# Uma palavra ou trecho entre **asteriscos** fica destacado em lilás.
+DARK = "#15131A"
+DARK_MUTED = "#8E8999"  # contraste ~5.7:1 sobre o fundo escuro
+
+
+def rich(t):
+    import re
+    return re.sub(r"\*\*(.+?)\*\*", rf'<span style="color:{VIOLET}">\1</span>', e(t))
+
+
+def text_slide(s, last=False):
+    pos = s.get("pos", "middle")
+    place = {"top": "top:180px", "middle": "top:50%;transform:translateY(-55%)", "bottom": "bottom:230px"}[pos]
+    align = "right" if s.get("align") == "right" else "left"
+    sub = (f'<p style="margin-top:40px;font-family:\'DM Sans\',sans-serif;font-weight:700;font-size:56px;line-height:1.12;'
+           f'letter-spacing:-1.5px;color:{DARK_MUTED}">{rich(s["sub"])}</p>') if s.get("sub") else ""
+    return f"""
+<div class="s" style="background:{DARK};color:#fff">
+  <div style="position:absolute;left:96px;right:96px;{place};text-align:{align}">
+    <p class="h" style="font-size:{132 if s.get('size') == 'xl' else 88}px;line-height:1.04;letter-spacing:{-4 if s.get('size') == 'xl' else -2.5}px">{rich(s['text'])}</p>{sub}
+  </div>
+  <div class="foot" style="color:{DARK_MUTED}"><span>@urlan.design</span>
+    <span class="arrow" style="background:{VIOLET}">{arrow_svg('#fff')}</span></div>
+</div>"""
+
+
+def text_closing(p):
+    c = p["closing"]
+    avatar = (TPL / "assets" / "avatar.png").as_uri()
+    return f"""
+<div class="s" style="background:{DARK};color:#fff">
+  <div style="position:absolute;top:300px;left:96px;right:96px">
+    <h2 class="h" style="font-size:100px;line-height:1.06">{rich(c['title'])}</h2>
+    <p style="margin-top:40px;font-size:40px;line-height:1.4;color:{DARK_MUTED};max-width:820px">{rich(c.get('body'))}</p>
+  </div>
+  <div style="position:absolute;left:90px;right:90px;bottom:96px;height:196px;border-radius:26px;background:rgba(255,255,255,.05);
+       border:2px solid rgba(255,255,255,.1);display:flex;align-items:center;padding:0 36px;gap:38px">
+    <img src="{avatar}" alt="" style="width:140px;height:140px;border-radius:50%;object-fit:cover;flex:none">
+    <div style="flex:1;font-family:'DM Sans',sans-serif;font-weight:500;font-size:38px;line-height:1.3;color:#EADDFF">@urlan.design<br>AI Product Designer</div>
+    <span style="flex:none;background:{VIOLET};color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:36px;
+       height:90px;padding:0 46px;border-radius:999px;display:flex;align-items:center">Seguir</span>
+  </div>
+</div>"""
+
+
 def main(folder):
     folder = pathlib.Path(folder).resolve()
     p = json.loads((folder / "post.json").read_text())
-    pages = [cover(p, folder)] + [content(p, i, s) for i, s in enumerate(p["slides"], 1)] + [closing(p)]
+    if p.get("style") == "texto":
+        pages = [text_slide(s) for s in p["slides"]] + [text_closing(p)]
+    else:
+        pages = [cover(p, folder)] + [content(p, i, s) for i, s in enumerate(p["slides"], 1)] + [closing(p)]
     head = f"<!doctype html><html lang='pt-BR'><head><meta charset='utf-8'><style>{font_faces()}{BASE_CSS}</style></head><body>"
     tmp = folder / "_render.html"
     with sync_playwright() as pw:

@@ -1,0 +1,44 @@
+{
+  "style": "texto",
+  "tag": "PROJETOS",
+  "slides": [
+    {
+      "text": "Cliente não compra **tela**.",
+      "sub": "Compra o sistema funcionando.",
+      "pos": "bottom",
+      "size": "xl"
+    },
+    {
+      "text": "Ninguém contrata um projeto pra ter um arquivo bonito no **Figma**.",
+      "pos": "top"
+    },
+    {
+      "text": "A pessoa quer saber se vai **funcionar** no dia seguinte.",
+      "sub": "Se o time consegue usar sem treinamento.",
+      "pos": "middle"
+    },
+    {
+      "text": "Se vai custar mais do que **economiza**.",
+      "pos": "bottom"
+    },
+    {
+      "text": "E quanto tempo até estar **no ar**.",
+      "pos": "top"
+    },
+    {
+      "text": "Tela bonita é o **mínimo**.",
+      "sub": "Ela não responde nenhuma dessas perguntas.",
+      "pos": "middle"
+    },
+    {
+      "text": "Por isso eu entrego o sistema **rodando**, com o protótipo junto.",
+      "pos": "bottom"
+    }
+  ],
+  "closing": {
+    "title": "Precisa de um sistema que **funcione**?",
+    "body": "Fala comigo pela DM."
+  },
+  "caption": "Quando um projeto começa, a conversa quase nunca é sobre cor ou fonte.\n\nO que pesa pra quem contrata é se o sistema vai funcionar no primeiro dia, se o time consegue usar e quanto tempo leva pra entrar no ar.\n\nO design bonito continua importando. Ele só não responde essas perguntas sozinho.\n\nPrecisa de um site ou sistema? Fala comigo pela DM.\n\n#productdesign #uxdesign #designdeproduto #sistemas #ux",
+  "sources": []
+}
