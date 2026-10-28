@@ -238,14 +238,15 @@ def ed_arrow(color=ED_INK):
             f'stroke="{color}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
 
-def ed_frame(inner, foot_left="@URLAN.DESIGN", foot_right="", top_right="", bg=ED_BG, extra=""):
+def ed_frame(inner, foot_left="@URLAN.DESIGN", foot_right="", top_right="", bg=ED_BG, extra="", footer=True):
+    foot = (f'''<div style="position:absolute;left:96px;right:96px;bottom:84px;border-top:2px solid rgba(21,19,26,.55);padding-top:22px;display:flex;justify-content:space-between;align-items:flex-start;{MONO};font-size:22px;letter-spacing:2px;line-height:1.5">
+    <span>{e(foot_left)}</span><span style="text-align:right;white-space:pre-line">{e(foot_right)}</span></div>''') if footer else ""
     return f"""
 <div class="s" style="background:{bg};color:{ED_INK};overflow:hidden;padding:0">{extra}
   <div style="position:absolute;top:84px;left:96px;right:96px;display:flex;justify-content:space-between;{MONO};font-weight:500;font-size:26px;letter-spacing:2px">
     <span style="font-family:'Google Sans Flex',sans-serif;font-weight:500;font-size:30px;letter-spacing:0">@urlan.design</span><span>{e(top_right)}</span></div>
   {inner}
-  <div style="position:absolute;left:96px;right:96px;bottom:84px;border-top:2px solid rgba(21,19,26,.55);padding-top:22px;display:flex;justify-content:space-between;align-items:flex-start;{MONO};font-size:22px;letter-spacing:2px;line-height:1.5">
-    <span>{e(foot_left)}</span><span style="text-align:right;white-space:pre-line">{e(foot_right)}</span></div>
+  {foot}
 </div>"""
 
 
@@ -308,14 +309,14 @@ def ed_closing(p):
     <div class="fit-lines" style="{CONDENSED};font-size:170px;line-height:.9;letter-spacing:-2px;white-space:nowrap">{lines}</div>
     <p style="margin-top:44px;{MONO};font-size:28px;line-height:1.55;letter-spacing:2px;text-transform:uppercase;max-width:760px">{e(c.get('body'))}</p>
   </div>
-  <div style="position:absolute;left:90px;right:90px;bottom:190px;height:180px;border-radius:24px;background:#FFFFFF;
+  <div style="position:absolute;left:90px;right:90px;bottom:96px;height:180px;border-radius:24px;background:#FFFFFF;
        border:2px solid rgba(21,19,26,.08);display:flex;align-items:center;padding:0 32px;gap:32px">
     <img src="{avatar}" alt="" style="width:120px;height:120px;border-radius:50%;object-fit:cover;flex:none">
     <div style="flex:1;font-family:'Google Sans Flex',sans-serif;font-weight:500;font-size:36px;line-height:1.3">@urlan.design<br><span style="color:{ED_MONO_MUTED}">AI Product Designer</span></div>
     <span style="flex:none;background:{PURPLE};color:#fff;font-family:'Google Sans Flex',sans-serif;font-weight:700;font-size:34px;
        height:84px;padding:0 44px;border-radius:999px;display:flex;align-items:center">Seguir</span>
   </div>"""
-    return ed_frame(inner, foot_left=p_foot.get("left", ""), foot_right=p_foot.get("right", ""), top_right=p_foot.get("top_right", ""))
+    return ed_frame(inner, top_right=p_foot.get("top_right", ""), footer=False)
 
 
 p_foot = {}
