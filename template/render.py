@@ -219,6 +219,7 @@ def text_closing(p):
 # post.json: {"style": "editorial", "cover": {"lines": ["4 REPOS", "**BOMBANDO**"], "tag": "(OUTUBRO 2026)",
 #   "subtitle": "...", "image": "cover-image.png", "top_right": "...", "foot_right": "..."},
 #   "items": [{"name": "...", "ref": "owner/repo", "stat": "89 mil estrelas", "what": "...", "why": "..."}],
+#   (opcional por item: "star": false tira a estrela; "label_what"/"label_why" trocam os rótulos só daquele item)
 #   "closing": {"lines": [...], "body": "..."}}
 ED_BG = "#F3F0F8"
 ED_INK = "#15131A"
@@ -291,10 +292,10 @@ def ed_item(i, it, total):
     <div style="{MONO};font-size:34px;color:{PURPLE};font-weight:500">{i:02d}</div>
     <div class="fit" style="{CONDENSED};font-size:150px;line-height:.92;margin-top:14px;letter-spacing:-1px;white-space:nowrap">{e(it['name'])}</div>
     <div style="display:flex;align-items:center;gap:18px;margin-top:30px;{MONO};font-size:28px">
-      <span>{e(it['ref'])}</span><span style="opacity:.4">·</span>{star}<span>{e(it['stat'])}</span></div>
+      <span>{e(it['ref'])}</span><span style="opacity:.4">·</span>{star if it.get('star', True) else ''}<span>{e(it['stat'])}</span></div>
     <div style="height:2px;background:rgba(21,19,26,.15);margin-top:44px"></div>
-    {block(p_foot.get('label_what', 'O QUE FAZ'), it['what'])}
-    {block(p_foot.get('label_why', 'POR QUE IMPORTA'), it['why'])}
+    {block(it.get('label_what', p_foot.get('label_what', 'O QUE FAZ')), it['what'])}
+    {block(it.get('label_why', p_foot.get('label_why', 'POR QUE IMPORTA')), it['why'])}
   </div>"""
     return ed_frame(inner, foot_left=p_foot.get("left", ""), foot_right=p_foot.get("right", ""), top_right=p_foot.get("top_right", ""))
 

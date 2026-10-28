@@ -1,0 +1,89 @@
+{
+  "style": "editorial",
+  "case": "sentence",
+  "tag": "IA NO DESIGN",
+  "cover": {
+    "lines": [
+      "Claude Design",
+      "ficou **grátis**"
+    ],
+    "tag": "(Desde 8 de outubro)",
+    "subtitle": "O que dá pra fazer no plano Free e qual o limite.",
+    "top_right": "IA no design",
+    "foot_right": "",
+    "image": "cover-image-shift.png",
+    "image_top": 40,
+    "image_width": 1080,
+    "image_left": 0,
+    "sub_top": 560,
+    "sub_width": 340
+  },
+  "footer": {
+    "left": "Claude · out 2026",
+    "right": "Grátis em\ntodos os planos",
+    "top_right": "IA no design",
+    "label_what": "O que faz",
+    "label_why": "Por que importa"
+  },
+  "items": [
+    {
+      "name": "Claude Design",
+      "ref": "Telas e protótipos",
+      "star": false,
+      "stat": "Exporta HTML, PDF, PPTX",
+      "what": "Cria telas, protótipos interativos e one-pagers a partir de uma conversa com o Claude.",
+      "why": "O protótipo vai direto pro Claude Code ou pra Canva, Miro, Vercel e Wix."
+    },
+    {
+      "name": "Claude Slides",
+      "ref": "Apresentações",
+      "star": false,
+      "stat": "PowerPoint e Google Slides",
+      "what": "Monta apresentações que você edita junto com o Claude, até pelo celular.",
+      "why": "O arquivo sai pro PowerPoint, PDF ou Google Slides com a mesma formatação do editor."
+    },
+    {
+      "name": "Claude Docs",
+      "ref": "Documentos",
+      "star": false,
+      "stat": "Edição em conjunto",
+      "what": "Cria documentos que você e o Claude editam no mesmo arquivo.",
+      "why": "Dá pra escrever briefing e especificação sem copiar texto do chat pra outro lugar."
+    },
+    {
+      "name": "O limite",
+      "ref": "Cota compartilhada",
+      "star": false,
+      "stat": "Sem cota própria",
+      "label_what": "Como funciona",
+      "label_why": "Na prática",
+      "what": "Usa a mesma cota do chat e do Claude Code. Projeto grande gasta mais.",
+      "why": "Quando a cota acaba, o Claude Design fica indisponível até o limite renovar."
+    },
+    {
+      "name": "O prazo",
+      "ref": "claude.ai/design",
+      "star": false,
+      "stat": "Sai do ar em 14/12",
+      "label_what": "O que muda",
+      "label_why": "O que fazer",
+      "what": "A versão separada do Claude Design, em claude.ai/design, fecha em 14 de dezembro.",
+      "why": "Quem tem design system salvo lá precisa levar pro Claude antes dessa data."
+    }
+  ],
+  "closing": {
+    "lines": [
+      "Já testou o",
+      "**Claude Design?**"
+    ],
+    "body": "Comenta o que você criou e salva pra testar depois."
+  },
+  "caption": "Desde 8 de outubro, o Claude Design, o Claude Slides e o Claude Docs estão em todos os planos do Claude, inclusive o grátis.\n\nDá pra criar tela, protótipo, apresentação e documento conversando com o Claude e exportar pra PowerPoint, PDF, HTML ou Google Slides.\n\nNão tem cota separada: tudo sai do mesmo limite do chat.\n\nJá testou? Comenta aqui o que você criou.\n\n#claude #productdesign #uxdesign #inteligenciaartificial #designdeproduto",
+  "sources": [
+    "https://claude.com/resources/articles/dashboards-and-motion",
+    "https://support.claude.com/en/articles/14604416",
+    "https://pricingsaas.com/news/article/anthropic-brings-claude-design-slides-and-docs-to-the-free-plan",
+    "https://aicatchup.com/news/claude-dashboards-motion-beta"
+  ],
+  "statsDate": "2026-10-28"
+}
