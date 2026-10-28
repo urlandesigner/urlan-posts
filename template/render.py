@@ -35,9 +35,9 @@ def font_faces():
                 css.append(f"@font-face{{font-family:'{fam}';font-weight:{w};src:url('{f.as_uri()}') format('woff2');unicode-range:{rng};}}")
     for w in (400, 500):
         for sub, rng in (("latin", latin), ("latin-ext", ext)):
-            f = TPL / "fonts" / f"jetbrains-mono-{sub}-{w}-normal.woff2"
+            f = TPL / "fonts" / f"google-sans-code-{sub}-{w}-normal.woff2"
             if f.exists():
-                css.append(f"@font-face{{font-family:'JetBrains Mono';font-weight:{w};src:url('{f.as_uri()}') format('woff2');unicode-range:{rng};}}")
+                css.append(f"@font-face{{font-family:'Google Sans Code';font-weight:{w};src:url('{f.as_uri()}') format('woff2');unicode-range:{rng};}}")
     # Google Sans Flex: fonte variável (peso 1 a 1000), usada quando o post pede "font": "Google Sans Flex".
     for sub, rng in (("latin", latin), ("latin-ext", ext)):
         f = TPL / "fonts" / f"google-sans-flex-{sub}-full-normal.woff2"
@@ -224,7 +224,7 @@ ED_BG = "#F3F0F8"
 ED_INK = "#15131A"
 ED_MONO_MUTED = "#5E5A68"  # 6.0:1 sobre ED_BG
 
-MONO = "font-family:'JetBrains Mono',monospace"
+MONO = "font-family:'Google Sans Code',monospace"
 CONDENSED = "font-family:'Google Sans Flex',sans-serif;font-weight:900;font-stretch:72%;text-transform:uppercase"
 
 
@@ -242,7 +242,7 @@ def ed_frame(inner, foot_left="@URLAN.DESIGN", foot_right="", top_right="", bg=E
     return f"""
 <div class="s" style="background:{bg};color:{ED_INK};overflow:hidden;padding:0">{extra}
   <div style="position:absolute;top:84px;left:96px;right:96px;display:flex;justify-content:space-between;{MONO};font-weight:500;font-size:26px;letter-spacing:2px">
-    <span>@urlan.design</span><span>{e(top_right)}</span></div>
+    <span style="font-family:'Google Sans Flex',sans-serif;font-weight:500;font-size:30px;letter-spacing:0">@urlan.design</span><span>{e(top_right)}</span></div>
   {inner}
   <div style="position:absolute;left:96px;right:96px;bottom:84px;border-top:2px solid rgba(21,19,26,.55);padding-top:22px;display:flex;justify-content:space-between;align-items:flex-start;{MONO};font-size:22px;letter-spacing:2px;line-height:1.5">
     <span>{e(foot_left)}</span><span style="text-align:right;white-space:pre-line">{e(foot_right)}</span></div>

@@ -47,6 +47,9 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 - Formato 1080 × 1350 px, margem lateral de 96 px.
 - Não mexer no layout por post. Mudança de visual se faz no template e vale para todos.
 - **Post só de texto** (`"style": "texto"` no `post.json`): fundo #15131A, fonte **Google Sans Flex** (padrão desse estilo), frase principal em negrito com uma palavra em lilás (`**palavra**`), frase de apoio em peso médio e cinza #8E8999, texto alternando entre topo, meio e base, card de perfil com a foto em alta (`template/assets/avatar-hd.webp`) no fechamento. Usar para posts de opinião. Referência aprovada: `2026-10-cliente-sistema-gsf/`.
+- **Post editorial** (`"style": "editorial"`): para listas de repositórios, ferramentas ou recursos. Capa com foto de produto (gerada no Higgsfield) sangrando a capa, título em Google Sans Flex peso 900 e largura 72% em maiúsculas com a palavra de destaque em roxo #7120D1; itens limpos (número, nome, referência, uma estatística e duas frases: "O que faz" e "Por que importa"), sem prints. Textos pequenos e técnicos em **Google Sans Code**. Referência aprovada: `2026-10-repos-em-alta/`.
+- **Fontes da marca:** DM Sans + Inter (template roxo), Google Sans Flex (posts de texto e editorial) e Google Sans Code (só textos técnicos pequenos do editorial). Não introduzir outra família sem aprovação.
+- **Assinatura @urlan.design** sempre em fonte sem serifa da marca (Google Sans Flex ou DM Sans), nunca em fonte de código.
 - Estilo único por enquanto: todos os posts usam este padrão (capa roxa flat). Os outros estilos de capa do documento de marca (aurora escura, citação, foto) não estão em uso até o Urlan liberar.
 
 ## Publicação
