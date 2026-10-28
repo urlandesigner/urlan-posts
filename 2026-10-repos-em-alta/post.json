@@ -1,0 +1,70 @@
+{
+  "style": "editorial",
+  "tag": "IA NO DESIGN",
+  "cover": {
+    "lines": [
+      "4 repos",
+      "**bombando**"
+    ],
+    "tag": "(GITHUB, OUTUBRO 2026)",
+    "subtitle": "O que eles fazem e por que importam pra quem desenha produto.",
+    "image": "cover-image.png",
+    "top_right": "REPOS EM ALTA",
+    "foot_right": "OPEN SOURCE\nPRA DESIGNERS",
+    "image_top": 190,
+    "sub_top": 670,
+    "sub_width": 300
+  },
+  "footer": {
+    "right": "OPEN SOURCE\nPRA DESIGNERS",
+    "top_right": "REPOS EM ALTA",
+    "left": "GITHUB · OUT 2026"
+  },
+  "items": [
+    {
+      "name": "Impeccable",
+      "ref": "pbakaus/impeccable",
+      "stat": "89 mil estrelas",
+      "what": "Ensina o agente de IA a fazer interfaces menos genéricas, com comandos como critique, audit e polish.",
+      "why": "Detecta 62 padrões de design com cara de IA antes de você entregar."
+    },
+    {
+      "name": "Superpowers",
+      "ref": "obra/superpowers",
+      "stat": "304 mil estrelas",
+      "what": "Faz o agente perguntar, escrever um plano e revisar antes de sair programando.",
+      "why": "É o mesmo fluxo de briefing, plano e revisão que designer já usa."
+    },
+    {
+      "name": "HyperFrames",
+      "ref": "heygen-com/hyperframes",
+      "stat": "74 mil estrelas",
+      "what": "Transforma HTML, CSS e animação em vídeo MP4.",
+      "why": "Dá pra pedir um vídeo de produto ao agente e ajustar como se fosse uma página."
+    },
+    {
+      "name": "text-to-cad",
+      "ref": "earthtojake/text-to-cad",
+      "stat": "21 mil estrelas",
+      "what": "Gera modelos 3D a partir de texto ou imagem.",
+      "why": "Prepara arquivo pra impressão 3D e desenho técnico em PDF, sem abrir software de CAD."
+    }
+  ],
+  "closing": {
+    "lines": [
+      "Qual você",
+      "vai testar",
+      "**primeiro?**"
+    ],
+    "body": "Salva e manda pra quem trabalha com IA."
+  },
+  "caption": "Quatro repositórios do GitHub cresceram muito em outubro e têm tudo a ver com quem desenha produto.\n\nUm ensina o agente a fazer interface menos genérica. Outro faz ele planejar antes de programar. Tem um que transforma HTML em vídeo e outro que gera modelo 3D a partir de texto.\n\nTodos são gratuitos e open source.\n\nQual você vai testar primeiro? Comenta aqui.\n\n#github #productdesign #uxdesign #inteligenciaartificial #designdeproduto",
+  "sources": [
+    "https://github.com/pbakaus/impeccable",
+    "https://github.com/obra/superpowers",
+    "https://github.com/heygen-com/hyperframes",
+    "https://github.com/earthtojake/text-to-cad",
+    "https://wangchujiang.com/github-rank/trending-monthly.html"
+  ],
+  "statsDate": "2026-10-27"
+}

@@ -33,6 +33,11 @@ def font_faces():
             for sub, rng in (("latin", latin), ("latin-ext", ext)):
                 f = TPL / "fonts" / f"{slug}-{sub}-{w}-normal.woff2"
                 css.append(f"@font-face{{font-family:'{fam}';font-weight:{w};src:url('{f.as_uri()}') format('woff2');unicode-range:{rng};}}")
+    for w in (400, 500):
+        for sub, rng in (("latin", latin), ("latin-ext", ext)):
+            f = TPL / "fonts" / f"jetbrains-mono-{sub}-{w}-normal.woff2"
+            if f.exists():
+                css.append(f"@font-face{{font-family:'JetBrains Mono';font-weight:{w};src:url('{f.as_uri()}') format('woff2');unicode-range:{rng};}}")
     # Google Sans Flex: fonte variável (peso 1 a 1000), usada quando o post pede "font": "Google Sans Flex".
     for sub, rng in (("latin", latin), ("latin-ext", ext)):
         f = TPL / "fonts" / f"google-sans-flex-{sub}-full-normal.woff2"
@@ -210,11 +215,133 @@ def text_closing(p):
 </div>"""
 
 
+# ---------- Estilo "editorial": capa com foto de produto + itens limpos (listas, repos, ferramentas) ----------
+# post.json: {"style": "editorial", "cover": {"lines": ["4 REPOS", "**BOMBANDO**"], "tag": "(OUTUBRO 2026)",
+#   "subtitle": "...", "image": "cover-image.png", "top_right": "...", "foot_right": "..."},
+#   "items": [{"name": "...", "ref": "owner/repo", "stat": "89 mil estrelas", "what": "...", "why": "..."}],
+#   "closing": {"lines": [...], "body": "..."}}
+ED_BG = "#F3F0F8"
+ED_INK = "#15131A"
+ED_MONO_MUTED = "#5E5A68"  # 6.0:1 sobre ED_BG
+
+MONO = "font-family:'JetBrains Mono',monospace"
+CONDENSED = "font-family:'Google Sans Flex',sans-serif;font-weight:900;font-stretch:72%;text-transform:uppercase"
+
+
+def rich_ed(t):
+    import re
+    return re.sub(r"\*\*(.+?)\*\*", rf'<span style="color:{PURPLE}">\1</span>', e(t))
+
+
+def ed_arrow(color=ED_INK):
+    return (f'<svg width="96" height="24" viewBox="0 0 96 24" fill="none" aria-hidden="true"><path d="M2 12h90M80 3l11 9-11 9" '
+            f'stroke="{color}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+
+def ed_frame(inner, foot_left="@URLAN.DESIGN", foot_right="", top_right="", bg=ED_BG, extra=""):
+    return f"""
+<div class="s" style="background:{bg};color:{ED_INK};overflow:hidden;padding:0">{extra}
+  <div style="position:absolute;top:84px;left:96px;right:96px;display:flex;justify-content:space-between;{MONO};font-weight:500;font-size:26px;letter-spacing:2px">
+    <span>@urlan.design</span><span>{e(top_right)}</span></div>
+  {inner}
+  <div style="position:absolute;left:96px;right:96px;bottom:84px;border-top:2px solid rgba(21,19,26,.55);padding-top:22px;display:flex;justify-content:space-between;align-items:flex-start;{MONO};font-size:22px;letter-spacing:2px;line-height:1.5">
+    <span>{e(foot_left)}</span><span style="text-align:right;white-space:pre-line">{e(foot_right)}</span></div>
+</div>"""
+
+
+def ed_cover(p, folder):
+    c = p["cover"]
+    bg = ED_BG
+    bg_img = ""
+    if c.get("image"):
+        # Foto de produto ocupando a parte de baixo da capa. O fundo da capa assume a cor do topo da
+        # foto e um degradê esconde as bordas, para o objeto parecer "solto" na capa inteira.
+        from PIL import Image
+        path = folder / c["image"]
+        im = Image.open(path).convert("RGB")
+        bg = "#%02x%02x%02x" % im.crop((0, 0, im.width, max(1, im.height // 30))).resize((1, 1)).getpixel((0, 0))
+        left_c = "#%02x%02x%02x" % im.crop((0, 0, max(1, im.width // 30), im.height // 2)).resize((1, 1)).getpixel((0, 0))
+        w = c.get("image_width", 1180)
+        top = c.get("image_top", 290)
+        left = c.get("image_left", 0)
+        h = round(w * im.height / im.width)
+        bg_img = f"""
+  <img src="{path.as_uri()}" alt="" style="position:absolute;left:{left}px;top:{top}px;width:{w}px;height:{h}px">
+  <div style="position:absolute;left:0;right:0;top:{top - 2}px;height:260px;background:linear-gradient({bg},rgba(0,0,0,0))"></div>
+"""
+    lines = "".join(f'<div><span class="ln">{rich_ed(l)}</span></div>' for l in c["lines"])
+    inner = f"""
+  <div style="position:absolute;top:170px;left:90px;right:60px">
+    <div class="fit-lines" style="{CONDENSED};font-size:{c.get('size', 200)}px;line-height:.9;letter-spacing:-2px;white-space:nowrap">{lines}</div>
+    <div style="{MONO};font-size:40px;margin-top:22px">{e(c.get('tag'))}</div>
+  </div>
+  <div style="position:absolute;left:96px;top:{c.get('sub_top', 760)}px;width:{c.get('sub_width', 340)}px;{MONO};font-size:24px;line-height:1.55;letter-spacing:2px;text-transform:uppercase">{e(c.get('subtitle'))}
+    <div style="margin-top:30px">{ed_arrow()}</div></div>"""
+    return ed_frame(inner, foot_left=p_foot.get("left", ""), foot_right=c.get("foot_right", ""), top_right=c.get("top_right", ""), bg=bg, extra=bg_img)
+
+
+def ed_item(i, it, total):
+    star = ('<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6-4.9-4.6 6.6-.8z" '
+            f'fill="{PURPLE}"/></svg>')
+    block = lambda label, txt: (f'<div style="margin-top:56px"><div style="{MONO};font-size:24px;letter-spacing:3px;color:{ED_MONO_MUTED}">{label}</div>'
+                                f'<p style="margin-top:14px;font-family:\'Google Sans Flex\',sans-serif;font-weight:500;font-size:44px;line-height:1.25">{rich_ed(txt)}</p></div>')
+    inner = f"""
+  <div style="position:absolute;top:220px;left:96px;right:96px">
+    <div style="{MONO};font-size:34px;color:{PURPLE};font-weight:500">{i:02d}</div>
+    <div class="fit" style="{CONDENSED};font-size:150px;line-height:.92;margin-top:14px;letter-spacing:-1px;white-space:nowrap">{e(it['name'])}</div>
+    <div style="display:flex;align-items:center;gap:18px;margin-top:30px;{MONO};font-size:28px">
+      <span>{e(it['ref'])}</span><span style="opacity:.4">·</span>{star}<span>{e(it['stat'])}</span></div>
+    <div style="height:2px;background:rgba(21,19,26,.15);margin-top:44px"></div>
+    {block('O QUE FAZ', it['what'])}
+    {block('POR QUE IMPORTA', it['why'])}
+  </div>"""
+    return ed_frame(inner, foot_left=p_foot.get("left", ""), foot_right=p_foot.get("right", ""), top_right=p_foot.get("top_right", ""))
+
+
+def ed_closing(p):
+    c = p["closing"]
+    hd = TPL / "assets" / "avatar-hd.webp"
+    avatar = (hd if hd.exists() else TPL / "assets" / "avatar.png").as_uri()
+    lines = "".join(f'<div><span class="ln">{rich_ed(l)}</span></div>' for l in c["lines"])
+    inner = f"""
+  <div style="position:absolute;top:260px;left:90px;right:60px">
+    <div class="fit-lines" style="{CONDENSED};font-size:170px;line-height:.9;letter-spacing:-2px;white-space:nowrap">{lines}</div>
+    <p style="margin-top:44px;{MONO};font-size:28px;line-height:1.55;letter-spacing:2px;text-transform:uppercase;max-width:760px">{e(c.get('body'))}</p>
+  </div>
+  <div style="position:absolute;left:90px;right:90px;bottom:190px;height:180px;border-radius:24px;background:#FFFFFF;
+       border:2px solid rgba(21,19,26,.08);display:flex;align-items:center;padding:0 32px;gap:32px">
+    <img src="{avatar}" alt="" style="width:120px;height:120px;border-radius:50%;object-fit:cover;flex:none">
+    <div style="flex:1;font-family:'Google Sans Flex',sans-serif;font-weight:500;font-size:36px;line-height:1.3">@urlan.design<br><span style="color:{ED_MONO_MUTED}">AI Product Designer</span></div>
+    <span style="flex:none;background:{PURPLE};color:#fff;font-family:'Google Sans Flex',sans-serif;font-weight:700;font-size:34px;
+       height:84px;padding:0 44px;border-radius:999px;display:flex;align-items:center">Seguir</span>
+  </div>"""
+    return ed_frame(inner, foot_left=p_foot.get("left", ""), foot_right=p_foot.get("right", ""), top_right=p_foot.get("top_right", ""))
+
+
+p_foot = {}
+
+# Reduz o tamanho da fonte de títulos marcados até caberem na largura disponível (888 px).
+FIT_JS = """() => {
+  // Reduz a fonte até a linha mais larga caber na largura do próprio bloco.
+  for (const el of document.querySelectorAll('.fit, .fit-lines')) {
+    const limit = el.clientWidth;
+    const spans = el.classList.contains('fit-lines') ? [...el.querySelectorAll('.ln')] : [];
+    const widest = () => spans.length ? Math.max(...spans.map(s => s.offsetWidth)) : el.scrollWidth;
+    let size = parseFloat(getComputedStyle(el).fontSize);
+    while (widest() > limit && size > 40) { size -= 2; el.style.fontSize = size + 'px'; }
+  }
+}"""
+
+
 def main(folder):
     folder = pathlib.Path(folder).resolve()
     p = json.loads((folder / "post.json").read_text())
     if p.get("style") == "texto":
         pages = [text_slide(s) for s in p["slides"]] + [text_closing(p)]
+    elif p.get("style") == "editorial":
+        p_foot.update(p.get("footer", {}))
+        items = p["items"]
+        pages = [ed_cover(p, folder)] + [ed_item(i, it, len(items)) for i, it in enumerate(items, 1)] + [ed_closing(p)]
     else:
         pages = [cover(p, folder)] + [content(p, i, s) for i, s in enumerate(p["slides"], 1)] + [closing(p)]
     override = ""
@@ -233,6 +360,7 @@ def main(folder):
             pg.goto(tmp.as_uri())
             pg.evaluate("document.fonts.ready")
             pg.wait_for_timeout(250)
+            pg.evaluate(FIT_JS)
             pg.screenshot(path=str(folder / f"slide-{n:02d}.png"))
         b.close()
     tmp.unlink()
