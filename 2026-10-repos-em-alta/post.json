@@ -6,21 +6,23 @@
       "4 repos",
       "**bombando**"
     ],
-    "tag": "(GITHUB, OUTUBRO 2026)",
+    "tag": "(GitHub, outubro 2026)",
     "subtitle": "O que eles fazem e por que importam pra quem desenha produto.",
     "image": "cover-image-shift.png",
-    "top_right": "REPOS EM ALTA",
+    "top_right": "Repos em alta",
     "foot_right": "",
     "image_top": 150,
-    "sub_top": 670,
+    "sub_top": 780,
     "sub_width": 300,
     "image_width": 1287,
     "image_left": 0
   },
   "footer": {
-    "right": "OPEN SOURCE\nPRA DESIGNERS",
-    "top_right": "REPOS EM ALTA",
-    "left": "GITHUB · OUT 2026"
+    "right": "Open source\npra designers",
+    "top_right": "Repos em alta",
+    "left": "GitHub · out 2026",
+    "label_what": "O que faz",
+    "label_why": "Por que importa"
   },
   "items": [
     {
@@ -68,5 +70,6 @@
     "https://github.com/earthtojake/text-to-cad",
     "https://wangchujiang.com/github-rank/trending-monthly.html"
   ],
-  "statsDate": "2026-10-27"
+  "statsDate": "2026-10-27",
+  "case": "sentence"
 }
