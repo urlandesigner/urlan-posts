@@ -8,14 +8,14 @@
     ],
     "tag": "(GitHub, outubro 2026)",
     "subtitle": "O que eles fazem e por que importam pra quem desenha produto.",
-    "image": "cover-image-shift.png",
+    "image": "cover-image-v3.png",
     "top_right": "Repos em alta",
     "foot_right": "",
-    "image_top": 150,
+    "image_top": -220,
     "sub_top": 780,
     "sub_width": 300,
-    "image_width": 1287,
-    "image_left": 0
+    "image_width": 1250,
+    "image_left": -170
   },
   "footer": {
     "right": "Open source\npra designers",
