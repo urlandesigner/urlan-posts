@@ -1,0 +1,12 @@
+{
+  "style": "combos",
+  "gap": "#15131A",
+  "pairs": [
+    {"dark": ["Plum", "#3B0F4C"], "light": ["Lilac mist", "#EADCF5"]},
+    {"dark": ["Royal purple", "#3F1A8A"], "light": ["Lavender", "#DCD3FD"]},
+    {"dark": ["Amethyst", "#5E1E9E"], "light": ["Orchid", "#F1D7F5"]},
+    {"dark": ["Eggplant", "#2A1531"], "light": ["Thistle", "#D9C4DF"]},
+    {"dark": ["Ultraviolet", "#4A1FA8"], "light": ["Wisteria", "#CDBDF4"]}
+  ],
+  "closing": {"lines": ["Salve para", "usar no seu", "próximo", "projeto"]}
+}
