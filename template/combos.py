@@ -34,7 +34,7 @@ CARD_H = (1350 - 2 * PAD - GAP) // 2   # 660
 
 def card(name, hexv, bg, fg, top, hex_above, extra=""):
     label = f'<div style="font-weight:700;font-size:22px;letter-spacing:.5px">HEX: {e(hexv.upper())}</div>'
-    title = f'<div style="font-weight:700;font-size:92px;line-height:1;letter-spacing:-1.5px;text-transform:uppercase;margin:{"14px 0 0" if hex_above else "0 0 14px"}">{e(name)}</div>'
+    title = f'<div style="font-weight:800;font-size:92px;line-height:1;letter-spacing:-1.5px;text-transform:uppercase;margin:{"14px 0 0" if hex_above else "0 0 14px"}">{e(name)}</div>'
     inner = (label + title) if hex_above else (title + label)
     return f'''<div style="position:absolute;left:{PAD}px;right:{PAD}px;top:{top}px;height:{CARD_H}px;border-radius:44px;background:{bg};color:{fg}">
   <div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center">{inner}</div>{extra}</div>'''
@@ -60,7 +60,7 @@ def closing(p):
   <svg style="position:absolute;left:96px;top:120px" width="58" height="80" viewBox="0 0 58 80"><path d="M6 0h46a6 6 0 0 1 6 6v74L29 60 0 80V6a6 6 0 0 1 6-6z" fill="#fff"/></svg>
   <!-- título centralizado entre o ícone (base em 200px) e o card de perfil (topo em 1058px) -->
   <div style="position:absolute;left:96px;right:80px;top:200px;height:858px;display:flex;align-items:center">
-    <div style="color:#fff;font-weight:{p["closing"].get("weight", 900)};font-size:136px;line-height:1.02;letter-spacing:-3px">{lines}</div></div>
+    <div style="color:#fff;font-weight:{p["closing"].get("weight", 900)};font-size:146px;line-height:0.89;letter-spacing:-3px">{lines}</div></div>
   <div style="position:absolute;left:96px;right:96px;bottom:96px;height:196px;border-radius:28px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.10);display:flex;align-items:center;padding:0 40px;gap:36px;box-sizing:border-box">
     <img src="{av}" style="width:130px;height:130px;border-radius:50%;object-fit:cover">
     <div style="flex:1;color:#EADDFF;font-weight:500;font-size:36px;line-height:1.35">@urlan.design<br>AI Product Designer</div>
