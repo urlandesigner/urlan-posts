@@ -4,6 +4,10 @@ Fila de temas aprovados ou sugeridos. Ao produzir um, mover para "Feitos" com a 
 
 ## Próximos
 
+### Color combos pra UI (capa aprovada em 29/10/2026)
+- **Capa aprovada:** `testes-capa/color-combos/capa-b4.png` (foto de teclas no Nano Banana Pro, título em Google Sans Flex peso 800, caixa alta, "COLOR" branco e "COMBOS" em #A255FD). Arquivo-fonte: `capa-b4.html` + `teclas.png`.
+- **Pendente:** definir o ângulo (o tema "color combos" já saiu no feed): paletas pra interfaces com IA, combinações que passam no contraste ou paletas de produtos conhecidos. Título e subtítulo da capa são provisórios.
+
 ### O erro que eu mais vejo em quem começa a usar IA no design
 - **Pilar:** IA no Design. **Objetivo:** alcance.
 - **Pendente:** o Urlan precisa dizer qual é o erro, com base na experiência dele.
