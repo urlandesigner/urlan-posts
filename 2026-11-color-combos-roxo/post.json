@@ -2,11 +2,77 @@
   "style": "combos",
   "gap": "#15131A",
   "pairs": [
-    {"dark": ["Plum", "#3B0F4C"], "light": ["Lilac mist", "#EADCF5"]},
-    {"dark": ["Royal purple", "#3F1A8A"], "light": ["Lavender", "#DCD3FD"]},
-    {"dark": ["Amethyst", "#5E1E9E"], "light": ["Orchid", "#F1D7F5"]},
-    {"dark": ["Eggplant", "#2A1531"], "light": ["Thistle", "#D9C4DF"]},
-    {"dark": ["Ultraviolet", "#4A1FA8"], "light": ["Wisteria", "#CDBDF4"]}
+    {
+      "dark": [
+        "Plum",
+        "#3B0F4C"
+      ],
+      "light": [
+        "Lilac mist",
+        "#EADCF5"
+      ]
+    },
+    {
+      "dark": [
+        "Royal purple",
+        "#3F1A8A"
+      ],
+      "light": [
+        "Lavender",
+        "#DCD3FD"
+      ]
+    },
+    {
+      "dark": [
+        "Amethyst",
+        "#5E1E9E"
+      ],
+      "light": [
+        "Orchid",
+        "#F1D7F5"
+      ]
+    },
+    {
+      "dark": [
+        "Eggplant",
+        "#2A1531"
+      ],
+      "light": [
+        "Thistle",
+        "#D9C4DF"
+      ]
+    },
+    {
+      "dark": [
+        "Ultraviolet",
+        "#4A1FA8"
+      ],
+      "light": [
+        "Wisteria",
+        "#CDBDF4"
+      ]
+    }
   ],
-  "closing": {"lines": ["Salve para", "usar no seu", "próximo", "projeto"]}
+  "closing": {
+    "lines": [
+      "Salve para",
+      "usar no seu",
+      "próximo",
+      "projeto"
+    ]
+  },
+  "cover": {
+    "source": "capa.html",
+    "image": "../testes-capa/color-combos/teclas.png",
+    "model": "nano_banana_pro"
+  },
+  "caption": "Cinco duplas de cores, todas em tons de roxo, pra usar em interface, apresentação ou identidade visual.\n\nCada dupla tem uma cor escura e uma clara. As duas passam no teste de contraste pra texto, então dá pra usar uma como fundo e a outra como letra.\n\nOs códigos HEX estão em cada slide.\n\nSalva pra usar no seu próximo projeto.\n\n#colorpalette #uidesign #productdesign #designdeinterface #paletadecores",
+  "contrast": {
+    "Plum/Lilac mist": 11.82,
+    "Royal purple/Lavender": 8.56,
+    "Amethyst/Orchid": 7.32,
+    "Eggplant/Thistle": 10.33,
+    "Ultraviolet/Wisteria": 5.93
+  },
+  "note": "Slides 02-07: python3 template/combos.py 2026-11-color-combos-roxo. Capa: renderizar capa.html (1080x1350)."
 }
