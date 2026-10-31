@@ -85,5 +85,10 @@
     "https://pricingsaas.com/news/article/anthropic-brings-claude-design-slides-and-docs-to-the-free-plan",
     "https://aicatchup.com/news/claude-dashboards-motion-beta"
   ],
-  "statsDate": "2026-10-28"
+  "statsDate": "2026-10-28",
+  "cover_override": {
+    "style": "serie",
+    "source": "testes-capa/serie/capa-cd.html",
+    "note": "slide-01.png vem do estilo série; não regenerar a capa pelo render.py"
+  }
 }

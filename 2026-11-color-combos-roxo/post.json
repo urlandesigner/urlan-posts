@@ -74,5 +74,10 @@
     "Eggplant/Thistle": 10.33,
     "Ultraviolet/Wisteria": 5.93
   },
-  "note": "Slides 02-07: python3 template/combos.py 2026-11-color-combos-roxo. Capa: renderizar capa.html (1080x1350)."
+  "note": "Slides 02-07: python3 template/combos.py 2026-11-color-combos-roxo. Capa: renderizar capa.html (1080x1350).",
+  "cover_override": {
+    "style": "serie",
+    "source": "testes-capa/serie/capa1.html",
+    "note": "slide-01.png vem do estilo série; não regenerar a capa pelo render.py"
+  }
 }

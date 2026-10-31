@@ -71,5 +71,10 @@
     "https://wangchujiang.com/github-rank/trending-monthly.html"
   ],
   "statsDate": "2026-10-27",
-  "case": "sentence"
+  "case": "sentence",
+  "cover_override": {
+    "style": "serie",
+    "source": "testes-capa/serie/capa-repos.html",
+    "note": "slide-01.png vem do estilo série; não regenerar a capa pelo render.py"
+  }
 }
