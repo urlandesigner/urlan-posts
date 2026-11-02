@@ -76,5 +76,6 @@
     "style": "serie",
     "source": "testes-capa/serie/capa-repos.html",
     "note": "slide-01.png vem do estilo série; não regenerar a capa pelo render.py"
-  }
+  },
+  "instagramUrl": "https://www.instagram.com/p/DfPXy4Qjfbr/"
 }
