@@ -1,0 +1,78 @@
+{
+  "style": "editorial",
+  "case": "sentence",
+  "tag": "DIA DO DESIGN",
+  "cover": {
+    "lines": ["Dia do", "**Design**"],
+    "tag": "(5 de novembro)",
+    "subtitle": "Por que a data existe.",
+    "top_right": "Dia do design",
+    "foot_right": ""
+  },
+  "footer": {
+    "left": "Dia Nacional do Design",
+    "right": "5 de novembro",
+    "top_right": "Dia do design",
+    "label_what": "O que fez",
+    "label_why": "Onde você vê"
+  },
+  "items": [
+    {
+      "name": "Aloísio Magalhães",
+      "ref": "Recife, 1927–1982",
+      "star": false,
+      "stat": "Designer",
+      "label_what": "Quem foi",
+      "label_why": "Por que 5/11",
+      "what": "Designer pernambucano, considerado um dos pioneiros do design moderno no Brasil.",
+      "why": "O Dia Nacional do Design é comemorado no aniversário dele: 5 de novembro."
+    },
+    {
+      "name": "Marca BR",
+      "ref": "Petrobras",
+      "star": false,
+      "stat": "1971",
+      "what": "O escritório dele criou a marca BR e o visual dos postos de combustível da Petrobras.",
+      "why": "Na marca dos postos BR, presente até hoje em todo o país."
+    },
+    {
+      "name": "Rede Globo",
+      "ref": "Primeiro símbolo",
+      "star": false,
+      "stat": "1965",
+      "label_why": "Por que importa",
+      "what": "Desenhou o primeiro símbolo da Rede Globo, no ano em que a emissora estreou.",
+      "why": "Foi a primeira marca da Globo, antes das versões que conhecemos hoje."
+    },
+    {
+      "name": "Cruzeiro Novo",
+      "ref": "Cédulas",
+      "star": false,
+      "stat": "1966",
+      "label_why": "Detalhe",
+      "what": "Venceu o concurso do Banco Central para o desenho das cédulas do Cruzeiro Novo.",
+      "why": "Depois propôs cédulas espelhadas, que ficam iguais de qualquer lado que você segura."
+    },
+    {
+      "name": "ESDI",
+      "ref": "Rio de Janeiro",
+      "star": false,
+      "stat": "1963",
+      "label_why": "E mais",
+      "what": "Ajudou a criar a ESDI, a primeira escola superior de design do Brasil, onde também deu aula.",
+      "why": "Em 1979 assumiu a direção do IPHAN, órgão que cuida do patrimônio histórico."
+    }
+  ],
+  "closing": {
+    "lines": ["Feliz Dia", "do **Design**"],
+    "body": "Marca alguém que te ensinou design."
+  },
+  "caption": "Hoje, 5 de novembro, é o Dia Nacional do Design. A data marca o aniversário de Aloísio Magalhães, designer pernambucano nascido em 1927.\n\nO escritório dele criou a marca BR dos postos da Petrobras. Ele desenhou o primeiro símbolo da Globo e as cédulas do Cruzeiro Novo, e ajudou a fundar a ESDI, a primeira escola superior de design do país.\n\nMarca aqui alguém que te ensinou design.\n\n#diadodesign #designbrasileiro #aloisiomagalhaes #designgrafico #productdesign",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Alo%C3%ADsio_Magalh%C3%A3es",
+    "https://www.vibraenergia.com.br/historia",
+    "https://designersbrasileiros.com.br/designers-made-in-brazil-aloisio-magalhaes/",
+    "https://www.calendarr.com/brasil/dia-do-designer-grafico/"
+  ],
+  "cover_override": {"style": "serie", "source": "testes-capa/serie/capa-dia-design.html"}
+}
