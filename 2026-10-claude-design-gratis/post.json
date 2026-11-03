@@ -90,5 +90,6 @@
     "style": "serie",
     "source": "testes-capa/serie/capa-cd.html",
     "note": "slide-01.png vem do estilo série; não regenerar a capa pelo render.py"
-  }
+  },
+  "instagramUrl": "https://www.instagram.com/p/DfR8i2fjeul/"
 }
