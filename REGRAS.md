@@ -61,3 +61,16 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 4. Criar o post no Metricool (marca `urlan.design`, rede Instagram, tipo POST), com texto alternativo em cada imagem e `isAiGenerated: false`.
 5. Modo padrão: rascunho. Só publicar direto quando isso estiver combinado.
 6. Depois do horário marcado, conferir no Metricool se o status mudou para "Published" e guardar o link do post no `post.json` (campo `instagramUrl`). Um carrossel pode levar até 5 minutos para processar.
+
+## Capas: referência fixa
+
+- **Toda capa nova usa como referência o Instagram @craftwork.design** (https://www.instagram.com/craftwork.design/), adaptado à marca. Salvo em 05/11/2026.
+- Padrão: estilo "série". Fundo gerado no Nano Banana Pro (diferente a cada post, roxo/lilás, centro calmo), título centralizado em 3 camadas (manuscrita Caveat / tema em Google Sans Flex 800 / manuscrita), uma cor de destaque puxada do fundo, moldura discreta (@ e série no topo; "Deslize pra ver", "Siga pra mais", "Salve pra depois" no rodapé).
+- Template da capa: `testes-capa/serie/capa.tpl.html`. Exemplos aprovados: `capa-repos`, `capa-cd`, `capa1` (color combos), `capa-dia-design-3d`.
+- Posts de opinião continuam no estilo escuro de texto.
+- Fundo gerado não pode vir com borda de papel/moldura; se vier, gerar de novo em vez de cortar (cortar perde qualidade).
+
+## Stories
+
+- Um story por post (1080 × 1920): fundo da capa desfocado, selo "POST NOVO", capa num card, uma frase que só descreve o assunto. Sem chamadas tipo "corre no feed".
+- Agendar no Metricool com `type: STORY` e `autoPublish: false` (lembrete), porque o adesivo de link só entra pelo app. Mandar o link do post pro Urlan na hora.
