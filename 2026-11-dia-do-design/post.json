@@ -3,7 +3,10 @@
   "case": "sentence",
   "tag": "DIA DO DESIGN",
   "cover": {
-    "lines": ["Dia do", "**Design**"],
+    "lines": [
+      "Dia do",
+      "**Design**"
+    ],
     "tag": "(5 de novembro)",
     "subtitle": "Por que a data existe.",
     "top_right": "Dia do design",
@@ -64,7 +67,10 @@
     }
   ],
   "closing": {
-    "lines": ["Feliz Dia", "do **Design**"],
+    "lines": [
+      "Feliz Dia",
+      "do **Design**"
+    ],
     "body": "Marca alguém que te ensinou design."
   },
   "caption": "Hoje, 5 de novembro, é o Dia Nacional do Design. A data marca o aniversário de Aloísio Magalhães, designer pernambucano nascido em 1927.\n\nO escritório dele criou a marca BR dos postos da Petrobras. Ele desenhou o primeiro símbolo da Globo e as cédulas do Cruzeiro Novo, e ajudou a fundar a ESDI, a primeira escola superior de design do país.\n\nMarca aqui alguém que te ensinou design.\n\n#diadodesign #designbrasileiro #aloisiomagalhaes #designgrafico #productdesign",
@@ -74,5 +80,9 @@
     "https://designersbrasileiros.com.br/designers-made-in-brazil-aloisio-magalhaes/",
     "https://www.calendarr.com/brasil/dia-do-designer-grafico/"
   ],
-  "cover_override": {"style": "serie", "source": "testes-capa/serie/capa-dia-design-3d.html"}
+  "cover_override": {
+    "style": "serie",
+    "source": "testes-capa/serie/capa-dia-design-3d.html"
+  },
+  "instagramUrl": "https://www.instagram.com/p/DfXGTiVCuaC/"
 }
