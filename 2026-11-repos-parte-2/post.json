@@ -1,0 +1,62 @@
+{
+  "style": "editorial",
+  "case": "sentence",
+  "tag": "IA NO DESIGN",
+  "cover": {
+    "lines": ["Repos do", "**GitHub**"],
+    "tag": "(Parte 2)",
+    "subtitle": "O que eles fazem e por que importam pra quem desenha produto.",
+    "top_right": "Repos em alta",
+    "foot_right": ""
+  },
+  "footer": {
+    "left": "GitHub · nov 2026",
+    "right": "Open source\npra designers",
+    "top_right": "Repos em alta",
+    "label_what": "O que faz",
+    "label_why": "Por que importa"
+  },
+  "items": [
+    {
+      "name": "unslop",
+      "ref": "heydamir/unslop",
+      "stat": "10 mil estrelas",
+      "what": "Skill pro Claude Code que transforma interface com cara de IA em interface desenhada.",
+      "why": "Aponta gradiente roxo, brilho e espaçamento torto antes de corrigir a tela por etapas."
+    },
+    {
+      "name": "M3E Canvas",
+      "ref": "lnkiai/m3e-canvas",
+      "stat": "10 mil estrelas",
+      "what": "Rascunha telas com componentes reais do Material 3 Expressive direto no navegador.",
+      "why": "O desenho vira um prompt pronto pra ferramenta de IA construir o app."
+    },
+    {
+      "name": "Anatomy",
+      "ref": "wheresryan22/anatomy",
+      "stat": "25 mil estrelas",
+      "what": "Skill pro Claude que explica um conceito técnico com uma ilustração isométrica interativa.",
+      "why": "Gera figuras interativas em SVG e WebGL, sem precisar de chave de API."
+    },
+    {
+      "name": "Compositor",
+      "ref": "robbietilton/Compositor",
+      "stat": "18 mil estrelas",
+      "what": "Editor de imagem gratuito e open source pra Mac, no estilo do Photoshop.",
+      "why": "Tem camadas, máscaras, filtros e abre arquivos PSD sem pagar assinatura."
+    }
+  ],
+  "closing": {
+    "lines": ["Qual entra", "no seu **fluxo?**"],
+    "body": "Salva e manda pra quem trabalha com design e IA."
+  },
+  "caption": "Mais quatro repositórios do GitHub que cresceram rápido nas últimas semanas e servem pra quem desenha produto.\n\nDois são skills pro Claude: uma tira a cara de IA das interfaces e a outra gera ilustrações técnicas interativas. Os outros dois são um rascunhador de telas que vira prompt e um editor de imagem gratuito pra Mac.\n\nTodos são gratuitos e open source.\n\nQual entra no seu fluxo? Comenta aqui.\n\n#github #productdesign #uxdesign #inteligenciaartificial #designdeproduto",
+  "sources": [
+    "https://github.com/heydamir/unslop",
+    "https://github.com/lnkiai/m3e-canvas",
+    "https://github.com/wheresryan22/anatomy",
+    "https://github.com/robbietilton/Compositor"
+  ],
+  "statsDate": "2026-11-06",
+  "cover_override": {"style": "serie", "source": "testes-capa/serie/capa-repos-2.html"}
+}
