@@ -291,7 +291,7 @@ def ed_item(i, it, total):
   <div style="position:absolute;top:220px;left:96px;right:96px">
     <div style="{MONO};font-size:34px;color:{PURPLE};font-weight:500">{i:02d}</div>
     <div class="fit" style="{CONDENSED};font-size:150px;line-height:.92;margin-top:14px;letter-spacing:-1px;white-space:nowrap">{e(it['name'])}</div>
-    <div style="display:flex;align-items:center;gap:18px;margin-top:30px;{MONO};font-size:28px">
+    <div style="display:flex;align-items:center;gap:18px;margin-top:30px;{MONO};font-size:{it.get('ref_size', 28)}px;white-space:nowrap">
       <span>{e(it['ref'])}</span><span style="opacity:.4">·</span>{star if it.get('star', True) else ''}<span>{e(it['stat'])}</span></div>
     <div style="height:2px;background:rgba(21,19,26,.15);margin-top:44px"></div>
     {block(it.get('label_what', p_foot.get('label_what', 'O QUE FAZ')), it['what'])}
