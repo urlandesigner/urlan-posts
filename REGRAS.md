@@ -74,3 +74,7 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 
 - Um story por post (1080 × 1920): fundo da capa desfocado, selo "POST NOVO", capa num card, uma frase que só descreve o assunto. Sem chamadas tipo "corre no feed".
 - Agendar no Metricool com `type: STORY` e `autoPublish: false` (lembrete), porque o adesivo de link só entra pelo app. Mandar o link do post pro Urlan na hora.
+
+## Horário
+
+Posts do feed saem sempre às 10h (America/Sao_Paulo), um por dia útil. Stories às 18h do mesmo dia, em modo lembrete.
