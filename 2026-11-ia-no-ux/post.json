@@ -1,0 +1,59 @@
+{
+  "tag": "PESQUISA",
+  "cover": {
+    "title": "IA no UX: mais rápido, não mais leve",
+    "subtitle": "Pesquisa da Nielsen Norman Group com 521 profissionais de UX."
+  },
+  "slides": [
+    {
+      "title": "Quem respondeu?",
+      "body": "521 profissionais de UX, entre designers, pesquisadores e gerentes de produto. A pesquisa foi feita entre agosto e setembro de 2026.",
+      "takeaway": "dados deste ano"
+    },
+    {
+      "title": "Quanta gente usa agente?",
+      "body": "66% usam pelo menos uma ferramenta de agente de IA. Nas startups, são 85%.",
+      "takeaway": "já virou rotina"
+    },
+    {
+      "title": "Onde a IA mais entra?",
+      "body": "Escrever código, pesquisa de mesa e análise de dados de pesquisa. 73% usam IA pra código com frequência.",
+      "takeaway": "tarefas de produção"
+    },
+    {
+      "title": "Onde quase não entra?",
+      "body": "61% nunca usaram IA pra entrevistar usuários. 51% nunca usaram pra testar design com usuários.",
+      "takeaway": "o contato com gente segue humano"
+    },
+    {
+      "title": "Qual o maior problema?",
+      "body": "A qualidade do que a IA entrega, citada por 54%. Nos comentários, a queixa mais comum é ter que conferir e corrigir tudo.",
+      "takeaway": "o tempo ganho vai pra revisão"
+    },
+    {
+      "title": "Tem pressão da empresa?",
+      "body": "Muitos contam que a empresa obriga e mede o uso de IA. Isso gera uso só pra constar e mais trabalho pra corrigir.",
+      "takeaway": "uso forçado vira retrabalho"
+    },
+    {
+      "title": "E o emprego?",
+      "body": "Designers deram nota 2,99 de 5 pra segurança no emprego. Mesmo assim, 65% dos respondentes acham que a função vai se manter ou crescer.",
+      "takeaway": "inseguro, mas não pessimista"
+    },
+    {
+      "title": "O que a NN/g recomenda?",
+      "body": "Tratar o que a IA entrega como rascunho e medir o esforço do time inteiro pra entregar, não a velocidade de cada tarefa.",
+      "takeaway": "medir o time, não a tarefa"
+    }
+  ],
+  "closing": {
+    "title": "Sua empresa mede o uso de IA?",
+    "body": "Comenta como é aí e manda pra quem trabalha com UX."
+  },
+  "caption": "A Nielsen Norman Group ouviu 521 profissionais de UX entre agosto e setembro de 2026.\n\nA IA já faz parte da rotina: 66% usam ferramentas de agente. Mas o maior problema é a qualidade do que ela entrega, e muita gente diz que o tempo ganho vai pra conferir e corrigir. O Figma viu o mesmo: 52% dos profissionais de produto dizem que corrigir resultado de IA virou uma das partes que mais tomam tempo do dia.\n\nA recomendação da NN/g é medir o esforço do time inteiro, não a velocidade de cada tarefa.\n\nSua empresa mede o uso de IA? Comenta aqui.\n\n#uxdesign #productdesign #inteligenciaartificial #designdeproduto #uxresearch",
+  "sources": [
+    "https://www.nngroup.com/articles/ai-in-ux-survey-26/",
+    "https://s206.q4cdn.com/973901332/files/content_files/Figma-Q3-2026-Prepared-Remarks.pdf"
+  ],
+  "cover_override": {"style": "serie", "source": "testes-capa/serie/capa-ia-no-ux.html"}
+}

@@ -1,0 +1,54 @@
+{
+  "tag": "PESQUISA",
+  "cover": {
+    "title": "Usuário sintético substitui gente?",
+    "subtitle": "Um teste da Nielsen Norman Group com 604 pessoas e 120 respondentes de IA."
+  },
+  "slides": [
+    {
+      "title": "O que é usuário sintético?",
+      "body": "É um participante de pesquisa criado por IA. A ferramenta inventa um perfil, com cargo, idade e cidade, e responde como se fosse essa pessoa.",
+      "takeaway": "ninguém real responde"
+    },
+    {
+      "title": "Por que tanta gente testa?",
+      "body": "Não precisa recrutar nem agendar entrevista, e as respostas saem na hora. Em 2026, 11% dos profissionais de UX já usavam.",
+      "takeaway": "rápido e barato"
+    },
+    {
+      "title": "Como foi o teste?",
+      "body": "A Nielsen Norman Group fez a mesma pergunta aberta pra 604 profissionais reais e pra 120 respondentes sintéticos.",
+      "takeaway": "mesma pergunta, dois grupos"
+    },
+    {
+      "title": "Chegaram na mesma resposta?",
+      "body": "Sim. Os dois grupos apontaram UX como o nome principal da área que estuda as necessidades das pessoas.",
+      "takeaway": "a conclusão geral bateu"
+    },
+    {
+      "title": "Onde a IA errou?",
+      "body": "As pessoas usaram mais de 50 termos diferentes. Os sintéticos ficaram em cerca de uma dúzia, sempre os mais comuns.",
+      "takeaway": "a variedade sumiu"
+    },
+    {
+      "title": "E entre os cargos?",
+      "body": "93% dos gerentes de produto sintéticos usaram termos de UX. Entre os gerentes de produto reais, foram 44%.",
+      "takeaway": "as diferenças entre grupos somem"
+    },
+    {
+      "title": "Quando usar, então?",
+      "body": "Pra levantar hipóteses e checar padrões gerais. Pra saber o que o usuário pensa de verdade, só com gente real.",
+      "takeaway": "rascunho, não evidência"
+    }
+  ],
+  "closing": {
+    "title": "Você já testou usuário sintético?",
+    "body": "Comenta como foi e manda pra quem faz pesquisa."
+  },
+  "caption": "Usuário sintético é um participante de pesquisa criado por IA. Ele tem perfil inventado e responde como se fosse uma pessoa real.\n\nA Nielsen Norman Group fez a mesma pergunta pra 604 profissionais e pra 120 respondentes sintéticos. A conclusão geral foi a mesma, mas a IA repetiu as respostas mais comuns e apagou as diferenças entre os cargos.\n\nA recomendação deles: usar pra levantar hipóteses, não como prova do que o usuário pensa.\n\nVocê já testou? Comenta aqui.\n\n#uxresearch #pesquisadeusuario #uxdesign #inteligenciaartificial #productdesign",
+  "sources": [
+    "https://www.nngroup.com/articles/synthetic-users-vs-human-respondents/",
+    "https://www.nngroup.com/articles/ai-in-ux-survey-26/"
+  ],
+  "cover_override": {"style": "serie", "source": "testes-capa/serie/capa-sintetico.html"}
+}
