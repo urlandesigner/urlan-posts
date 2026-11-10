@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:GSF;src:url('../../../template/fonts/google-sans-flex-latin-full-normal.woff2') format('woff2');font-weight:1 1000;font-stretch:25% 151%}
+@font-face{font-family:GSC;src:url('../../../template/fonts/google-sans-code-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:Caveat;src:url('../../../testes-capa/serie/caveat-latin-700-normal.woff2') format('woff2');font-weight:700}
+html,body{margin:0;background:#0E0C12}
+.c{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:GSF;color:#fff;background:#0E0A1A}
+.sc{position:absolute;inset:0;opacity:0}
+.sc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dim{position:absolute;inset:0;background:radial-gradient(ellipse 80% 38% at 50% 50%,rgba(12,6,26,.82) 0%,rgba(12,6,26,.45) 70%,rgba(12,6,26,0) 100%)}
+.flash{position:absolute;inset:0;background:#C9A8FF;opacity:0;mix-blend-mode:screen}
+.beat{position:absolute;left:80px;right:80px;top:50%;text-align:center;opacity:0;text-shadow:0 4px 30px rgba(10,4,24,.8)}
+.t{font-weight:800;font-size:104px;line-height:1.0;letter-spacing:-3px}
+.t b{color:#C9A8FF;font-weight:800}
+.big{font-weight:800;font-size:360px;line-height:.88;letter-spacing:-12px}
+.s{font-family:Caveat;font-weight:700;font-size:78px;color:#C9A8FF;margin-bottom:18px}
+.m{font-family:GSC;font-size:32px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.85);margin-top:30px}
+.handle{position:absolute;top:170px;left:0;right:0;text-align:center;font-weight:600;font-size:34px;color:rgba(255,255,255,.9);text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.card{margin:44px auto 0;width:820px;text-align:left;background:#F3F0F8;color:#15131A;border-radius:28px;padding:38px 44px;box-shadow:0 30px 80px rgba(0,0,0,.5);text-shadow:none}
+.card .k{font-family:GSC;font-size:24px;letter-spacing:2px;color:#5E5A68;text-transform:uppercase}
+.card .h{font-weight:700;font-size:44px;line-height:1.12;margin-top:16px;letter-spacing:-.5px}
+.card .u{font-family:GSC;font-size:24px;color:#7120D1;margin-top:18px}
+</style></head><body><div class="c">
+<div class="sc"><img src="s-bustos.png"></div>
+<div class="sc"><img src="s-unico.png" style="object-position:50% 70%"></div>
+<div class="sc"><img src="s-grade.png"></div>
+<div class="sc"><img src="s-diversos.png" style="top:auto;bottom:0;height:150%;object-position:50% 100%"></div>
+<div class="sc"><img src="s-grade.png"></div>
+<div class="sc"><img src="s-baloes.png"></div>
+<div class="sc"><img src="s-bustos.png"></div>
+<div class="dim" id="dm"></div><div class="flash" id="fl"></div>
+<div class="handle">@urlan.design</div>
+<div class="beat" id="hook"></div>
+<div class="beat" style="top:30%"><div class="s">Usuário sintético</div><div class="t">Um perfil criado por IA que responde <b>como se fosse gente</b></div></div>
+<div class="beat"><div class="t" style="font-size:84px">Um estudo comparou <b>604 pessoas</b> com <b>120 sintéticos</b></div>
+  <div class="card"><div class="k">Nielsen Norman Group · 16 out 2026</div><div class="h">Synthetic Users vs. Human Respondents: Same Conclusion, Less Variation</div><div class="u">nngroup.com</div></div></div>
+<div class="beat"><div class="s">Gerentes de produto reais</div><div class="big" id="n1">44%</div><div class="m">falaram em UX</div></div>
+<div class="beat"><div class="s">Gerentes de produto sintéticos</div><div class="big" id="n2" style="color:#C9A8FF">93%</div><div class="m">falaram em UX</div></div>
+<div class="beat"><div class="t">A IA repete a resposta mais comum e <b>apaga as diferenças</b></div></div>
+<div class="beat"><div class="t">Use pra levantar hipótese.<br><b>Não pra decidir.</b></div></div>
+</div>
+<script>
+const HOOKS={a:'Sua próxima pesquisa pode ser respondida <b>por ninguém</b>',b:'<b>93% contra 44%.</b><br>A IA não pensa como o seu usuário'};
+const v=(location.hash||'#a').slice(1);document.getElementById('hook').innerHTML='<div class="t">'+HOOKS[v]+'</div>';
+const D=[2.2,2.2,2.4,1.7,1.9,2.0,2.4];const T=D.reduce((a,b)=>a+b,0);
+const ST=[];D.reduce((a,d,i)=>(ST[i]=a,a+d),0);
+window.TOTAL=T;window.CUTS=ST.slice(1);window.HIT=ST[4]+0.55;
+const sc=[...document.querySelectorAll('.sc')],beats=[...document.querySelectorAll('.beat')];
+const ease=x=>1-Math.pow(1-x,3),cl=x=>Math.max(0,Math.min(1,x));
+window.setT=function(t){
+  let cur=0;for(let i=0;i<D.length;i++)if(t>=ST[i])cur=i;
+  const lt=t-ST[cur],p=lt/D[cur];
+  sc.forEach((s,i)=>{s.style.opacity=i===cur?1:0});document.getElementById('dm').style.opacity=[1,1,1,1,1,1,1][cur];document.getElementById('dm').style.background=['','','rgba(12,6,26,.72)','','rgba(12,6,26,.62)','',''][cur]||'';
+  const punch=cur===0?0:0.10*(1-ease(cl(lt/0.3)));
+  const dir=cur%2?1:-1;
+  sc[cur].style.transform=`scale(${1.06+0.08*p+punch}) translateY(${dir*20*p}px)`;
+  beats.forEach((b,i)=>{let o=0,s=1;if(i===cur){if(cur===0){o=1}else{const a=ease(cl(lt/0.16));o=a;s=0.94+0.06*a}}
+    b.style.opacity=o;b.style.transform=`translateY(-50%) scale(${s})`});
+  // count-ups
+  const c1=cl((t-ST[3])/0.55),c2=cl((t-ST[4])/0.55);
+  document.getElementById('n1').textContent=Math.round(44*ease(c1))+'%';
+  document.getElementById('n2').textContent=Math.round(93*ease(c2))+'%';
+  // flash on 93 hit
+  const h=t-HIT;document.getElementById('fl').style.opacity=h>=0&&h<0.25?0.35*(1-h/0.25):0;
+}
+setT(0);
+</script></body></html>
