@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:GSF;src:url('../../template/fonts/google-sans-flex-latin-full-normal.woff2') format('woff2');font-weight:1 1000;font-stretch:25% 151%}
+@font-face{font-family:GSC;src:url('../../template/fonts/google-sans-code-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:Caveat;src:url('../../testes-capa/serie/caveat-latin-700-normal.woff2') format('woff2');font-weight:700}
+html,body{margin:0;background:#0E0C12}
+.c{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:GSF;color:#fff}
+#bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 50%}
+.dim{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(14,8,30,.78) 0%,rgba(14,8,30,.35) 60%,rgba(14,8,30,.1) 100%)}
+.beat{position:absolute;left:90px;right:90px;top:50%;text-align:center;opacity:0}
+.t{font-weight:800;font-size:96px;line-height:1.02;letter-spacing:-2.5px}
+.t b{color:#C9A8FF;font-weight:800}
+.big{font-weight:800;font-size:330px;line-height:.9;letter-spacing:-10px}
+.s{font-family:Caveat;font-weight:700;font-size:72px;color:#C9A8FF;margin-bottom:22px}
+.m{font-family:GSC;font-size:30px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:28px}
+.top{position:absolute;top:120px;left:0;right:0;text-align:center;font-family:GSF;font-weight:600;font-size:34px;color:rgba(255,255,255,.9)}
+.bar{position:absolute;left:90px;right:90px;bottom:200px;height:6px;border-radius:3px;background:rgba(255,255,255,.18)}
+.bar i{display:block;height:100%;width:0;border-radius:3px;background:#C9A8FF}
+</style></head><body><div class="c">
+<img id="bg" src="bg.png"><div class="dim"></div>
+<div class="top">@urlan.design</div>
+<div class="beat"><div class="t">Tem empresa fazendo pesquisa com <b>usuário que não existe</b></div></div>
+<div class="beat"><div class="s">Usuário sintético</div><div class="t">Um perfil criado por IA que responde como se fosse gente</div></div>
+<div class="beat"><div class="t">A Nielsen Norman Group comparou <b>604 pessoas</b> com <b>120 sintéticos</b></div></div>
+<div class="beat"><div class="s">Gerentes de produto reais</div><div class="big">44%</div><div class="m">falaram em UX</div></div>
+<div class="beat"><div class="s">Gerentes de produto sintéticos</div><div class="big" style="color:#C9A8FF">93%</div><div class="m">falaram em UX</div></div>
+<div class="beat"><div class="t">A IA repete a resposta mais comum e <b>apaga as diferenças</b></div></div>
+<div class="beat"><div class="t">Use pra levantar hipótese.<br><b>Não pra decidir.</b></div></div>
+<div class="bar"><i id="p"></i></div>
+</div>
+<script>
+const D=[2.8,3.0,3.0,2.4,2.4,3.0,3.2]; const T=D.reduce((a,b)=>a+b,0);
+const beats=[...document.querySelectorAll('.beat')];
+function ease(x){return 1-Math.pow(1-x,3)}
+window.TOTAL=T;
+window.setT=function(t){
+  document.getElementById('bg').style.transform=`scale(${1.08+0.10*t/T})`;
+  document.getElementById('p').style.width=(100*t/T)+'%';
+  let s=0;
+  beats.forEach((b,i)=>{const st=s,en=s+D[i];s=en;
+    let o=0,y=40;
+    if(t>=st&&t<en){const a=Math.min(1,(t-st)/0.35);o=ease(a);y=40*(1-ease(a));
+      if(i<beats.length-1&&t>en-0.2){o*=Math.max(0,(en-t)/0.2)}}
+    b.style.opacity=o;b.style.transform=`translateY(calc(-50% + ${y}px))`;});
+}
+setT(0);
+</script></body></html>
