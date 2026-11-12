@@ -1,0 +1,88 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:GSF;src:url('../../../template/fonts/google-sans-flex-latin-full-normal.woff2') format('woff2');font-weight:1 1000;font-stretch:25% 151%}
+@font-face{font-family:GSC;src:url('../../../template/fonts/google-sans-code-latin-500-normal.woff2') format('woff2')}
+html,body{margin:0;background:#0E0C12}
+.c{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:GSF;color:#fff;background:#0E0A1A}
+.bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 45% at 50% 0%,#3A1A78 0%,rgba(58,26,120,0) 100%)}
+.handle{position:absolute;top:170px;left:0;right:0;text-align:center;font-weight:600;font-size:34px;color:rgba(255,255,255,.9)}
+.beat{position:absolute;left:80px;right:80px;top:290px;text-align:center;opacity:0}
+.t{font-weight:800;font-size:100px;line-height:1.0;letter-spacing:-3px}
+.t b{color:#C9A8FF;font-weight:800}
+.vp{position:absolute;left:60px;width:960px;top:700px;height:960px;overflow:hidden;border:6px solid #3A2D6B;box-sizing:content-box;margin-left:-6px;margin-top:-6px;box-shadow:0 0 90px rgba(113,32,209,.45);background:#12101c;opacity:0}
+.st{position:absolute;left:0;top:0;transform-origin:0 0;display:none}
+.st img{position:absolute;left:0;top:0;display:block}
+.pix img{image-rendering:pixelated}
+.hl{position:absolute;left:0;top:0;width:100%;height:132px;border:6px solid #C9A8FF;box-sizing:border-box;display:none;box-shadow:0 0 40px rgba(201,168,255,.7)}
+.chip{position:absolute;left:60px;top:1676px;font-family:GSC;font-size:24px;letter-spacing:1px;color:rgba(233,222,255,.75);opacity:0}
+.end{position:absolute;left:0;right:0;top:640px;text-align:center;opacity:0}
+.wm{font-weight:800;font-size:210px;letter-spacing:-8px;line-height:1;margin-top:34px}
+.sub{font-weight:800;font-size:80px;letter-spacing:-2px;margin-top:34px;line-height:1.05}
+.sub b{color:#C9A8FF}
+.url{font-family:GSC;font-size:46px;color:#C9A8FF;margin-top:40px;letter-spacing:2px}
+.note{font-family:GSC;font-size:26px;color:rgba(233,222,255,.6);margin-top:90px;letter-spacing:1px}
+.flash{position:absolute;inset:0;background:#C9A8FF;opacity:0;mix-blend-mode:screen}
+</style></head><body><div class="c">
+<div class="bg"></div>
+<div class="handle">@urlan.design</div>
+<div class="beat"><div class="t">Cada agente de IA vira um <b>personagem</b></div></div>
+<div class="beat"><div class="t">Cada projeto é uma <b>sala</b></div></div>
+<div class="beat"><div class="t" style="font-size:88px">Clique num agente e veja <b>tarefas</b> e <b>subagentes</b></div></div>
+<div class="beat"><div class="t" style="font-size:92px">Quando um agente precisa de você, <b>ele avisa</b></div></div>
+<div class="beat"><div class="t" style="font-size:92px">Acompanhe o uso de <b>5 horas</b> e o <b>semanal</b></div></div>
+<div class="beat"><div class="t" style="font-size:92px">Sem tarefa, eles vão pro <b>lounge</b></div></div>
+<div class="vp" id="vp">
+  <div class="st pix" id="s0"></div>
+  <div class="st" id="s1"><img src="assets/overview.png"></div>
+  <div class="st" id="s2"><img src="assets/agent-details.png"></div>
+  <div class="st pix" id="s3"></div>
+  <div class="st" id="s4"><img src="assets/overview.png"></div>
+  <div class="hl" id="hl"></div>
+  <div class="st pix" id="s5"></div>
+</div>
+<div class="chip" id="chip">Interface do Habblaud, modo simulação</div>
+<div class="end" id="end"><img src="assets/logo-mark@4x.png" style="width:200px;image-rendering:pixelated"><div class="wm">Habblaud</div><div class="sub">Grátis e <b>código aberto</b></div><div class="url">habblaud.com</div><div class="note">Imagens do projeto, em modo simulação</div></div>
+<div class="flash" id="fl"></div>
+</div>
+<script>
+const imgs=[];
+function frames(id,dir,n){const el=document.getElementById(id);const arr=[];for(let i=0;i<n;i++){const im=new Image();im.src=`assets/${dir}/${String(i).padStart(2,'0')}.png`;el.appendChild(im);im.style.display='none';arr.push(im);imgs.push(im)}return arr}
+const OF=frames('s0','office',30),OF3=frames('s3','office',30),LF=frames('s5','lounge',32);
+document.querySelectorAll('.st img').forEach(i=>imgs.push(i));
+window.READY=Promise.all(imgs.map(i=>i.decode().catch(()=>{})));
+function show(arr,k){arr.forEach((im,i)=>im.style.display=i===k?'block':'none')}
+// scenes: duration, camera start/end {z,cx,cy}, viewport box {top,h}
+const SC=[
+ {d:2.4,a:{z:1.95,x:330,y:260},b:{z:2.15,x:330,y:260},box:[700,960]},
+ {d:2.2,a:{z:1.15,x:880,y:450},b:{z:1.7,x:1140,y:330},box:[700,960]},
+ {d:2.4,a:{z:1.2,x:1040,y:460},b:{z:1.35,x:1080,y:460},box:[700,960]},
+ {d:2.6,a:{z:3.0,x:320,y:175},b:{z:3.0,x:320,y:175},box:[700,960]},
+ {d:2.0,a:{z:2.05,x:915,y:234},b:{z:2.05,x:915,y:234},box:[700,960]},
+ {d:2.2,a:{z:1.6,x:408,y:310},b:{z:1.8,x:408,y:310},box:[700,960]},
+ {d:2.4}];
+const D=SC.map(s=>s.d);const ST=[];D.reduce((a,d,i)=>(ST[i]=a,a+d),0);const T=D.reduce((a,b)=>a+b,0);
+window.TOTAL=T;window.CUTS=ST.slice(1);window.HIT=ST[3]+0.3;
+const beats=[...document.querySelectorAll('.beat')],stg=[...document.querySelectorAll('.st')];
+const vp=document.getElementById('vp'),chip=document.getElementById('chip'),endEl=document.getElementById('end');
+const ease=x=>1-Math.pow(1-x,3),io=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2,cl=x=>Math.max(0,Math.min(1,x));
+window.setT=function(t){
+  let cur=0;for(let i=0;i<D.length;i++)if(t>=ST[i])cur=i;
+  const lt=t-ST[cur],p=lt/D[cur];
+  beats.forEach((b,i)=>{let o=0,s=1;if(i===cur){const a=ease(cl(lt/0.16));o=cur===0?1:a;s=cur===0?1:0.94+0.06*a}b.style.opacity=o;b.style.transform=`scale(${s})`});
+  stg.forEach((s,i)=>s.style.display=i===cur?'block':'none');
+  const hl=document.getElementById('hl');hl.style.display=cur===4?'block':'none';hl.style.opacity=0.55+0.45*Math.abs(Math.sin(lt*5));
+  const sc=SC[cur];
+  if(cur<6){
+    const [top,h]=sc.box;vp.style.top=top+'px';vp.style.height=h+'px';vp.style.opacity=1;chip.style.opacity=1;endEl.style.opacity=0;
+    chip.style.top=(top+h+16)+'px';
+    const e=io(p),z=sc.a.z+(sc.b.z-sc.a.z)*e,cx=sc.a.x+(sc.b.x-sc.a.x)*e,cy=sc.a.y+(sc.b.y-sc.a.y)*e;
+    const punch=1+0.05*(1-ease(cl(lt/0.28)))*(cur?1:0);
+    const zz=z*punch;
+    stg[cur].style.transform=`translate(${480-cx*zz}px,${h/2-cy*zz}px) scale(${zz})`;
+    if(cur===0)show(OF,Math.floor(t/0.12)%30);
+    if(cur===3)show(OF3,Math.min(29,12+Math.floor(lt/0.12)));
+    if(cur===5)show(LF,Math.floor(lt/0.17)%32);
+  }else{vp.style.opacity=0;chip.style.opacity=0;const a=ease(cl(lt/0.2));endEl.style.opacity=a;endEl.style.transform=`scale(${0.95+0.05*a})`}
+  const h=t-window.HIT;document.getElementById('fl').style.opacity=h>=0&&h<0.25?0.3*(1-h/0.25):0;
+}
+setT(0);
+</script></body></html>
