@@ -1,0 +1,135 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:GSF;src:url('../../template/fonts/google-sans-flex-latin-full-normal.woff2') format('woff2');font-weight:1 1000;font-stretch:25% 151%}
+@font-face{font-family:GSC;src:url('../../template/fonts/google-sans-code-latin-500-normal.woff2') format('woff2')}
+html,body{margin:0;background:#0E0C12}
+.c{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:GSF;color:#fff;background:#0E0A1A}
+.bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 45% at 50% 0%,#3A1A78 0%,rgba(58,26,120,0) 100%),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 2px,transparent 2px 48px),repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 48px)}
+.sc{position:absolute;inset:0;opacity:0}
+.flash{position:absolute;inset:0;background:#C9A8FF;opacity:0;mix-blend-mode:screen}
+.handle{position:absolute;top:170px;left:0;right:0;text-align:center;font-weight:600;font-size:34px;color:rgba(255,255,255,.9)}
+.beat{position:absolute;left:80px;right:80px;top:290px;text-align:center}
+.t{font-weight:800;font-size:104px;line-height:1.0;letter-spacing:-3px}
+.t b{color:#C9A8FF;font-weight:800}
+.grid{position:absolute;left:80px;top:840px;width:920px;display:grid;grid-template-columns:440px 440px;gap:40px}
+.room{position:relative;width:440px;height:380px;background:#1B1432;border:6px solid #3A2D6B;box-sizing:border-box;overflow:hidden}
+.room .floor{position:absolute;left:0;right:0;top:56px;bottom:0;background:repeating-conic-gradient(#231A40 0 25%,#1E1636 0 50%) 0 0/40px 40px}
+.room .bar{position:absolute;left:0;right:0;top:0;height:56px;background:#2A2144;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-family:GSC;font-size:22px;color:#E9DEFF}
+.chip{font-family:GSC;font-size:19px;padding:5px 12px;background:#C9A8FF;color:#150B2B;text-transform:uppercase;letter-spacing:1px}
+.room.wait{border-color:#FFC857}
+.room.wait .chip{background:#FFC857}
+.desk{position:absolute;left:70px;right:40px;top:286px;height:50px;background:#3A2D6B;border-top:8px solid #5A4A99}
+.mon{position:absolute;left:210px;top:178px;width:150px;height:104px;background:#0F0A20;border:6px solid #5A4A99;box-sizing:border-box;padding:12px}
+.mon i{display:block;height:8px;margin-bottom:9px;background:#C9A8FF}
+.spr{position:absolute;left:46px;top:140px}
+.ball{position:absolute;left:62px;top:62px;width:76px;height:76px;background:#FFC857;color:#2B1A00;font-weight:800;font-size:54px;text-align:center;line-height:76px;opacity:0}
+.big{position:absolute;left:100px;top:720px;transform-origin:0 0}
+.card{position:absolute;left:110px;width:860px;background:#1B1432;border:6px solid #3A2D6B;box-sizing:border-box;padding:40px}
+.k{font-family:GSC;font-size:28px;color:#E9DEFF;letter-spacing:1px}
+.cmd{margin-top:28px;background:#0F0A20;border:4px solid #3A2D6B;font-family:GSC;font-size:36px;color:#C9A8FF;padding:24px 28px}
+.btns{margin-top:36px;display:flex;gap:28px}
+.btn{flex:1;text-align:center;font-weight:700;font-size:44px;padding:28px 0;border:6px solid #5A4A99;color:#E9DEFF}
+.btn.ok{background:#C9A8FF;border-color:#C9A8FF;color:#150B2B}
+.done{display:none;margin-top:36px;font-family:GSC;font-size:40px;color:#C9A8FF;text-align:center;padding:28px 0;border:6px solid #C9A8FF;opacity:0}
+.row{margin-top:44px}
+.row:first-child{margin-top:0}
+.lab{font-weight:700;font-size:46px;margin-bottom:20px}
+.track{height:56px;background:#0F0A20;border:6px solid #3A2D6B;box-sizing:border-box}
+.fill{height:100%;background:#C9A8FF;width:0}
+.end{position:absolute;left:0;right:0;top:700px;text-align:center}
+.wm{font-weight:800;font-size:210px;letter-spacing:-8px;line-height:1}
+.sub{font-weight:800;font-size:76px;letter-spacing:-2px;margin-top:34px;line-height:1.05}
+.sub b{color:#C9A8FF}
+.url{font-family:GSC;font-size:44px;color:#C9A8FF;margin-top:40px;letter-spacing:2px}
+.chars{display:flex;justify-content:center;gap:34px;margin-bottom:70px;align-items:flex-end}
+</style></head><body><div class="c">
+<div class="bg"></div>
+<div class="handle">@urlan.design</div>
+
+<div class="sc" id="s0"><div class="beat"><div class="t">Cada agente de IA vira um <b>personagem</b></div></div></div>
+<div class="sc" id="s1"><div class="beat"><div class="t">Cada projeto é uma <b>sala</b></div></div></div>
+<div class="sc" id="s2"><div class="beat"><div class="t" style="font-size:86px">Você vê quem <b>está trabalhando</b> e quem <b>espera por você</b></div></div></div>
+<div class="sc" id="s3"><div class="beat"><div class="t">Aprove sem voltar ao <b>terminal</b></div></div>
+  <div class="card" id="pc" style="top:840px"><div style="display:flex;align-items:center;gap:26px" id="pcHead"></div>
+    <div class="cmd" id="cmd">npm install tailwindcss</div>
+    <div class="btns" id="btns"><div class="btn">Negar</div><div class="btn ok" id="okb">Aprovar</div></div>
+    <div class="done" id="done">Aprovado</div></div></div>
+<div class="sc" id="s4"><div class="beat"><div class="t" style="font-size:92px">Acompanhe o limite de <b>5 horas</b> e o <b>semanal</b></div></div>
+  <div class="card" style="top:900px"><div class="row"><div class="lab">Limite de 5 horas</div><div class="track"><div class="fill" id="f1"></div></div></div>
+  <div class="row"><div class="lab">Limite semanal</div><div class="track"><div class="fill" id="f2"></div></div></div></div></div>
+<div class="sc" id="s5"><div class="end"><div class="chars" id="chars"></div><div class="wm">Habblaud</div><div class="sub">Grátis e <b>código aberto</b></div><div class="url">habblaud.com</div></div></div>
+
+<div class="grid" id="grid" style="opacity:0"></div>
+<div class="big" id="big" style="opacity:0"></div>
+<div class="flash" id="fl"></div>
+</div>
+<script>
+const SPR=['..HHH..','.HHHHH.','.SSSSS.','.SESES.','..SSS..','.BBBBB.','SBBBBBS','.BBBBB.','.PP.PP.'];
+const PALS=[
+ {H:'#FFC857',S:'#F2C9A0',B:'#7120D1',P:'#2B2250',E:'#15131A'},
+ {H:'#3A2A1A',S:'#D9A57A',B:'#C9A8FF',P:'#2B2250',E:'#15131A'},
+ {H:'#E4572E',S:'#F2C9A0',B:'#3DDC97',P:'#2B2250',E:'#15131A'},
+ {H:'#1B1B1B',S:'#B97F58',B:'#FF8FB1',P:'#2B2250',E:'#15131A'}];
+function sprite(pal,sc){const c=document.createElement('canvas');c.width=7;c.height=9;c.style.width=7*sc+'px';c.style.height=9*sc+'px';c.style.imageRendering='pixelated';c.style.display='block';const x=c.getContext('2d');
+  SPR.forEach((r,y)=>[...r].forEach((ch,i)=>{if(ch==='.')return;x.fillStyle=pal[ch];x.fillRect(i,y,1,1)}));return c}
+function room(name,pal){
+  const el=document.createElement('div');el.className='room';
+  el.innerHTML='<div class="floor"></div><div class="bar"><span>'+name+'</span><span class="chip">trabalhando</span></div>';
+  const sp=document.createElement('div');sp.className='spr';sp.appendChild(sprite(pal,16));
+  const ball=document.createElement('div');ball.className='ball';ball.textContent='!';
+  const desk=document.createElement('div');desk.className='desk';
+  const mon=document.createElement('div');mon.className='mon';mon.innerHTML='<i></i><i></i><i></i><i></i>';
+  el.append(sp,mon,desk,ball);
+  return {el,sp,ball,chip:el.querySelector('.chip'),lines:[...mon.querySelectorAll('i')]};
+}
+const NAMES=['site-novo','app-pagamentos','design-system','blog'];
+const rooms=NAMES.map((n,i)=>room(n,PALS[i]));
+const grid=document.getElementById('grid');rooms.forEach(r=>grid.appendChild(r.el));
+const bigR=room('design-system',PALS[2]);const big=document.getElementById('big');big.appendChild(bigR.el);big.style.transform='scale(2.0)';
+// card head
+const pcHead=document.getElementById('pcHead');pcHead.appendChild(sprite(PALS[1],7));
+const hd=document.createElement('div');hd.className='k';hd.innerHTML='design-system<br>pede permissão';hd.style.fontSize='34px';hd.style.lineHeight='1.25';pcHead.appendChild(hd);
+// end chars
+const chars=document.getElementById('chars');PALS.forEach(p=>{const w=document.createElement('div');w.appendChild(sprite(p,14));chars.appendChild(w)});
+const chW=[...chars.children];
+
+const D=[2.4,2.2,2.4,2.2,2.0,2.4];const ST=[];D.reduce((a,d,i)=>(ST[i]=a,a+d),0);const T=D.reduce((a,b)=>a+b,0);
+window.TOTAL=T;window.CUTS=ST.slice(1);window.HIT=ST[3]+1.0;
+const sc=[...document.querySelectorAll('.sc')];
+const ease=x=>1-Math.pow(1-x,3),cl=x=>Math.max(0,Math.min(1,x));
+function upd(r,t,mode,pop){
+  const w=mode==='work';
+  r.el.classList.toggle('wait',!w);r.chip.textContent=w?'trabalhando':'esperando';
+  const bob=w&&Math.floor(t*4)%2?16:0;
+  const s=0.2+0.8*ease(cl(pop));
+  r.sp.style.transform=`translateY(${bob}px) scale(${s})`;r.sp.style.transformOrigin='50% 100%';r.sp.style.opacity=pop>0?1:0;
+  r.ball.style.opacity=w?0:(Math.floor(t*3)%2?1:0.55);
+  r.lines.forEach((l,i)=>{l.style.width=(w?24+((Math.sin(t*3+i*1.9)+1)/2)*100:[90,60,40,10][i])+'px'});
+}
+window.setT=function(t){
+  let cur=0;for(let i=0;i<D.length;i++)if(t>=ST[i])cur=i;
+  const lt=t-ST[cur],p=lt/D[cur];
+  sc.forEach((s,i)=>{s.style.opacity=i===cur?1:0;});
+  const punch=cur===0?0:0.07*(1-ease(cl(lt/0.28)));
+  const sca=1.0+0.03*p+punch;
+  grid.style.opacity=(cur===0||cur===2)?1:0;big.style.opacity=cur===1?1:0;
+  grid.style.transform=`scale(${sca})`;grid.style.transformOrigin='50% 50%';
+  big.style.transform=`scale(${2.0*(1+0.03*p+punch)})`;
+  sc[cur].style.transform=cur===3||cur===4||cur===5?`scale(${sca})`:'none';
+  // beats pop
+  const b=sc[cur].querySelector('.beat');if(b){const a=ease(cl(lt/0.16));b.style.opacity=cur===0?1:a;b.style.transform=`scale(${cur===0?1:0.94+0.06*a})`}
+  // grid rooms
+  if(cur===0){rooms.forEach((r,i)=>{upd(r,t,'work',i===0?1:(lt-0.15*i)/0.18)})}
+  if(cur===2){rooms.forEach((r,i)=>upd(r,t,i===1?'wait':'work',1))}
+  if(cur===1)upd(bigR,t,'work',1);
+  // permission card
+  if(cur===3){const press=lt-1.0;const glow=cl((lt-0.5)/0.5);
+    const okb=document.getElementById('okb');okb.style.transform=`scale(${press>0&&press<0.12?0.93:1})`;okb.style.boxShadow=press<0?`0 0 ${40*glow}px rgba(201,168,255,${.7*glow})`:'none';
+    const ap=press>0.12;document.getElementById('btns').style.display=ap?'none':'flex';const dn=document.getElementById('done');dn.style.display=ap?'block':'none';dn.style.opacity=1;
+    document.getElementById('cmd').textContent=ap?'executando...':'npm install tailwindcss';
+    document.getElementById('pc').style.transform=`scale(${0.94+0.06*ease(cl(lt/0.18))})`}
+  if(cur===4){document.getElementById('f1').style.width=(62*ease(cl((lt-0.2)/0.8)))+'%';document.getElementById('f2').style.width=(34*ease(cl((lt-0.35)/0.8)))+'%'}
+  if(cur===5){chW.forEach((w,i)=>{w.style.transform=`translateY(${Math.floor(t*4+i)%2?-12:0}px)`})}
+  const h=t-window.HIT;document.getElementById('fl').style.opacity=h>=0&&h<0.25?0.35*(1-h/0.25):0;
+}
+setT(0);
+</script></body></html>
