@@ -1,0 +1,50 @@
+{
+  "tag": "NOVIDADE",
+  "cover": {
+    "title": "Apps no Claude",
+    "subtitle": "Conectores interativos, lançados em 10 de novembro de 2026."
+  },
+  "slides": [
+    {
+      "title": "O que mudou?",
+      "body": "Apps conectados abrem ao lado da conversa ou em tela cheia, e o Claude edita neles com você.",
+      "takeaway": "o app vem pro chat"
+    },
+    {
+      "title": "Quais apps?",
+      "body": "Entre os apps do lançamento estão Asana, Canva, Carta, Dropbox, monday.com, Smartsheet, Vercel e Webflow.",
+      "takeaway": "tem design e site na lista"
+    },
+    {
+      "title": "E o Figma?",
+      "body": "O FigJam já cria diagramas no chat. Na página do anúncio, o Figma aparece como integração em desenvolvimento.",
+      "takeaway": "uma parte já funciona"
+    },
+    {
+      "title": "Quem aprova as edições?",
+      "body": "Você aprova as ações como em qualquer conector. A mudança aparece na ferramenta enquanto acontece.",
+      "takeaway": "a decisão é sua"
+    },
+    {
+      "title": "Precisa de prompt?",
+      "body": "Não. Dá pra abrir a ferramenta direto e fixar as mais usadas na barra lateral.",
+      "takeaway": "sem escrever nada"
+    },
+    {
+      "title": "Quem pode usar?",
+      "body": "Na web e no app desktop. Os recursos aparecem quando a conta é atualizada ou a organização ativa.",
+      "takeaway": "depende da sua conta"
+    }
+  ],
+  "closing": {
+    "title": "Você já usa o Claude com seus apps?",
+    "body": "Comenta qual e salva pra testar."
+  },
+  "caption": "O Claude agora abre ferramentas conectadas ao lado da conversa ou em tela cheia, e edita nelas com você. No lançamento, de 10 de novembro, a lista inclui Canva, Webflow e Vercel, e o FigJam já cria diagramas no chat. Pra quem desenha produto, dá pra pedir uma alteração sem sair da conversa. Você aprova cada ação. Confira se o seu plano inclui.\n\nVocê já usa o Claude com seus apps? Comenta qual e salva pra testar.\n\n#claude #inteligenciaartificial #designdeproduto #productdesign #ferramentasdeia",
+  "sources": [
+    "https://claude.com/resources/articles/interactive-connectors-full-tool",
+    "https://claude.com/resources/articles/interactive-tools-in-claude",
+    "https://claude.com/resources/articles/connectors-directory"
+  ],
+  "cover_override": {"style": "serie", "source": "testes-capa/serie/capa-claude-apps.html"}
+}
