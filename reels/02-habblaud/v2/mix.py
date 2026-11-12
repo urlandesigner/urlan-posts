@@ -1,11 +1,14 @@
 """Mixa trilha + efeitos suaves para o Reel do Habblaud v2.
 Efeitos sintetizados aqui (sem IA): troca de cena = 'tick' curto com brilho; permissao e fim = sino suave."""
+import sys
 import numpy as np, scipy.io.wavfile as w
 from scipy.signal import butter, sosfilt
 
 D = '/home/claude/urlan-posts/reels/02-habblaud/v2/'
 sr = 44100
 T = 16.2
+MODE = sys.argv[1] if len(sys.argv) > 1 else 'swipe'  # swipe | none | thump
+OUT = sys.argv[2] if len(sys.argv) > 2 else 'mix.wav'
 CUTS = [2.4, 4.6, 7.0, 9.6, 11.6, 13.8]
 rng = np.random.default_rng(7)
 
@@ -24,6 +27,15 @@ def swipe():
     t = np.arange(n) / sr
     tone = np.sin(2 * np.pi * (520 - 700 * t) * t) * env(n, 0.002, 0.03) * 0.28
     return air + tone
+
+
+def thump():
+    """Toque grave curto e seco, tipo bumbo suave."""
+    n = int(sr * 0.22)
+    t = np.arange(n) / sr
+    f = 48 + 90 * np.exp(-t / 0.035)
+    ph = 2 * np.pi * np.cumsum(f) / sr
+    return np.sin(ph) * env(n, 0.003, 0.07) * 0.9
 
 
 def bell(freq, dur=0.5, g=0.5):
@@ -55,8 +67,12 @@ def put(buf, x, t, g=1.0):
 
 
 for c in CUTS:
-    put(sfx, swipe(), c - 0.02, 0.9)
-    events.append((c - 0.02, 0.3))
+    if MODE == 'swipe':
+        put(sfx, swipe(), c - 0.02, 0.9)
+    elif MODE == 'thump':
+        put(sfx, thump(), c, 0.8)
+    if MODE != 'none':
+        events.append((c - 0.02, 0.3))
 put(sfx, chime(), 7.25, 0.9)
 events.append((7.25, 0.7))
 put(sfx, chime(1046.5), 13.85, 0.75)
@@ -88,5 +104,5 @@ m = m * (gain * duck)[:, None]
 out = m + np.stack([sfx, sfx], 1)
 peak = np.abs(out).max()
 out = out / peak * 0.89
-w.write(D + 'mix.wav', sr, (out * 32767).astype(np.int16))
+w.write(D + OUT, sr, (out * 32767).astype(np.int16))
 print('pico antes', round(float(peak), 3))
