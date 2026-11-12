@@ -67,6 +67,8 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 - **Toda capa nova usa como referência o Instagram @craftwork.design** (https://www.instagram.com/craftwork.design/), adaptado à marca. Salvo em 05/11/2026.
 - Padrão: estilo "série". Fundo gerado no Nano Banana Pro (diferente a cada post, roxo/lilás, centro calmo), título centralizado em 3 camadas (manuscrita Caveat / tema em Google Sans Flex 800 / manuscrita), uma cor de destaque puxada do fundo, moldura discreta (@ e série no topo; "Deslize pra ver", "Siga pra mais", "Salve pra depois" no rodapé).
 - Template da capa: `testes-capa/serie/capa.tpl.html`. Exemplos aprovados: `capa-repos`, `capa-cd`, `capa1` (color combos), `capa-dia-design-3d`.
+- **Posição do título: igual em todas as capas da série.** Bloco do título (`.mid`) em `top:50%` com `translateY(-54%)`, título em 210px. Não usar `style` inline para subir, descer ou reduzir o título. Se o texto não couber, encurtar o texto, não mover o bloco. Motivo: no feed as capas aparecem lado a lado, e uma capa com o título mais alto parece desalinhada (feedback do Urlan em 12/11/2026, capa "Apps no Claude" estava em 40% e 190px).
+- Antes de agendar uma capa nova, comparar lado a lado com a capa anterior da série (mesma altura do título, mesmo tamanho).
 - Posts de opinião continuam no estilo escuro de texto.
 - Fundo gerado não pode vir com borda de papel/moldura; se vier, gerar de novo em vez de cortar (cortar perde qualidade).
 
