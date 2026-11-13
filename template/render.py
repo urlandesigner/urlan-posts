@@ -147,7 +147,8 @@ def content(p, i, s):
 
 def closing(p):
     c = p["closing"]
-    avatar = (TPL / "assets" / "avatar.png").as_uri()
+    novo = TPL / "assets" / "avatar-perfil.png"  # foto de perfil atual (12/11/2026)
+    avatar = (novo if novo.exists() else TPL / "assets" / "avatar.png").as_uri()
     return f"""
 <div class="s" style="background:{PURPLE};color:#fff">
   <div class="pill" style="background:#F3E8FF;color:{VIOLET}"><i></i>Pra fechar</div>
