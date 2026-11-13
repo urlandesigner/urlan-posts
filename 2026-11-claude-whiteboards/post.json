@@ -1,0 +1,48 @@
+{
+  "tag": "NOVIDADE",
+  "cover": {
+    "title": "Quadro branco",
+    "subtitle": "Claude Whiteboards, lançado em 10 de novembro de 2026."
+  },
+  "slides": [
+    {
+      "title": "O que é?",
+      "body": "É um quadro compartilhado no Claude. Você fala, digita ou desenha, e ele organiza em formas, setas e seções.",
+      "takeaway": "a conversa vira um quadro"
+    },
+    {
+      "title": "Como começar?",
+      "body": "Peça no chat, por exemplo: começa um quadro pra planejar o lançamento. Ou use a aba Artifacts.",
+      "takeaway": "um pedido no chat basta"
+    },
+    {
+      "title": "O que o Claude faz?",
+      "body": "Agrupa ideias por tema, ordena etapas, liga o que depende de outra coisa e aponta lacunas.",
+      "takeaway": "ele organiza o quadro"
+    },
+    {
+      "title": "Dá pra editar em time?",
+      "body": "O time edita junto em tempo real. Arraste sobre uma área e pergunte ao Claude só sobre ela.",
+      "takeaway": "pergunte só sobre um trecho"
+    },
+    {
+      "title": "Pra onde vai depois?",
+      "body": "Exporte em PNG, peça um doc ou deck, ou envie para Miro, Lucid ou Zoho Vani.",
+      "takeaway": "sai em PNG, doc ou deck"
+    },
+    {
+      "title": "Qual o limite?",
+      "body": "O Claude usa só o que está no quadro, sem contexto de apps conectados. Está em beta.",
+      "takeaway": "ainda é beta"
+    }
+  ],
+  "closing": {
+    "title": "Você usaria um quadro com o Claude?",
+    "body": "Comenta pra que e salva pra testar."
+  },
+  "caption": "O Claude ganhou quadros brancos. Em 10 de novembro a Anthropic lançou o Claude Whiteboards, em beta nos planos pagos. Você fala, digita ou desenha, e o Claude organiza as ideias em formas, setas e seções. O time edita junto, e o quadro sai em PNG, doc, deck ou vai para o Miro. Em planos Enterprise, o administrador precisa ativar.\n\nVocê usaria um quadro com o Claude? Comenta pra que e salva pra testar.\n\n#claude #inteligenciaartificial #designdeproduto #productdesign #ferramentasdeia",
+  "sources": [
+    "https://claude.com/resources/articles/sheets-whiteboards-data",
+    "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards"
+  ]
+}
