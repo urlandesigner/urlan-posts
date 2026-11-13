@@ -8,7 +8,9 @@
     {
       "title": "O que é?",
       "body": "É um quadro compartilhado no Claude. Você fala, digita ou desenha, e ele organiza em formas, setas e seções.",
-      "takeaway": "a conversa vira um quadro"
+      "takeaway": "a conversa vira um quadro",
+      "layout": "definicao",
+      "destaque": "organiza em formas, setas e seções"
     },
     {
       "title": "Como começar?",
@@ -33,7 +35,8 @@
     {
       "title": "Qual o limite?",
       "body": "O Claude usa só o que está no quadro, sem contexto de apps conectados. Está em beta.",
-      "takeaway": "ainda é beta"
+      "takeaway": "ainda é beta",
+      "layout": "limite"
     }
   ],
   "closing": {
@@ -44,5 +47,10 @@
   "sources": [
     "https://claude.com/resources/articles/sheets-whiteboards-data",
     "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards"
-  ]
+  ],
+  "style": "alternado",
+  "cover_override": {
+    "style": "serie",
+    "source": "testes-capa/serie/capa-whiteboards.html"
+  }
 }

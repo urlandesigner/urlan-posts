@@ -320,6 +320,76 @@ def ed_closing(p):
     return ed_frame(inner, top_right=p_foot.get("top_right", ""), footer=False)
 
 
+
+# ---------- Estilo "alternado": fundos claro, roxo e escuro; slides 1 e 6 com layout próprio ----------
+# post.json: {"style": "alternado", ...mesmo formato do padrão}. A capa vem de cover_override (renderizada à parte,
+# vira slide-01.png) e os slides de conteúdo saem como slide-02.png em diante.
+# Opcional no slide: "destaque": trecho do body que fica em cor de destaque; "layout": "definicao" | "limite".
+ALT_THEMES = {
+    "light":  dict(bg=LIGHT_BG, num=VIOLET, title=INK, body=MUTED, take=INK, arrow=VIOLET, pill_bg="#F1E5FF", pill=VIOLET, foot=MUTED, dot=VIOLET, dot_arrow="#fff", hi=VIOLET),
+    "purple": dict(bg=PURPLE, num="#B794F6", title="#fff", body="#EADDFF", take="#fff", arrow="#fff", pill_bg="rgba(255,255,255,.18)", pill="#fff", foot="#EADDFF", dot="#fff", dot_arrow=PURPLE, hi="#fff"),
+    "dark":   dict(bg=DARK, num=VIOLET, title="#fff", body="#CFCAD8", take="#fff", arrow=VIOLET, pill_bg="rgba(162,85,253,.22)", pill="#C9A8FF", foot="#CFCAD8", dot=VIOLET, dot_arrow="#fff", hi="#C9A8FF"),
+}
+ALT_ORDER = ["light", "purple", "dark", "light", "purple", "dark"]
+
+
+def alt_hi(body, destaque, color):
+    t = e(body)
+    if destaque and e(destaque) in t:
+        t = t.replace(e(destaque), f'<span style="color:{color}">{e(destaque)}</span>', 1)
+    return t
+
+
+def alt_frame(p, th, inner, take):
+    take_html = (f'<div style="position:absolute;left:96px;right:96px;top:1010px;display:flex;align-items:center;gap:24px;font-size:29px;color:{th["take"]}">'
+                 f'<span style="flex:none">{arrow_svg(th["arrow"]).replace("24", "34", 2)}</span><span>{e(take)}</span></div>') if take else ""
+    return f"""
+<div class="s" style="background:{th['bg']};color:{th['title']}">
+  <div class="pill" style="background:{th['pill_bg']};color:{th['pill']}"><i></i>{e(p['tag'])}</div>
+  {inner}
+  {take_html}
+  <div class="foot" style="color:{th['foot']}"><span>@urlan.design</span>
+    <span class="arrow" style="background:{th['dot']}">{arrow_svg(th['dot_arrow'])}</span></div>
+</div>"""
+
+
+def alt_content(p, i, s):
+    th = ALT_THEMES[ALT_ORDER[(i - 1) % len(ALT_ORDER)]]
+    layout = s.get("layout")
+    if layout == "definicao":
+        inner = f"""
+  <div style="position:absolute;top:250px;left:96px;right:96px">
+    <div class="h" style="font-size:44px;letter-spacing:-.5px;color:{th['num']}">{i:02d}&nbsp;&nbsp;{e(s['title'])}</div>
+    <p class="h" style="font-size:72px;line-height:1.14;letter-spacing:-2px;margin-top:44px;color:{th['title']}">{alt_hi(s['body'], s.get('destaque'), th['hi'])}</p>
+  </div>"""
+    elif layout == "limite":
+        inner = f"""
+  <div style="position:absolute;top:290px;left:96px;right:110px">
+    <div class="h" style="font-size:190px;line-height:1;letter-spacing:-6px;color:{th['num']}">{i:02d}</div>
+    <h2 class="h" style="font-size:66px;line-height:1.1;margin-top:26px;letter-spacing:-1.5px;color:{th['title']}">{e(s['title'])}</h2>
+  </div>
+  <div style="position:absolute;left:96px;right:96px;top:700px;border-radius:32px;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.16);padding:44px 48px 48px">
+    <div style="display:inline-flex;align-items:center;height:54px;padding:0 26px;border-radius:999px;background:{th['num']};color:#fff;
+         font-family:'DM Sans',sans-serif;font-weight:700;font-size:26px;letter-spacing:1px">BETA</div>
+    <p style="font-size:36px;line-height:1.42;color:{th['body']};margin-top:28px">{e(s['body'])}</p>
+  </div>"""
+    else:
+        inner = f"""
+  <div style="position:absolute;top:290px;left:96px;right:110px">
+    <div class="h" style="font-size:190px;line-height:1;letter-spacing:-6px;color:{th['num']}">{i:02d}</div>
+    <h2 class="h" style="font-size:66px;line-height:1.1;margin-top:26px;letter-spacing:-1.5px;color:{th['title']}">{e(s['title'])}</h2>
+    <p style="font-size:36px;line-height:1.45;color:{th['body']};margin-top:30px">{e(s['body'])}</p>
+  </div>"""
+    take = None if layout == "limite" else s.get("takeaway")
+    if layout == "limite" and s.get("takeaway"):
+        # o resumo vai abaixo do cartão
+        out = alt_frame(p, th, inner, None)
+        t = (f'<div style="position:absolute;left:96px;right:96px;top:1090px;display:flex;align-items:center;gap:24px;font-size:29px;color:{th["take"]}">'
+             f'<span style="flex:none">{arrow_svg(th["arrow"]).replace("24", "34", 2)}</span><span>{e(s["takeaway"])}</span></div>')
+        return out.replace('<div class="foot"', t + '\n  <div class="foot"', 1)
+    return alt_frame(p, th, inner, take)
+
+
 p_foot = {}
 
 # Reduz o tamanho da fonte de títulos marcados até caberem na largura disponível (888 px).
@@ -336,6 +406,7 @@ FIT_JS = """() => {
 
 
 def main(folder):
+    start = 1
     folder = pathlib.Path(folder).resolve()
     p = json.loads((folder / "post.json").read_text())
     if p.get("style") == "texto":
@@ -344,6 +415,9 @@ def main(folder):
         p_foot.update(p.get("footer", {}))
         items = p["items"]
         pages = [ed_cover(p, folder)] + [ed_item(i, it, len(items)) for i, it in enumerate(items, 1)] + [ed_closing(p)]
+    elif p.get("style") == "alternado":
+        pages = [alt_content(p, i, sl) for i, sl in enumerate(p["slides"], 1)] + [closing(p)]
+        start = 2  # slide-01.png é a capa da série, renderizada à parte
     else:
         pages = [cover(p, folder)] + [content(p, i, s) for i, s in enumerate(p["slides"], 1)] + [closing(p)]
     override = ""
@@ -361,7 +435,7 @@ def main(folder):
         pg = b.new_page(viewport={"width": W, "height": H})
         if p.get("style") == "editorial" and p.get("case") == "sentence":
             pages = [pg_.replace("font-weight:900;font-stretch:72%", "font-weight:700;font-stretch:100%").replace("line-height:.9;letter-spacing:-2px", "line-height:1.02;letter-spacing:-3px").replace("line-height:.92;margin-top:14px;letter-spacing:-1px", "line-height:1;margin-top:14px;letter-spacing:-3px").replace("letter-spacing:2px", "letter-spacing:0").replace("letter-spacing:3px", "letter-spacing:0") for pg_ in pages]
-        for n, body in enumerate(pages, 1):
+        for n, body in enumerate(pages, start):
             tmp.write_text(head + body + "</body></html>")
             pg.goto(tmp.as_uri())
             pg.evaluate("document.fonts.ready")
