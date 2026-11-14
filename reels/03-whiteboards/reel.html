@@ -30,6 +30,7 @@ svg.ar{position:absolute;inset:0;width:920px;height:940px}
 .chip{font-weight:800;font-size:52px;color:#1A1033;background:#E9DEFF;border:4px solid #C9A8FF;border-radius:22px;padding:28px 36px;margin-bottom:22px;opacity:0}
 .beta{display:inline-block;font-family:GSC;font-size:34px;background:#7120D1;color:#fff;padding:10px 24px;border-radius:12px;letter-spacing:2px;margin-bottom:30px}
 .card2{position:absolute;left:60px;right:60px;background:#fff;border-radius:26px;box-shadow:0 16px 44px rgba(40,20,90,.2);border:3px solid #E3DAF6;box-sizing:border-box;padding:34px;opacity:0}
+.arr2{position:absolute;left:0;right:0;top:370px;text-align:center;opacity:0}
 .av{width:76px;height:76px;border-radius:50%;background:#C9A8FF;flex:none}
 .note{position:absolute;bottom:92px;left:0;right:0;text-align:center;font-family:GSC;font-size:25px;color:rgba(255,255,255,.55)}
 </style></head><body><div class="c">
@@ -58,7 +59,9 @@ svg.ar{position:absolute;inset:0;width:920px;height:940px}
   <div class="layer" id="lplans" style="background:#F4F1FA"><div class="plans"><div class="beta">BETA</div><div class="chip">Pro</div><div class="chip">Max</div><div class="chip">Ultra</div><div class="chip">Team</div><div class="chip">Enterprise</div></div></div>
   <div class="layer" id="lend" style="background:#F4F1FA">
     <div class="card2" id="cm" style="top:150px"><div style="display:flex;gap:26px;align-items:center"><div class="av"></div><div><div style="font-family:GSC;font-size:28px;color:#6B5B95">comentário</div><div style="font-weight:800;font-size:60px;color:#1A1033;letter-spacing:-1px">QUADRO</div></div></div></div>
-    <div class="card2" id="cd" style="top:470px"><div style="font-family:GSC;font-size:28px;color:#6B5B95">mensagem direta</div><div style="font-weight:700;font-size:46px;color:#1A1033;margin:14px 0 26px;line-height:1.15">Aqui está o guia oficial dos Quadros brancos do Claude.</div><div style="display:inline-block;background:#7120D1;color:#fff;font-weight:700;font-size:40px;padding:20px 44px;border-radius:16px">Abrir guia</div></div>
+    <div class="arr2" id="ar2"><svg width="60" height="90" viewBox="0 0 24 36" fill="none" stroke="#7120D1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v28M4 22l8 10 8-10"/></svg></div>
+    <div class="card2" id="cd" style="top:520px"><div style="display:flex;gap:26px;align-items:center"><div class="av" style="background:#7120D1;display:flex;align-items:center;justify-content:center"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></div><div><div style="font-family:GSC;font-size:28px;color:#6B5B95">chega na sua DM</div><div style="font-weight:800;font-size:54px;color:#1A1033;letter-spacing:-1px;line-height:1.05">Guia oficial do Whiteboards</div></div></div></div>
+  </div>
   </div>
 </div>
 <div class="note" id="note">Ilustração do conceito, não é a tela real do Claude</div>
@@ -118,7 +121,7 @@ window.setT=function(t){
     fb.style.opacity=fk;fb.style.transform=`scale(${0.7+0.3*fk})`}
   if(cur===5){L.menu.style.opacity=1;const press=lt-1.3;$('r1').className='row'+(press>0?' on':'');$('sv').textContent=press>0.2?'salvo':''}
   if(cur===6){L.plans.style.opacity=1;[...document.querySelectorAll('.chip')].forEach((c,i)=>{const k=ease(cl((lt-0.45-i*0.25)/0.3));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*20}px)`})}
-  if(cur===7){L.end.style.opacity=1;const k1=ease(cl((lt-0.5)/0.35)),k2=ease(cl((lt-1.4)/0.35));$('cm').style.opacity=k1;$('cm').style.transform=`translateY(${(1-k1)*30}px)`;$('cd').style.opacity=k2;$('cd').style.transform=`translateY(${(1-k2)*30}px)`}
+  if(cur===7){L.end.style.opacity=1;const k1=ease(cl((lt-0.5)/0.35)),k2=ease(cl((lt-1.4)/0.35));$('cm').style.opacity=k1;$('cm').style.transform=`translateY(${(1-k1)*30}px)`;$('cd').style.opacity=k2;$('ar2').style.opacity=k2;$('cd').style.transform=`translateY(${(1-k2)*30}px)`}
 }
 setT(0);
 </script></body></html>
