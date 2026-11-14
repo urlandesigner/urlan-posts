@@ -1,0 +1,122 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:GSF;src:url('../../template/fonts/google-sans-flex-latin-full-normal.woff2') format('woff2');font-weight:1 1000;font-stretch:25% 151%}
+@font-face{font-family:GSC;src:url('../../template/fonts/google-sans-code-latin-500-normal.woff2') format('woff2')}
+html,body{margin:0;background:#0E0C12}
+.c{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:GSF;color:#fff;background:#0E0A1A}
+.bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 45% at 50% 0%,#3A1A78 0%,rgba(58,26,120,0) 100%),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 2px,transparent 2px 48px),repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 48px)}
+.handle{position:absolute;top:170px;left:0;right:0;text-align:center;font-weight:600;font-size:34px;color:rgba(255,255,255,.9)}
+.beat{position:absolute;left:80px;right:80px;top:270px;text-align:center;opacity:0}
+.t{font-weight:800;font-size:96px;line-height:1.02;letter-spacing:-3px}
+.t b{color:#C9A8FF;font-weight:800}
+.panel{position:absolute;left:80px;top:790px;width:920px;height:940px;border-radius:28px;background:#F4F1FA;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45);
+ background-image:radial-gradient(#CFC6E6 2.5px,transparent 3px);background-size:46px 46px}
+.layer{position:absolute;inset:0;opacity:0}
+.sec{position:absolute;width:270px;height:520px;top:150px;border:4px dashed rgba(113,32,209,.55);background:rgba(113,32,209,.06);border-radius:22px;box-sizing:border-box}
+.sec span{position:absolute;left:20px;top:16px;font-family:GSC;font-size:26px;color:#5B22B0;letter-spacing:1px}
+.st{position:absolute;width:230px;height:120px;border-radius:14px;box-sizing:border-box;padding:18px 20px;font-weight:700;font-size:36px;color:#1A1033;box-shadow:0 10px 24px rgba(40,20,90,.22);display:flex;align-items:flex-end;transform-origin:50% 50%}
+svg.ar{position:absolute;inset:0;width:920px;height:940px}
+.chat{position:absolute;left:40px;top:330px;width:840px;height:280px;background:#fff;border-radius:28px;box-shadow:0 18px 50px rgba(40,20,90,.22);border:3px solid #E3DAF6;box-sizing:border-box;padding:36px}
+.chat .tx{font-weight:600;font-size:46px;line-height:1.25;color:#1A1033;min-height:116px}
+.caret{display:inline-block;width:4px;height:48px;background:#7120D1;vertical-align:-8px;margin-left:3px}
+.send{position:absolute;right:30px;bottom:26px;width:78px;height:78px;border-radius:50%;background:#7120D1;display:flex;align-items:center;justify-content:center}
+.pill{position:absolute;left:150px;right:150px;bottom:36px;background:#1A1033;color:#fff;border-radius:60px;font-weight:600;font-size:34px;text-align:center;padding:24px 20px;opacity:0}
+.cur{position:absolute;left:0;top:0;opacity:0}
+.cur i{position:absolute;left:30px;top:26px;font-style:normal;font-weight:700;font-size:26px;color:#1A1033;padding:4px 14px;border-radius:20px;white-space:nowrap}
+.menu{position:absolute;left:110px;top:230px;width:700px;background:#fff;border-radius:28px;box-shadow:0 26px 70px rgba(40,20,90,.35);padding:34px;box-sizing:border-box}
+.row{font-weight:700;font-size:44px;color:#1A1033;padding:30px 28px;border-radius:18px;margin-bottom:14px;border:3px solid #E3DAF6;display:flex;justify-content:space-between;align-items:center}
+.row.on{background:#7120D1;color:#fff;border-color:#7120D1}
+.row small{font-family:GSC;font-size:26px;font-weight:500;opacity:.8}
+.plans{position:absolute;left:70px;right:70px;top:60px}
+.chip{font-weight:800;font-size:52px;color:#1A1033;background:#E9DEFF;border:4px solid #C9A8FF;border-radius:22px;padding:28px 36px;margin-bottom:22px;opacity:0}
+.beta{display:inline-block;font-family:GSC;font-size:34px;background:#7120D1;color:#fff;padding:10px 24px;border-radius:12px;letter-spacing:2px;margin-bottom:30px}
+.card2{position:absolute;left:60px;right:60px;background:#fff;border-radius:26px;box-shadow:0 16px 44px rgba(40,20,90,.2);border:3px solid #E3DAF6;box-sizing:border-box;padding:34px;opacity:0}
+.av{width:76px;height:76px;border-radius:50%;background:#C9A8FF;flex:none}
+.note{position:absolute;bottom:92px;left:0;right:0;text-align:center;font-family:GSC;font-size:25px;color:rgba(255,255,255,.55)}
+</style></head><body><div class="c">
+<div class="bg"></div>
+<div class="handle">@urlan.design</div>
+<div class="beat" id="b0"><div class="t">Você pediu pra ver o <b>quadro branco</b> do Claude</div></div>
+<div class="beat" id="b1"><div class="t">Peça um quadro <b>no chat</b></div></div>
+<div class="beat" id="b2"><div class="t">Ele organiza em <b>formas, setas e seções</b></div></div>
+<div class="beat" id="b3"><div class="t">Peça pra reorganizar por <b>tema</b> ou virar <b>linha do tempo</b></div></div>
+<div class="beat" id="b4"><div class="t">O time edita junto, <b>ao mesmo tempo</b></div></div>
+<div class="beat" id="b5"><div class="t">Exporte em <b>PNG</b> ou envie pro <b>Miro</b></div></div>
+<div class="beat" id="b6"><div class="t">Está em <b>beta</b>. Disponível nestes planos</div></div>
+<div class="beat" id="b7"><div class="t">Comenta <b>QUADRO</b> que eu mando o <b>guia oficial</b> na DM</div></div>
+
+<div class="panel" id="panel">
+  <div class="layer" id="lcanvas">
+    <div id="secs"></div>
+    <svg class="ar" id="svg" viewBox="0 0 920 940"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5B22B0"/></marker></defs></svg>
+    <div id="sts"></div>
+    <div class="cur" id="curA"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#7120D1" stroke="#fff" stroke-width="1.5"/></svg><i style="background:#C9A8FF">Você</i></div>
+    <div class="cur" id="curB"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#1FA86E" stroke="#fff" stroke-width="1.5"/></svg><i style="background:#3DDC97">Time</i></div>
+    <div class="pill" id="pill">Transforme em linha do tempo</div>
+  </div>
+  <div class="layer" id="lchat"><div class="chat"><div class="tx" id="tx"></div><div class="send" id="send"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div></div></div>
+  <div class="layer" id="lmenu" style="background:rgba(244,241,250,.82)"><div class="menu"><div class="row" id="r1">Exportar em PNG<small id="sv"></small></div><div class="row" id="r2">Enviar pro Miro<small>Send to</small></div></div></div>
+  <div class="layer" id="lplans" style="background:#F4F1FA"><div class="plans"><div class="beta">BETA</div><div class="chip">Pro</div><div class="chip">Max</div><div class="chip">Ultra</div><div class="chip">Team</div><div class="chip">Enterprise</div></div></div>
+  <div class="layer" id="lend" style="background:#F4F1FA">
+    <div class="card2" id="cm" style="top:150px"><div style="display:flex;gap:26px;align-items:center"><div class="av"></div><div><div style="font-family:GSC;font-size:28px;color:#6B5B95">comentário</div><div style="font-weight:800;font-size:60px;color:#1A1033;letter-spacing:-1px">QUADRO</div></div></div></div>
+    <div class="card2" id="cd" style="top:470px"><div style="font-family:GSC;font-size:28px;color:#6B5B95">mensagem direta</div><div style="font-weight:700;font-size:46px;color:#1A1033;margin:14px 0 26px;line-height:1.15">Aqui está o guia oficial dos Quadros brancos do Claude.</div><div style="display:inline-block;background:#7120D1;color:#fff;font-weight:700;font-size:40px;padding:20px 44px;border-radius:16px">Abrir guia</div></div>
+  </div>
+</div>
+<div class="note" id="note">Ilustração do conceito, não é a tela real do Claude</div>
+</div>
+<script>
+const ease=x=>1-Math.pow(1-x,3),cl=x=>Math.max(0,Math.min(1,x)),lerp=(a,b,k)=>a+(b-a)*k;
+const D=[2.8,3.0,4.4,4.2,3.6,3.4,3.6,4.2];const ST=[];D.reduce((a,d,i)=>(ST[i]=a,a+d),0);
+window.TOTAL=D.reduce((a,b)=>a+b,0);window.CUTS=ST.slice(1);
+const IT=[{t:'Ideia',c:'#FFC857',col:0,row:0},{t:'Pesquisa',c:'#E9DEFF',col:0,row:1},{t:'Design',c:'#C9A8FF',col:1,row:0},{t:'Protótipo',c:'#7CE8B5',col:1,row:1},{t:'Teste',c:'#FF8FB1',col:2,row:0},{t:'Lançar',c:'#FFC857',col:2,row:1}];
+IT.forEach((it,i)=>{it.p1=[45+it.col*300,250+it.row*220];it.p2=[i%2?500:190,60+i*140]});
+const secs=document.getElementById('secs');['Descobrir','Construir','Lançar'].forEach((n,i)=>{const d=document.createElement('div');d.className='sec';d.style.left=(25+i*300)+'px';d.innerHTML='<span>'+n+'</span>';d.style.opacity=0;secs.appendChild(d)});
+const sts=document.getElementById('sts');IT.forEach(it=>{const d=document.createElement('div');d.className='st';d.style.background=it.c;d.textContent=it.t;d.style.opacity=0;sts.appendChild(d);it.el=d});
+const fb=document.createElement('div');fb.className='st';fb.style.background='#7CE8B5';fb.textContent='Feedback';fb.style.opacity=0;sts.appendChild(fb);fb.style.left='500px';fb.style.top='340px';
+const svg=document.getElementById('svg');const NS='http://www.w3.org/2000/svg';
+function path(d,col,w,mk){const p=document.createElementNS(NS,'path');p.setAttribute('d',d);p.setAttribute('fill','none');p.setAttribute('stroke',col);p.setAttribute('stroke-width',w);p.setAttribute('stroke-linecap','round');p.setAttribute('pathLength','1');p.setAttribute('stroke-dasharray','1');p.setAttribute('stroke-dashoffset','1');if(mk)p.setAttribute('marker-end','url(#ah)');svg.appendChild(p);return p}
+const A=[path('M160 370L160 470','#5B22B0',5,1),path('M460 370L460 470','#5B22B0',5,1),path('M760 370L760 470','#5B22B0',5,1),path('M275 530C310 530 310 310 345 310','#5B22B0',5,1),path('M575 530C610 530 610 310 645 310','#5B22B0',5,1)];
+const TL=path('M460 100L460 860','#7120D1',6,0);
+const dots=IT.map((it,i)=>{const c=document.createElementNS(NS,'circle');c.setAttribute('cx',460);c.setAttribute('cy',120+i*140);c.setAttribute('r',16);c.setAttribute('fill','#7120D1');c.style.opacity=0;svg.appendChild(c);return c});
+const PROMPT='Monte um quadro pra planejar o lançamento de um app';
+const $=id=>document.getElementById(id);
+const L={c:$('lcanvas'),chat:$('lchat'),menu:$('lmenu'),plans:$('lplans'),end:$('lend')};
+function setSt(it,x,y,o,s){it.el.style.left=x+'px';it.el.style.top=y+'px';it.el.style.opacity=o;it.el.style.transform=`scale(${s})`}
+function curPos(c,x,y,o){c.style.opacity=o;c.style.transform=`translate(${x}px,${y}px)`}
+window.setT=function(t){
+  let cur=0;for(let i=0;i<D.length;i++)if(t>=ST[i])cur=i;
+  const lt=t-ST[cur];
+  for(let i=0;i<8;i++){const b=$('b'+i);const a=i===cur?ease(cl(lt/0.18)):0;b.style.opacity=a;b.style.transform=`scale(${0.95+0.05*a})`}
+  Object.values(L).forEach(l=>l.style.opacity=0);
+  $('note').style.opacity=cur>=1&&cur<=5?1:0;
+  // reset canvas
+  secs.childNodes.forEach(s=>s.style.opacity=0);A.forEach(a=>{a.setAttribute('stroke-dashoffset','1');a.style.opacity=0});TL.setAttribute('stroke-dashoffset','1');dots.forEach(d=>d.style.opacity=0);
+  IT.forEach(it=>setSt(it,it.p1[0],it.p1[1],0,1));fb.style.opacity=0;curPos($('curA'),0,0,0);curPos($('curB'),0,0,0);$('pill').style.opacity=0;
+  if(cur===0){L.c.style.opacity=.55}
+  if(cur===1){L.chat.style.opacity=1;const n=Math.floor(PROMPT.length*cl((lt-0.3)/1.8));$('tx').innerHTML=PROMPT.slice(0,n)+(Math.floor(t*2.5)%2||n<PROMPT.length?'<span class="caret"></span>':'');
+    const pr=lt-2.35;$('send').style.transform=`scale(${pr>0&&pr<0.15?0.88:1})`}
+  if(cur===2){L.c.style.opacity=1;
+    secs.childNodes.forEach((s,i)=>{s.style.opacity=ease(cl((lt-0.1-i*0.2)/0.4))});
+    IT.forEach((it,i)=>{const k=ease(cl((lt-0.5-i*0.3)/0.35));setSt(it,it.p1[0],it.p1[1],k,0.7+0.3*k)});
+    A.forEach((a,i)=>{const k=ease(cl((lt-1.4-i*0.35)/0.5));a.setAttribute('stroke-dashoffset',1-k);a.style.opacity=k>0.02?1:0});}
+  if(cur===3){L.c.style.opacity=1;const q=ease(cl((lt-0.5)/1.8));
+    secs.childNodes.forEach(s=>s.style.opacity=1-q);A.forEach(a=>{a.setAttribute('stroke-dashoffset','0');a.style.opacity=1-q});
+    IT.forEach(it=>setSt(it,lerp(it.p1[0],it.p2[0],q),lerp(it.p1[1],it.p2[1],q),1,1));
+    TL.setAttribute('stroke-dashoffset',1-ease(cl((lt-1.6)/1.2)));dots.forEach((d,i)=>d.style.opacity=ease(cl((lt-1.8-i*0.15)/0.3)));
+    $('pill').style.opacity=ease(cl(lt/0.25))*(1-ease(cl((lt-1.7)/0.3)))}
+  if(cur>=4&&cur<=5){L.c.style.opacity=1;TL.setAttribute('stroke-dashoffset','0');dots.forEach(d=>d.style.opacity=1);
+    IT.forEach((it,i)=>setSt(it,it.p2[0],it.p2[1],1,1));A.forEach(a=>a.style.opacity=0);}
+  if(cur===4){
+    const a=ease(cl((lt-0.3)/1.1)),b=ease(cl((lt-1.7)/0.9));
+    // A drags Ideia left
+    const ax=lerp(330,230,a),ay=lerp(520,110,a);const ideaX=lerp(190,100,ease(cl((lt-1.0)/0.9)));
+    IT[0].el.style.left=ideaX+'px';
+    curPos($('curA'),lerp(ax,ideaX+170,ease(cl((lt-1.0)/0.9))),lerp(ay,100,1),1);
+    // B adds Feedback
+    const fk=ease(cl((lt-1.9)/0.4));curPos($('curB'),lerp(790,690,ease(cl((lt-0.4)/1.2))),lerp(150,440,ease(cl((lt-0.4)/1.2))),1);
+    fb.style.opacity=fk;fb.style.transform=`scale(${0.7+0.3*fk})`}
+  if(cur===5){L.menu.style.opacity=1;const press=lt-1.3;$('r1').className='row'+(press>0?' on':'');$('sv').textContent=press>0.2?'salvo':''}
+  if(cur===6){L.plans.style.opacity=1;[...document.querySelectorAll('.chip')].forEach((c,i)=>{const k=ease(cl((lt-0.45-i*0.25)/0.3));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*20}px)`})}
+  if(cur===7){L.end.style.opacity=1;const k1=ease(cl((lt-0.5)/0.35)),k2=ease(cl((lt-1.4)/0.35));$('cm').style.opacity=k1;$('cm').style.transform=`translateY(${(1-k1)*30}px)`;$('cd').style.opacity=k2;$('cd').style.transform=`translateY(${(1-k2)*30}px)`}
+}
+setT(0);
+</script></body></html>
