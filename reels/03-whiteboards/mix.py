@@ -2,7 +2,7 @@
 import numpy as np, scipy.io.wavfile as w
 from scipy.signal import butter, sosfilt
 sr=44100
-D=[2.8,3.0,4.4,4.2,3.6,3.4,3.6,4.2];T=sum(D)
+D=[3.4,3.0,4.4,4.2,3.6,3.4,3.6,4.2];T=sum(D)
 CUTS=np.cumsum(D)[:-1]
 rng=np.random.default_rng(7)
 def env(n,a,r):

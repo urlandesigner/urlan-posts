@@ -1,7 +1,7 @@
 # Reel Whiteboards (resposta ao comentario "cadê a imagem ilustrativa?")
 
 Legenda:
-Você pediu pra ver, então aqui está o quadro branco do Claude em ação. Você pede no chat, ele organiza em formas, setas e seções, e o time edita junto. Dá pra exportar em PNG. Está em beta nos planos Pro, Max, Ultra, Team e Enterprise.
+O Claude agora desenha um quadro branco direto no chat, com formas, setas e seções. Você pede, ele monta, e o time edita junto em tempo real. Dá pra reorganizar por tema, virar linha do tempo e exportar em PNG. Está em beta nos planos Pro, Max, Ultra, Team e Enterprise.
 
 Comenta QUADRO que eu mando o guia oficial na DM.
 

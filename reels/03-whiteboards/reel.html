@@ -35,7 +35,7 @@ svg.ar{position:absolute;inset:0;width:920px;height:940px}
 </style></head><body><div class="c">
 <div class="bg"></div>
 <div class="handle">@urlan.design</div>
-<div class="beat" id="b0"><div class="t">Você pediu pra ver o <b>quadro branco</b> do Claude</div></div>
+<div class="beat" id="b0"><div class="t">O Claude agora <b>desenha</b> o quadro branco pra você</div></div>
 <div class="beat" id="b1"><div class="t">Peça um quadro <b>no chat</b></div></div>
 <div class="beat" id="b2"><div class="t">Ele organiza em <b>formas, setas e seções</b></div></div>
 <div class="beat" id="b3"><div class="t">Peça pra reorganizar por <b>tema</b> ou virar <b>linha do tempo</b></div></div>
@@ -65,13 +65,13 @@ svg.ar{position:absolute;inset:0;width:920px;height:940px}
 </div>
 <script>
 const ease=x=>1-Math.pow(1-x,3),cl=x=>Math.max(0,Math.min(1,x)),lerp=(a,b,k)=>a+(b-a)*k;
-const D=[2.8,3.0,4.4,4.2,3.6,3.4,3.6,4.2];const ST=[];D.reduce((a,d,i)=>(ST[i]=a,a+d),0);
+const D=[3.4,3.0,4.4,4.2,3.6,3.4,3.6,4.2];const ST=[];D.reduce((a,d,i)=>(ST[i]=a,a+d),0);
 window.TOTAL=D.reduce((a,b)=>a+b,0);window.CUTS=ST.slice(1);
 const IT=[{t:'Ideia',c:'#FFC857',col:0,row:0},{t:'Pesquisa',c:'#E9DEFF',col:0,row:1},{t:'Design',c:'#C9A8FF',col:1,row:0},{t:'Protótipo',c:'#7CE8B5',col:1,row:1},{t:'Teste',c:'#FF8FB1',col:2,row:0},{t:'Lançar',c:'#FFC857',col:2,row:1}];
 IT.forEach((it,i)=>{it.p1=[45+it.col*300,250+it.row*220];it.p2=[i%2?500:190,60+i*140]});
 const secs=document.getElementById('secs');['Descobrir','Construir','Lançar'].forEach((n,i)=>{const d=document.createElement('div');d.className='sec';d.style.left=(25+i*300)+'px';d.innerHTML='<span>'+n+'</span>';d.style.opacity=0;secs.appendChild(d)});
-const sts=document.getElementById('sts');IT.forEach(it=>{const d=document.createElement('div');d.className='st';d.style.background=it.c;d.textContent=it.t;d.style.opacity=0;sts.appendChild(d);it.el=d});
-const fb=document.createElement('div');fb.className='st';fb.style.background='#7CE8B5';fb.textContent='Feedback';fb.style.opacity=0;sts.appendChild(fb);fb.style.left='500px';fb.style.top='340px';
+const sts=document.getElementById('sts');IT.forEach(it=>{const d=document.createElement('div');d.className='st';d.style.background='#fff';d.style.border='5px solid '+it.c;d.textContent=it.t;d.style.opacity=0;sts.appendChild(d);it.el=d});
+const fb=document.createElement('div');fb.className='st';fb.style.background='#fff';fb.style.border='5px solid #3DDC97';fb.textContent='Feedback';fb.style.opacity=0;sts.appendChild(fb);fb.style.left='500px';fb.style.top='340px';
 const svg=document.getElementById('svg');const NS='http://www.w3.org/2000/svg';
 function path(d,col,w,mk){const p=document.createElementNS(NS,'path');p.setAttribute('d',d);p.setAttribute('fill','none');p.setAttribute('stroke',col);p.setAttribute('stroke-width',w);p.setAttribute('stroke-linecap','round');p.setAttribute('pathLength','1');p.setAttribute('stroke-dasharray','1');p.setAttribute('stroke-dashoffset','1');if(mk)p.setAttribute('marker-end','url(#ah)');svg.appendChild(p);return p}
 const A=[path('M160 370L160 470','#5B22B0',5,1),path('M460 370L460 470','#5B22B0',5,1),path('M760 370L760 470','#5B22B0',5,1),path('M275 530C310 530 310 310 345 310','#5B22B0',5,1),path('M575 530C610 530 610 310 645 310','#5B22B0',5,1)];
@@ -87,11 +87,13 @@ window.setT=function(t){
   const lt=t-ST[cur];
   for(let i=0;i<8;i++){const b=$('b'+i);const a=i===cur?ease(cl(lt/0.18)):0;b.style.opacity=a;b.style.transform=`scale(${0.95+0.05*a})`}
   Object.values(L).forEach(l=>l.style.opacity=0);
-  $('note').style.opacity=cur>=1&&cur<=5?1:0;
+  $('note').style.opacity=cur<=5?1:0;
   // reset canvas
   secs.childNodes.forEach(s=>s.style.opacity=0);A.forEach(a=>{a.setAttribute('stroke-dashoffset','1');a.style.opacity=0});TL.setAttribute('stroke-dashoffset','1');dots.forEach(d=>d.style.opacity=0);
   IT.forEach(it=>setSt(it,it.p1[0],it.p1[1],0,1));fb.style.opacity=0;curPos($('curA'),0,0,0);curPos($('curB'),0,0,0);$('pill').style.opacity=0;
-  if(cur===0){L.c.style.opacity=.55}
+  if(cur===0){L.c.style.opacity=1;
+    IT.forEach((it,i)=>{const k=ease(cl((lt-0.5-i*0.28)/0.3));setSt(it,it.p2[0],it.p2[1],k,0.7+0.3*k)});
+    TL.setAttribute('stroke-dashoffset',1-ease(cl((lt-0.5)/1.6)));dots.forEach((d,i)=>d.style.opacity=ease(cl((lt-0.7-i*0.28)/0.3)))}
   if(cur===1){L.chat.style.opacity=1;const n=Math.floor(PROMPT.length*cl((lt-0.3)/1.8));$('tx').innerHTML=PROMPT.slice(0,n)+(Math.floor(t*2.5)%2||n<PROMPT.length?'<span class="caret"></span>':'');
     const pr=lt-2.35;$('send').style.transform=`scale(${pr>0&&pr<0.15?0.88:1})`}
   if(cur===2){L.c.style.opacity=1;
