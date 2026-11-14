@@ -80,3 +80,9 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 ## Horário
 
 Posts do feed saem sempre às 10h (America/Sao_Paulo), um por dia útil. Stories às 18h do mesmo dia, em modo lembrete.
+
+## Reels: som
+- Sem efeitos sonoros de transicao (parecem bug). Usar trilha instrumental continua do inicio ao fim, com fade in/out.
+- Trilha gerada no Higgsfield (elevenlabs_music_v2_5, ~4 creditos por 30 s, force_instrumental). O Magnific tem limite diario gratis.
+- Gancho nos primeiros 3 s falando com o publico geral, nunca como resposta a uma pessoa.
+- Imagens ilustrativas devem ter aviso no video; so afirmar visual da ferramenta se confirmado na fonte.
