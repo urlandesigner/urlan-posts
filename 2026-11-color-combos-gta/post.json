@@ -61,7 +61,7 @@
       "projeto"
     ]
   },
-  "caption": "Cinco duplas de cores inspiradas no visual de Vice City, a cidade de GTA VI, que chega em 19 de novembro. Não são as cores oficiais do jogo.\n\nCada dupla tem uma cor escura e uma clara. As duas passam no teste de contraste pra texto, então dá pra usar uma como fundo e a outra como letra.\n\nOs códigos HEX estão em cada slide. Salva pra usar no seu próximo projeto.\n\n#colorpalette #uidesign #productdesign #designdeinterface #gta6",
+  "caption": "Cinco duplas de cores inspiradas no visual de Vice City, a cidade de GTA VI, que chega em 19 de novembro. Não são as cores oficiais do jogo.\n\nCada dupla tem uma cor escura e uma clara. As duas passam no teste de contraste pra texto, então dá pra usar uma como fundo e a outra como letra.\n\nOs códigos HEX estão em cada slide. Salva pra usar no seu próximo projeto.\n\nFoto da capa: West Coast Customs / Selfridges.\n\n#colorpalette #uidesign #productdesign #designdeinterface #gta6",
   "contrast": {
     "Cobalt night/Ice cyan": 12.53,
     "Deep magenta/Flamingo": 8.01,
@@ -70,12 +70,12 @@
     "Dusk violet/Coral glow": 7.72
   },
   "sources": [
-    "https://www.rockstargames.com/VI"
+    "https://www.rockstargames.com/VI",
+    "https://www.terra.com.br/gameon/plataformas-e-consoles/carro-de-gta-6-de-verdade-esta-a-venda-por-mais-de-r-7-milhoes,7938672b8b5a250a4f0be2e9129d12cdl5l06ana.html"
   ],
   "note": "Slides 02-07: python3 template/combos.py 2026-11-color-combos-gta. Capa: renderizar testes-capa/serie/capa-gta.html (1080x1350) e copiar para slide-01.png.",
   "cover_override": {
     "style": "serie",
-    "source": "testes-capa/serie/capa-gta.html",
-    "note": "slide-01.png vem do estilo série; não regenerar a capa pelo render.py"
+    "source": "testes-capa/serie/capa-gta-foto.html"
   }
 }
