@@ -90,3 +90,7 @@ Posts do feed saem sempre às 10h (America/Sao_Paulo), um por dia útil. Stories
 ## Agendamento
 
 A partir de 15/11/2026 o agendamento é feito somente pelo mLabs (perfil ext_ODYyMzk3MA.7exPeI4iUtJyY-cNYfOl0u). Não usar Flux nem Metricool. Fluxo: upload_media com URL raw do GitHub (hash do commit), create_post com status scheduled.
+
+## Reels: música (decisão de 15/11/2026)
+
+Não gerar trilha no Higgsfield nem embutir música no MP4. O Reel sai sem trilha e o áudio é adicionado pelo próprio Instagram, via mLabs: search_instagram_audio para achar a faixa e audioConfigurations no create_post (somente instagram_reels, máximo 1). Sem efeitos sonoros de transição.
