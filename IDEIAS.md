@@ -17,6 +17,7 @@ Fila de temas aprovados ou sugeridos. Ao produzir um, mover para "Feitos" com a 
 - Skills do Claude que eu uso / processo de AI design em 10 fases.
 - Parei de usar IA como atalho.
 - Bibliotecas de componentes, sites de referência, Figma Config 2026, Color combos.
+- Color combos roxo (`2026-11-color-combos-roxo/`) e Color combos GTA VI / Vice City (`2026-11-color-combos-gta/`, nov/2026, rascunho, sugerido 18/11 10h).
 - Quanto custa um site que parece simples.
 - REA (out/2026), liderança em design com dados da Designer Fund (out/2026).
 - Claude Design, Slides e Docs grátis (`2026-10-claude-design-gratis/`, out/2026).

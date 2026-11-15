@@ -1,0 +1,81 @@
+{
+  "style": "combos",
+  "gap": "#15131A",
+  "pairs": [
+    {
+      "dark": [
+        "Midnight indigo",
+        "#1B0B3A"
+      ],
+      "light": [
+        "Flamingo",
+        "#FFB3D1"
+      ]
+    },
+    {
+      "dark": [
+        "Deep magenta",
+        "#5C0B3F"
+      ],
+      "light": [
+        "Peach",
+        "#FFD6B8"
+      ]
+    },
+    {
+      "dark": [
+        "Burnt sunset",
+        "#6B2208"
+      ],
+      "light": [
+        "Sand",
+        "#FBE8C8"
+      ]
+    },
+    {
+      "dark": [
+        "Deep lagoon",
+        "#03393A"
+      ],
+      "light": [
+        "Aqua mist",
+        "#A8F0E4"
+      ]
+    },
+    {
+      "dark": [
+        "Dusk violet",
+        "#2B1659"
+      ],
+      "light": [
+        "Coral glow",
+        "#FF9E8A"
+      ]
+    }
+  ],
+  "closing": {
+    "lines": [
+      "Salve para",
+      "usar no seu",
+      "próximo",
+      "projeto"
+    ]
+  },
+  "caption": "Cinco duplas de cores inspiradas no visual de Vice City, a cidade de GTA VI, que chega em 19 de novembro. Não são as cores oficiais do jogo.\n\nCada dupla tem uma cor escura e uma clara. As duas passam no teste de contraste pra texto, então dá pra usar uma como fundo e a outra como letra.\n\nOs códigos HEX estão em cada slide. Salva pra usar no seu próximo projeto.\n\n#colorpalette #uidesign #productdesign #designdeinterface #gta6",
+  "contrast": {
+    "Midnight indigo/Flamingo": 10.92,
+    "Deep magenta/Peach": 9.88,
+    "Burnt sunset/Sand": 9.41,
+    "Deep lagoon/Aqua mist": 9.85,
+    "Dusk violet/Coral glow": 7.72
+  },
+  "sources": [
+    "https://www.rockstargames.com/VI"
+  ],
+  "note": "Slides 02-07: python3 template/combos.py 2026-11-color-combos-gta. Capa: renderizar testes-capa/serie/capa-gta.html (1080x1350) e copiar para slide-01.png.",
+  "cover_override": {
+    "style": "serie",
+    "source": "testes-capa/serie/capa-gta.html",
+    "note": "slide-01.png vem do estilo série; não regenerar a capa pelo render.py"
+  }
+}
