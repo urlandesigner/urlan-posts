@@ -4,12 +4,12 @@
   "pairs": [
     {
       "dark": [
-        "Midnight indigo",
-        "#1B0B3A"
+        "Cobalt night",
+        "#0A1A5C"
       ],
       "light": [
-        "Flamingo",
-        "#FFB3D1"
+        "Ice cyan",
+        "#B8ECFF"
       ]
     },
     {
@@ -18,28 +18,28 @@
         "#5C0B3F"
       ],
       "light": [
+        "Flamingo",
+        "#FFB3D1"
+      ]
+    },
+    {
+      "dark": [
+        "Raspberry",
+        "#7A0F45"
+      ],
+      "light": [
         "Peach",
         "#FFD6B8"
       ]
     },
     {
       "dark": [
-        "Burnt sunset",
-        "#6B2208"
+        "Burnt orange",
+        "#7A2E08"
       ],
       "light": [
         "Sand",
         "#FBE8C8"
-      ]
-    },
-    {
-      "dark": [
-        "Deep lagoon",
-        "#03393A"
-      ],
-      "light": [
-        "Aqua mist",
-        "#A8F0E4"
       ]
     },
     {
@@ -63,10 +63,10 @@
   },
   "caption": "Cinco duplas de cores inspiradas no visual de Vice City, a cidade de GTA VI, que chega em 19 de novembro. Não são as cores oficiais do jogo.\n\nCada dupla tem uma cor escura e uma clara. As duas passam no teste de contraste pra texto, então dá pra usar uma como fundo e a outra como letra.\n\nOs códigos HEX estão em cada slide. Salva pra usar no seu próximo projeto.\n\n#colorpalette #uidesign #productdesign #designdeinterface #gta6",
   "contrast": {
-    "Midnight indigo/Flamingo": 10.92,
-    "Deep magenta/Peach": 9.88,
-    "Burnt sunset/Sand": 9.41,
-    "Deep lagoon/Aqua mist": 9.85,
+    "Cobalt night/Ice cyan": 12.53,
+    "Deep magenta/Flamingo": 8.01,
+    "Raspberry/Peach": 7.85,
+    "Burnt orange/Sand": 7.87,
     "Dusk violet/Coral glow": 7.72
   },
   "sources": [
