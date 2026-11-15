@@ -86,3 +86,7 @@ Posts do feed saem sempre às 10h (America/Sao_Paulo), um por dia útil. Stories
 - Trilha gerada no Higgsfield (elevenlabs_music_v2_5, ~4 creditos por 30 s, force_instrumental). O Magnific tem limite diario gratis.
 - Gancho nos primeiros 3 s falando com o publico geral, nunca como resposta a uma pessoa.
 - Imagens ilustrativas devem ter aviso no video; so afirmar visual da ferramenta se confirmado na fonte.
+
+## Agendamento
+
+A partir de 15/11/2026 o agendamento é feito somente pelo mLabs (perfil ext_ODYyMzk3MA.7exPeI4iUtJyY-cNYfOl0u). Não usar Flux nem Metricool. Fluxo: upload_media com URL raw do GitHub (hash do commit), create_post com status scheduled.
