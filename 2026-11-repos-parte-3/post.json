@@ -69,5 +69,11 @@
   "style": "serie",
   "source": "testes-capa/serie/capa-repos-3.html"
  },
- "font": "Google Sans Flex"
+ "font": "Google Sans Flex",
+ "mlabs": {
+  "id": "ext_MzcwMTAzODYx.HklmLTWw0tag5roQwCyrHm",
+  "scheduledAt": "2026-11-18T10:00:00-03:00",
+  "link": "https://publish.mlabs.io/schedule/370103861/edit",
+  "status": "scheduled"
+ }
 }
