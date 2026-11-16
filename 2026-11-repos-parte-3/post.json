@@ -1,30 +1,10 @@
 {
-  "slides": [
-    {
-      "text": "O Open Pencil abre arquivos do **Figma**.",
-      "sub": "Editor de design open source, com servidor MCP.",
-      "pos": "bottom",
-      "size": "xl"
-    },
-    {
-      "text": "transitions.dev reúne **transições** em CSS.",
-      "sub": "Código pronto pra copiar, e uma skill pra agentes.",
-      "pos": "top"
-    },
-    {
-      "text": "O unslop corrige tela com cara de **IA**.",
-      "sub": "Skill pra Claude Code e Codex. Audita antes de editar.",
-      "pos": "middle"
-    },
-    {
-      "text": "O Dembrandt transforma um site em **tokens**.",
-      "sub": "Sai em DESIGN.md, Tailwind ou shadcn.",
-      "pos": "bottom"
-    }
-  ],
   "closing": {
-    "title": "Teste um **essa semana**.",
-    "body": "Dembrandt e unslop funcionam num site ou tela que você já tem. Comenta qual testou."
+    "lines": [
+      "Qual entra",
+      "no seu **fluxo?**"
+    ],
+    "body": "Teste um essa semana. Dembrandt e unslop funcionam num site ou tela que você já tem."
   },
   "caption": "Mais quatro repositórios do GitHub pra quem desenha produto, todos atualizados nos últimos dias.\n\nO Open Pencil é um editor de design que abre arquivos do Figma. O transitions.dev reúne transições em CSS prontas pra copiar. O unslop corrige telas com cara de feitas por IA. O Dembrandt transforma o visual de um site em tokens de design.\n\nConfira a licença de cada um antes de usar em projeto de cliente.\n\nTeste um essa semana e comenta qual foi.\n\n#github #productdesign #uxdesign #inteligenciaartificial #designdeproduto",
   "sources": [
@@ -34,7 +14,38 @@
     "https://github.com/dembrandt/dembrandt"
   ],
   "note": "Estrelas pela API de busca do GitHub em 15/11/2026 (open-pencil 9868, transitions.dev 6342, unslop 16758, dembrandt 4026). Licenças: MIT, MIT/custom (transitions.dev restringe redistribuir como biblioteca concorrente), CC BY 4.0, MIT.",
-  "items_referencia": [
+  "style": "editorial",
+  "cover_override": {
+    "style": "serie",
+    "source": "testes-capa/serie/capa-repos-3.html"
+  },
+  "mlabs": {
+    "id": "ext_MzcwMTU5MTI1.pPr5ikoP2LxVgSaswofiVV",
+    "scheduledAt": "2026-11-18T10:00:00-03:00",
+    "link": "https://publish.mlabs.io/schedule/370159125/edit",
+    "status": "scheduled",
+    "nota": "Recriado em 16/11 apos reconexao do Instagram"
+  },
+  "case": "sentence",
+  "tag": "IA NO DESIGN",
+  "cover": {
+    "lines": [
+      "Repos do",
+      "**GitHub**"
+    ],
+    "tag": "(Parte 3)",
+    "subtitle": "O que eles fazem e por que importam pra quem desenha produto.",
+    "top_right": "Repos em alta",
+    "foot_right": ""
+  },
+  "footer": {
+    "left": "GitHub · nov 2026",
+    "right": "Open source\npra designers",
+    "top_right": "Repos em alta",
+    "label_what": "O que faz",
+    "label_why": "Por que importa"
+  },
+  "items": [
     {
       "name": "Open Pencil",
       "ref": "open-pencil/open-pencil",
@@ -63,18 +74,5 @@
       "what": "Lê um site e devolve cores, fontes, espaçamento e sombras como tokens de design.",
       "why": "Exporta em DESIGN.md, tokens W3C, Tailwind e tema shadcn/ui."
     }
-  ],
-  "style": "texto",
-  "cover_override": {
-    "style": "serie",
-    "source": "testes-capa/serie/capa-repos-3.html"
-  },
-  "font": "Google Sans Flex",
-  "mlabs": {
-    "id": "ext_MzcwMTU5MTI1.pPr5ikoP2LxVgSaswofiVV",
-    "scheduledAt": "2026-11-18T10:00:00-03:00",
-    "link": "https://publish.mlabs.io/schedule/370159125/edit",
-    "status": "scheduled",
-    "nota": "Recriado em 16/11 apos reconexao do Instagram"
-  }
+  ]
 }
