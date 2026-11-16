@@ -34,8 +34,8 @@
   },
   {
    "title": "Qual o limite?",
-   "body": "Beta nos planos Team e Enterprise, só no Google Meet. Com convidado externo, só se o admin liberar.",
-   "takeaway": "ainda é beta",
+   "body": "Planos Team e Enterprise, só no Google Meet. Com convidado externo, só se o admin liberar.",
+   "takeaway": "outras plataformas virão depois",
    "layout": "limite"
   }
  ],
@@ -52,5 +52,7 @@
  "cover_override": {
   "style": "serie",
   "source": "testes-capa/serie/capa-meetings.html"
- }
+ },
+ "grande": true,
+ "font": "Google Sans Flex"
 }

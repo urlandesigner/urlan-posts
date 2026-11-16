@@ -72,5 +72,7 @@
  "cover_override": {
   "style": "serie",
   "source": "testes-capa/serie/capa-repos-3.html"
- }
+ },
+ "grande": true,
+ "font": "Google Sans Flex"
 }

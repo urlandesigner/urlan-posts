@@ -342,7 +342,8 @@ def alt_hi(body, destaque, color):
 
 
 def alt_frame(p, th, inner, take):
-    take_html = (f'<div style="position:absolute;left:96px;right:96px;top:1010px;display:flex;align-items:center;gap:24px;font-size:29px;color:{th["take"]}">'
+    big = p.get("grande")
+    take_html = (f'<div style="position:absolute;left:96px;right:96px;top:{1040 if big else 1010}px;display:flex;align-items:center;gap:24px;font-size:{42 if big else 29}px;color:{th["take"]}">'
                  f'<span style="flex:none">{arrow_svg(th["arrow"]).replace("24", "34", 2)}</span><span>{e(take)}</span></div>') if take else ""
     return f"""
 <div class="s" style="background:{th['bg']};color:{th['title']}">
@@ -365,14 +366,21 @@ def alt_content(p, i, s):
   </div>"""
     elif layout == "limite":
         inner = f"""
-  <div style="position:absolute;top:290px;left:96px;right:110px">
-    <div class="h" style="font-size:190px;line-height:1;letter-spacing:-6px;color:{th['num']}">{i:02d}</div>
-    <h2 class="h" style="font-size:66px;line-height:1.1;margin-top:26px;letter-spacing:-1.5px;color:{th['title']}">{e(s['title'])}</h2>
+  <div style="position:absolute;top:{210 if p.get('grande') else 290}px;left:96px;right:110px">
+    <div class="h" style="font-size:{150 if p.get('grande') else 190}px;line-height:1;letter-spacing:-6px;color:{th['num']}">{i:02d}</div>
+    <h2 class="h" style="font-size:{88 if p.get('grande') else 66}px;line-height:1.1;margin-top:{20 if p.get('grande') else 26}px;letter-spacing:-1.5px;color:{th['title']}">{e(s['title'])}</h2>
   </div>
-  <div style="position:absolute;left:96px;right:96px;top:700px;border-radius:32px;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.16);padding:44px 48px 48px">
+  <div style="position:absolute;left:96px;right:96px;top:{560 if p.get('grande') else 700}px;border-radius:32px;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.16);padding:44px 48px 48px">
     <div style="display:inline-flex;align-items:center;height:54px;padding:0 26px;border-radius:999px;background:{th['num']};color:#fff;
          font-family:'DM Sans',sans-serif;font-weight:700;font-size:26px;letter-spacing:1px">BETA</div>
-    <p style="font-size:36px;line-height:1.42;color:{th['body']};margin-top:28px">{e(s['body'])}</p>
+    <p style="font-size:{46 if p.get('grande') else 36}px;line-height:1.3;color:{th['body']};margin-top:28px">{e(s['body'])}</p>
+  </div>"""
+    elif p.get("grande"):
+        inner = f"""
+  <div style="position:absolute;top:210px;left:96px;right:96px">
+    <div class="h" style="font-size:150px;line-height:1;letter-spacing:-5px;color:{th['num']}">{i:02d}</div>
+    <h2 class="h" style="font-size:88px;line-height:1.04;margin-top:20px;letter-spacing:-2.5px;color:{th['title']}">{e(s['title'])}</h2>
+    <p style="font-size:56px;line-height:1.2;font-weight:500;color:{th['body']};margin-top:36px">{e(s['body'])}</p>
   </div>"""
     else:
         inner = f"""
@@ -385,7 +393,7 @@ def alt_content(p, i, s):
     if layout == "limite" and s.get("takeaway"):
         # o resumo vai abaixo do cartão
         out = alt_frame(p, th, inner, None)
-        t = (f'<div style="position:absolute;left:96px;right:96px;top:1090px;display:flex;align-items:center;gap:24px;font-size:29px;color:{th["take"]}">'
+        t = (f'<div style="position:absolute;left:96px;right:96px;top:{1110 if p.get("grande") else 1090}px;display:flex;align-items:center;gap:24px;font-size:{42 if p.get("grande") else 29}px;color:{th["take"]}">'
              f'<span style="flex:none">{arrow_svg(th["arrow"]).replace("24", "34", 2)}</span><span>{e(s["takeaway"])}</span></div>')
         return out.replace('<div class="foot"', t + '\n  <div class="foot"', 1)
     return alt_frame(p, th, inner, take)
