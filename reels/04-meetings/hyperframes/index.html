@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:GSF;src:url('assets/fonts/gsf.woff2') format('woff2');font-weight:1 1000;font-stretch:25% 151%}
+@font-face{font-family:Caveat;src:url('assets/fonts/caveat.woff2') format('woff2');font-weight:700}
+:root{--ground:#0E0C12;--ink:#F4F1FA;--lilac:#C9A8FF;--mute:#8E879C;--card:#1A1722;--line:#2B2736}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--ground)}
+#root{position:relative;width:1080px;height:1920px;background:var(--ground);font-family:GSF,sans-serif;color:var(--ink);overflow:hidden}
+.scene{position:absolute;inset:0}
+.txt{position:absolute;left:80px;right:80px;font-weight:700;letter-spacing:-0.02em;line-height:1.08}
+.big{font-size:104px}.mid{font-size:80px}
+.lil{color:var(--lilac)}
+.ilus{position:absolute;right:80px;top:230px;font-size:30px;color:var(--mute);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.tile{position:absolute;width:420px;height:420px;border-radius:36px;background:var(--card);border:2px solid var(--line);overflow:hidden}
+.tile .av{position:absolute;left:50%;top:44%;width:170px;height:170px;margin:-85px 0 0 -85px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:72px;font-weight:700;color:#0E0C12}
+.tile .nm{position:absolute;left:22px;bottom:20px;font-size:30px;font-weight:600;background:rgba(0,0,0,.45);padding:8px 16px;border-radius:14px}
+.bubble{position:absolute;left:80px;right:80px;top:620px;background:var(--lilac);color:#0E0C12;border-radius:56px 56px 56px 12px;padding:64px 60px;font-size:84px;font-weight:700;letter-spacing:-0.02em;line-height:1.1}
+.card{position:absolute;border-radius:40px;background:var(--card);border:2px solid var(--line);padding:44px}
+.lbl{font-size:34px;color:var(--lilac);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:24px}
+.ln{height:20px;border-radius:10px;background:var(--line);margin-bottom:20px}
+.badge{position:absolute;left:80px;right:80px;border-radius:44px;border:3px solid var(--lilac);padding:56px 60px;font-size:78px;font-weight:700;letter-spacing:-0.02em;line-height:1.1}
+.cta{position:absolute;left:80px;right:80px;font-size:52px;color:var(--mute);font-weight:500}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="25" data-width="1080" data-height="1920">
+
+<!-- CENA 1: 0-3 -->
+<div id="s1" class="scene clip" data-start="0" data-duration="3.2" data-track-index="0">
+  <div id="t1" class="txt" style="top:640px;font-size:150px;line-height:1.0">Claude<br><span class="lil">Meetings</span></div>
+  <div id="t1b" class="txt mid" style="top:1080px;font-weight:600">O Claude agora entra na sua <span class="lil">reunião</span>.</div>
+</div>
+
+<!-- CENA 2: 3-7 -->
+<div id="s2" class="scene clip" data-start="3" data-duration="4.2" data-track-index="1">
+  <div class="txt mid" style="top:300px">Ele aparece na videochamada como <span class="lil">participante</span>.</div>
+  <div class="tile" id="k1" style="left:80px;top:760px"><img src="assets/ana.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="nm">Ana</div></div>
+  <div class="tile" id="k2" style="left:580px;top:760px"><img src="assets/bruno.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="nm">Bruno</div></div>
+  <div class="tile" id="k3" style="left:80px;top:1220px"><img src="assets/carla.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="nm">Carla</div></div>
+  <div class="tile" id="k4" style="left:580px;top:1220px;border-color:var(--lilac)"><div class="av" style="background:var(--lilac)">✦</div><div class="nm" style="background:var(--lilac);color:#0E0C12">Claude</div></div>
+  <div class="ilus">Ilustração</div>
+</div>
+
+<!-- CENA 3: 7-11 -->
+<div id="s3" class="scene clip" data-start="7" data-duration="4.2" data-track-index="2">
+  <div class="txt mid" style="top:300px">Você pede em <span class="lil">voz alta</span>.</div>
+  <div class="bubble" id="bb">“Claude, make a doc.”</div>
+  <div class="cta" style="top:1160px">Qualquer participante pode pedir.</div>
+  <div class="ilus">Ilustração</div>
+</div>
+
+<!-- CENA 4: 11-15 -->
+<div id="s4" class="scene clip" data-start="11" data-duration="4.2" data-track-index="3">
+  <div class="txt mid" style="top:300px">E ele cria o <span class="lil">doc</span> durante a conversa.</div>
+  <div class="card" id="c2" style="left:80px;top:760px;width:920px;height:640px"><div class="lbl">Doc</div>
+    <div class="ln" style="width:70%;height:28px;background:#3A2F55"></div><div class="ln" style="width:100%"></div><div class="ln" style="width:92%"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:96%"></div><div class="ln" style="width:70%"></div></div>
+  <div class="cta" id="c3" style="top:1480px">Também cria quadros.</div>
+  <div class="ilus">Ilustração</div>
+</div>
+
+<!-- CENA 5: 15-19 -->
+<div id="s5" class="scene clip" data-start="15" data-duration="4.2" data-track-index="4">
+  <div class="txt mid" style="top:300px">No fim, tudo fica numa <span class="lil">página</span>.</div>
+  <div class="card" id="p1" style="left:80px;top:700px;width:920px;height:240px"><div class="lbl">Notas</div><div class="ln" style="width:90%"></div><div class="ln" style="width:60%"></div></div>
+  <div class="card" id="p2" style="left:80px;top:980px;width:920px;height:240px"><div class="lbl">Transcrição</div><div class="ln" style="width:95%"></div><div class="ln" style="width:75%"></div></div>
+  <div class="card" id="p3" style="left:80px;top:1260px;width:920px;height:240px"><div class="lbl">O que foi criado</div><div class="ln" style="width:55%"></div><div class="ln" style="width:80%"></div></div>
+  <div class="ilus">Ilustração</div>
+</div>
+
+<!-- CENA 6: 19-22 -->
+<div id="s6" class="scene clip" data-start="19" data-duration="3.2" data-track-index="5">
+  <div class="txt mid" style="top:300px">Ainda é <span class="lil">beta</span>.</div>
+  <div class="badge" id="g1" style="top:700px">Planos <span class="lil">Team</span> e <span class="lil">Enterprise</span></div>
+  <div class="badge" id="g2" style="top:1020px">Só no <span class="lil">Google Meet</span></div>
+</div>
+
+<!-- CENA 7: 22-25 -->
+<div id="s7" class="scene clip" data-start="22" data-duration="3" data-track-index="6">
+  <div id="t7" class="txt" style="top:520px;font-size:120px">Claude <span class="lil">Meetings</span></div>
+  <div id="t7b" class="txt mid" style="top:800px">Marca quem vive em <span class="lil">reunião</span>.</div>
+  <div id="t7c" class="cta" style="top:1240px;color:var(--ink)">@urlan.design</div>
+</div>
+
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+const IN = { y: 60, opacity: 0, duration: 0.5, ease: "power3.out" };
+const out = (id, t) => tl.to(id, { opacity: 0, y: -30, duration: 0.3, ease: "power2.in" }, t);
+
+// Cena 1 (título visível no frame 0)
+tl.fromTo("#t1", { scale: 0.96 }, { scale: 1, duration: 3, ease: "power1.out", transformOrigin: "left center" }, 0);
+tl.fromTo("#t1b", { y: 0 }, { y: -10, duration: 3, ease: "none" }, 0);
+out("#s1", 2.85);
+
+// Cena 2
+tl.from("#s2 .txt", { ...IN }, 3.05);
+["#k1","#k2","#k3"].forEach((k,i)=>tl.from(k,{ scale:0.85, opacity:0, duration:0.4, ease:"back.out(1.6)"},3.4+i*0.15));
+tl.from("#k4",{ scale:0.6, opacity:0, duration:0.6, ease:"back.out(2)"},4.9);
+out("#s2", 6.85);
+
+// Cena 3
+tl.from("#s3 .txt", { ...IN }, 7.05);
+tl.from("#bb",{ y:80, opacity:0, scale:0.92, duration:0.6, ease:"back.out(1.4)"},7.6);
+tl.from("#s3 .cta",{ opacity:0, y:30, duration:0.5 },9.2);
+out("#s3", 10.85);
+
+// Cena 4
+tl.from("#s4 .txt", { ...IN }, 11.05);
+tl.from("#c2",{ y:80, opacity:0, duration:0.6, ease:"power3.out"},11.7);
+tl.from("#c3",{ opacity:0, duration:0.5},13.3);
+out("#s4", 14.85);
+
+// Cena 5
+tl.from("#s5 .txt", { ...IN }, 15.05);
+["#p1","#p2","#p3"].forEach((p,i)=>tl.from(p,{ y:70, opacity:0, duration:0.5, ease:"power3.out"},15.7+i*0.55));
+out("#s5", 18.85);
+
+// Cena 6
+tl.from("#s6 .txt", { ...IN }, 19.05);
+tl.from("#g1",{ y:60, opacity:0, duration:0.5, ease:"power3.out"},19.6);
+tl.from("#g2",{ y:60, opacity:0, duration:0.5, ease:"power3.out"},20.3);
+out("#s6", 21.85);
+
+// Cena 7
+tl.from("#t7",{ y:50, opacity:0, duration:0.5, ease:"power3.out"},22.05);
+tl.from("#t7b",{ y:50, opacity:0, duration:0.5, ease:"power3.out"},22.6);
+tl.from("#t7c",{ opacity:0, duration:0.5},23.4);
+
+window.__timelines["main"] = tl;
+tl.seek(0);
+</script>
+</body>
+</html>
