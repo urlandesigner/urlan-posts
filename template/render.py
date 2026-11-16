@@ -420,6 +420,8 @@ def main(folder):
     p = json.loads((folder / "post.json").read_text())
     if p.get("style") == "texto":
         pages = [text_slide(s) for s in p["slides"]] + [text_closing(p)]
+        if p.get("cover_override"):
+            start = 2  # slide-01.png é a capa da série, renderizada à parte
     elif p.get("style") == "editorial":
         p_foot.update(p.get("footer", {}))
         items = p["items"]

@@ -1,46 +1,39 @@
 {
- "tag": "NOVIDADE",
- "cover": {
-  "title": "Claude na reunião",
-  "subtitle": "Claude Meetings, em beta desde novembro de 2026."
- },
  "slides": [
   {
-   "title": "O que é?",
-   "body": "O Claude entra na videochamada como participante visível, acompanha a conversa e trabalha durante a reunião.",
-   "takeaway": "o Claude vira participante",
-   "layout": "definicao",
-   "destaque": "participante visível"
+   "text": "O Claude agora entra na **reunião**.",
+   "sub": "Ele aparece na videochamada como participante.",
+   "pos": "bottom",
+   "size": "xl"
   },
   {
-   "title": "Como convidar?",
-   "body": "No Claude, abra Meetings, conecte o Google Agenda, escolha a reunião e clique em Add Claude.",
-   "takeaway": "o convite sai do calendário"
+   "text": "Pra convidar, clique em **Add Claude**.",
+   "sub": "Em Meetings, com o Google Agenda conectado.",
+   "pos": "top"
   },
   {
-   "title": "O que ele faz?",
-   "body": "Responde no chat, escreve as notas e os itens de ação e cria docs e quadros que todos editam.",
-   "takeaway": "docs e quadros saem da reunião"
+   "text": "Ele responde no **chat**.",
+   "sub": "E escreve as notas e os itens de ação.",
+   "pos": "middle"
   },
   {
-   "title": "Dá pra pedir falando?",
-   "body": "Diga: Claude, make a doc. Ou: Claude, make a whiteboard. Qualquer participante pode pedir.",
-   "takeaway": "qualquer um do time pede"
+   "text": "Peça um doc ou um **quadro**.",
+   "sub": "Qualquer participante pode pedir em voz alta.",
+   "pos": "bottom"
   },
   {
-   "title": "E depois da reunião?",
-   "body": "Cada reunião ganha uma página no claude.ai com notas, transcrição e tudo o que foi criado.",
-   "takeaway": "tudo fica numa página"
+   "text": "Tudo fica numa **página**.",
+   "sub": "Notas, transcrição e o que foi criado, no claude.ai.",
+   "pos": "top"
   },
   {
-   "title": "Qual o limite?",
-   "body": "Planos Team e Enterprise, só no Google Meet. Com convidado externo, só se o admin liberar.",
-   "takeaway": "outras plataformas virão depois",
-   "layout": "limite"
+   "text": "Ainda é **beta**.",
+   "sub": "Planos Team e Enterprise, só no Google Meet.",
+   "pos": "middle"
   }
  ],
  "closing": {
-  "title": "Em qual reunião você usaria?",
+  "title": "Em qual reunião você **usaria**?",
   "body": "Comenta o tipo de reunião e salva pra testar com o seu time."
  },
  "caption": "O Claude agora pode entrar em reuniões. Em novembro a Anthropic lançou, em beta, o Claude Meetings: ele participa de chamadas no Google Meet, responde no chat, escreve notas e cria docs e quadros que o time edita na hora. Está nos planos Team e Enterprise, e docs e quadros são gratuitos até 10 de fevereiro de 2027. Ele salva a transcrição, não o áudio, então avise todos antes de adicioná-lo.\n\nEm qual reunião você usaria? Comenta e salva pra testar com o time.\n\n#claude #inteligenciaartificial #designdeproduto #productdesign #ferramentasdeia",
@@ -48,11 +41,10 @@
   "https://claude.com/resources/articles/claude-meetings",
   "https://support.claude.com/en/articles/18325154-use-claude-meetings"
  ],
- "style": "alternado",
+ "style": "texto",
  "cover_override": {
   "style": "serie",
   "source": "testes-capa/serie/capa-meetings.html"
  },
- "grande": true,
  "font": "Google Sans Flex"
 }

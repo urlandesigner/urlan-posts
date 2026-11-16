@@ -1,33 +1,29 @@
 {
- "tag": "IA NO DESIGN",
- "cover": {
-  "title": "Repos do GitHub",
-  "subtitle": "Parte 3"
- },
  "slides": [
   {
-   "title": "Open Pencil",
-   "body": "Editor de design open source que abre e salva arquivos .fig do Figma.",
-   "takeaway": "tem MCP pra agentes de IA"
+   "text": "O Open Pencil abre arquivos do **Figma**.",
+   "sub": "Editor de design open source, com servidor MCP.",
+   "pos": "bottom",
+   "size": "xl"
   },
   {
-   "title": "transitions.dev",
-   "body": "Biblioteca de transições em CSS, cada uma com o código pronto pra copiar.",
-   "takeaway": "tem skill pra Claude Code e Cursor"
+   "text": "transitions.dev reúne **transições** em CSS.",
+   "sub": "Código pronto pra copiar, e uma skill pra agentes.",
+   "pos": "top"
   },
   {
-   "title": "unslop",
-   "body": "Skill pra Claude Code e Codex que corrige telas com cara de feitas por IA.",
-   "takeaway": "audita antes de editar"
+   "text": "O unslop corrige tela com cara de **IA**.",
+   "sub": "Skill pra Claude Code e Codex. Audita antes de editar.",
+   "pos": "middle"
   },
   {
-   "title": "Dembrandt",
-   "body": "Lê um site e devolve cores, fontes, espaçamento e sombras como tokens de design.",
-   "takeaway": "exporta DESIGN.md, Tailwind e shadcn"
+   "text": "O Dembrandt transforma um site em **tokens**.",
+   "sub": "Sai em DESIGN.md, Tailwind ou shadcn.",
+   "pos": "bottom"
   }
  ],
  "closing": {
-  "title": "Teste um essa semana",
+  "title": "Teste um **essa semana**.",
   "body": "Dembrandt e unslop funcionam num site ou tela que você já tem. Comenta qual testou."
  },
  "caption": "Mais quatro repositórios do GitHub pra quem desenha produto, todos atualizados nos últimos dias.\n\nO Open Pencil é um editor de design que abre arquivos do Figma. O transitions.dev reúne transições em CSS prontas pra copiar. O unslop corrige telas com cara de feitas por IA. O Dembrandt transforma o visual de um site em tokens de design.\n\nConfira a licença de cada um antes de usar em projeto de cliente.\n\nTeste um essa semana e comenta qual foi.\n\n#github #productdesign #uxdesign #inteligenciaartificial #designdeproduto",
@@ -68,11 +64,10 @@
    "why": "Exporta em DESIGN.md, tokens W3C, Tailwind e tema shadcn/ui."
   }
  ],
- "style": "alternado",
+ "style": "texto",
  "cover_override": {
   "style": "serie",
   "source": "testes-capa/serie/capa-repos-3.html"
  },
- "grande": true,
  "font": "Google Sans Flex"
 }
