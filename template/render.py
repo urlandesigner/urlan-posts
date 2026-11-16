@@ -204,7 +204,7 @@ def text_closing(p):
 <div class="s" style="background:{DARK};color:#fff">
   <div style="position:absolute;top:300px;left:96px;right:96px">
     <h2 class="h" style="font-size:100px;line-height:1.06">{rich(c['title'])}</h2>
-    <p style="margin-top:40px;font-size:40px;line-height:1.4;color:{DARK_MUTED};max-width:820px">{rich(c.get('body'))}</p>
+    <p style="margin-top:40px;font-size:54px;line-height:1.22;font-weight:500;color:{DARK_MUTED}">{rich(c.get('body'))}</p>
   </div>
   <div style="position:absolute;left:90px;right:90px;bottom:96px;height:196px;border-radius:26px;background:rgba(255,255,255,.05);
        border:2px solid rgba(255,255,255,.1);display:flex;align-items:center;padding:0 36px;gap:38px">
