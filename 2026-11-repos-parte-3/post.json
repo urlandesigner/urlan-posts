@@ -1,25 +1,44 @@
 {
- "style": "editorial",
- "case": "sentence",
  "tag": "IA NO DESIGN",
  "cover": {
-  "lines": [
-   "Repos do",
-   "**GitHub**"
-  ],
-  "tag": "(Parte 3)",
-  "subtitle": "O que eles fazem e por que importam pra quem desenha produto.",
-  "top_right": "Repos em alta",
-  "foot_right": ""
+  "title": "Repos do GitHub",
+  "subtitle": "Parte 3"
  },
- "footer": {
-  "left": "GitHub · nov 2026",
-  "right": "Open source\npra designers",
-  "top_right": "Repos em alta",
-  "label_what": "O que faz",
-  "label_why": "Por que importa"
+ "slides": [
+  {
+   "title": "Open Pencil",
+   "body": "Editor de design open source que abre e salva arquivos .fig do Figma.",
+   "takeaway": "tem MCP pra agentes de IA"
+  },
+  {
+   "title": "transitions.dev",
+   "body": "Biblioteca de transições em CSS, cada uma com o código pronto pra copiar.",
+   "takeaway": "tem skill pra Claude Code e Cursor"
+  },
+  {
+   "title": "unslop",
+   "body": "Skill pra Claude Code e Codex que corrige telas com cara de feitas por IA.",
+   "takeaway": "audita antes de editar"
+  },
+  {
+   "title": "Dembrandt",
+   "body": "Lê um site e devolve cores, fontes, espaçamento e sombras como tokens de design.",
+   "takeaway": "exporta DESIGN.md, Tailwind e shadcn"
+  }
+ ],
+ "closing": {
+  "title": "Teste um essa semana",
+  "body": "Dembrandt e unslop funcionam num site ou tela que você já tem. Comenta qual testou."
  },
- "items": [
+ "caption": "Mais quatro repositórios do GitHub pra quem desenha produto, todos atualizados nos últimos dias.\n\nO Open Pencil é um editor de design que abre arquivos do Figma. O transitions.dev reúne transições em CSS prontas pra copiar. O unslop corrige telas com cara de feitas por IA. O Dembrandt transforma o visual de um site em tokens de design.\n\nConfira a licença de cada um antes de usar em projeto de cliente.\n\nTeste um essa semana e comenta qual foi.\n\n#github #productdesign #uxdesign #inteligenciaartificial #designdeproduto",
+ "sources": [
+  "https://github.com/open-pencil/open-pencil",
+  "https://github.com/Jakubantalik/transitions.dev",
+  "https://github.com/heydamir/unslop",
+  "https://github.com/dembrandt/dembrandt"
+ ],
+ "note": "Estrelas pela API de busca do GitHub em 15/11/2026 (open-pencil 9868, transitions.dev 6342, unslop 16758, dembrandt 4026). Licenças: MIT, MIT/custom (transitions.dev restringe redistribuir como biblioteca concorrente), CC BY 4.0, MIT.",
+ "items_referencia": [
   {
    "name": "Open Pencil",
    "ref": "open-pencil/open-pencil",
@@ -49,19 +68,9 @@
    "why": "Exporta em DESIGN.md, tokens W3C, Tailwind e tema shadcn/ui."
   }
  ],
- "closing": {
-  "lines": [
-   "Teste um",
-   "**essa semana**"
-  ],
-  "body": "Dembrandt e unslop funcionam num site ou tela que você já tem. Comenta qual testou."
- },
- "caption": "Mais quatro repositórios do GitHub pra quem desenha produto, todos atualizados nos últimos dias.\n\nO Open Pencil é um editor de design que abre arquivos do Figma. O transitions.dev reúne transições em CSS prontas pra copiar. O unslop corrige telas com cara de feitas por IA. O Dembrandt transforma o visual de um site em tokens de design.\n\nConfira a licença de cada um antes de usar em projeto de cliente.\n\nTeste um essa semana e comenta qual foi.\n\n#github #productdesign #uxdesign #inteligenciaartificial #designdeproduto",
- "sources": [
-  "https://github.com/open-pencil/open-pencil",
-  "https://github.com/Jakubantalik/transitions.dev",
-  "https://github.com/heydamir/unslop",
-  "https://github.com/dembrandt/dembrandt"
- ],
- "note": "Estrelas pela API de busca do GitHub em 15/11/2026 (open-pencil 9868, transitions.dev 6342, unslop 16758, dembrandt 4026). Licenças: MIT, MIT/custom (transitions.dev restringe redistribuir como biblioteca concorrente), CC BY 4.0, MIT."
+ "style": "alternado",
+ "cover_override": {
+  "style": "serie",
+  "source": "testes-capa/serie/capa-repos-3.html"
+ }
 }
