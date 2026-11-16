@@ -1,56 +1,57 @@
 {
- "slides": [
-  {
-   "text": "O Claude agora entra na **reunião**.",
-   "sub": "Ele aparece na videochamada como participante.",
-   "pos": "bottom",
-   "size": "xl"
+  "slides": [
+    {
+      "text": "O Claude agora entra na **reunião**.",
+      "sub": "Ele aparece na videochamada como participante.",
+      "pos": "bottom",
+      "size": "xl"
+    },
+    {
+      "text": "Pra convidar, clique em **Add Claude**.",
+      "sub": "Em Meetings, com o Google Agenda conectado.",
+      "pos": "top"
+    },
+    {
+      "text": "Ele responde no **chat**.",
+      "sub": "E escreve as notas e os itens de ação.",
+      "pos": "middle"
+    },
+    {
+      "text": "Peça um doc ou um **quadro**.",
+      "sub": "Qualquer participante pode pedir em voz alta.",
+      "pos": "bottom"
+    },
+    {
+      "text": "Tudo fica numa **página**.",
+      "sub": "Notas, transcrição e o que foi criado, no claude.ai.",
+      "pos": "top"
+    },
+    {
+      "text": "Ainda é **beta**.",
+      "sub": "Planos Team e Enterprise, só no Google Meet.",
+      "pos": "middle"
+    }
+  ],
+  "closing": {
+    "title": "Em qual reunião você **usaria**?",
+    "body": "Comenta o tipo de reunião e salva pra testar com o seu time."
   },
-  {
-   "text": "Pra convidar, clique em **Add Claude**.",
-   "sub": "Em Meetings, com o Google Agenda conectado.",
-   "pos": "top"
+  "caption": "O Claude agora pode entrar em reuniões. Em novembro a Anthropic lançou, em beta, o Claude Meetings: ele participa de chamadas no Google Meet, responde no chat, escreve notas e cria docs e quadros que o time edita na hora. Está nos planos Team e Enterprise, e docs e quadros são gratuitos até 10 de fevereiro de 2027. Ele salva a transcrição, não o áudio, então avise todos antes de adicioná-lo.\n\nEm qual reunião você usaria? Comenta e salva pra testar com o time.\n\n#claude #inteligenciaartificial #designdeproduto #productdesign #ferramentasdeia",
+  "sources": [
+    "https://claude.com/resources/articles/claude-meetings",
+    "https://support.claude.com/en/articles/18325154-use-claude-meetings"
+  ],
+  "style": "texto",
+  "cover_override": {
+    "style": "serie",
+    "source": "testes-capa/serie/capa-meetings.html"
   },
-  {
-   "text": "Ele responde no **chat**.",
-   "sub": "E escreve as notas e os itens de ação.",
-   "pos": "middle"
-  },
-  {
-   "text": "Peça um doc ou um **quadro**.",
-   "sub": "Qualquer participante pode pedir em voz alta.",
-   "pos": "bottom"
-  },
-  {
-   "text": "Tudo fica numa **página**.",
-   "sub": "Notas, transcrição e o que foi criado, no claude.ai.",
-   "pos": "top"
-  },
-  {
-   "text": "Ainda é **beta**.",
-   "sub": "Planos Team e Enterprise, só no Google Meet.",
-   "pos": "middle"
+  "font": "Google Sans Flex",
+  "mlabs": {
+    "id": "ext_MzcwMTU5MTAz.iXMK5mjOiJ1A2rE6PESOa5",
+    "scheduledAt": "2026-11-17T10:00:00-03:00",
+    "link": "https://publish.mlabs.io/schedule/370159103/edit",
+    "status": "scheduled",
+    "nota": "Recriado em 16/11 apos reconexao do Instagram"
   }
- ],
- "closing": {
-  "title": "Em qual reunião você **usaria**?",
-  "body": "Comenta o tipo de reunião e salva pra testar com o seu time."
- },
- "caption": "O Claude agora pode entrar em reuniões. Em novembro a Anthropic lançou, em beta, o Claude Meetings: ele participa de chamadas no Google Meet, responde no chat, escreve notas e cria docs e quadros que o time edita na hora. Está nos planos Team e Enterprise, e docs e quadros são gratuitos até 10 de fevereiro de 2027. Ele salva a transcrição, não o áudio, então avise todos antes de adicioná-lo.\n\nEm qual reunião você usaria? Comenta e salva pra testar com o time.\n\n#claude #inteligenciaartificial #designdeproduto #productdesign #ferramentasdeia",
- "sources": [
-  "https://claude.com/resources/articles/claude-meetings",
-  "https://support.claude.com/en/articles/18325154-use-claude-meetings"
- ],
- "style": "texto",
- "cover_override": {
-  "style": "serie",
-  "source": "testes-capa/serie/capa-meetings.html"
- },
- "font": "Google Sans Flex",
- "mlabs": {
-  "id": "ext_MzcwMTAzODYw.kCAEiSoJobqV1cPPiZbYW1",
-  "scheduledAt": "2026-11-17T10:00:00-03:00",
-  "link": "https://publish.mlabs.io/schedule/370103860/edit",
-  "status": "scheduled"
- }
 }
