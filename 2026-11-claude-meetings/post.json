@@ -1,0 +1,56 @@
+{
+ "tag": "NOVIDADE",
+ "cover": {
+  "title": "Claude na reunião",
+  "subtitle": "Claude Meetings, em beta desde novembro de 2026."
+ },
+ "slides": [
+  {
+   "title": "O que é?",
+   "body": "O Claude entra na videochamada como participante visível, acompanha a conversa e trabalha durante a reunião.",
+   "takeaway": "o Claude vira participante",
+   "layout": "definicao",
+   "destaque": "participante visível"
+  },
+  {
+   "title": "Como convidar?",
+   "body": "No Claude, abra Meetings, conecte o Google Agenda, escolha a reunião e clique em Add Claude.",
+   "takeaway": "o convite sai do calendário"
+  },
+  {
+   "title": "O que ele faz?",
+   "body": "Responde no chat, escreve as notas e os itens de ação e cria docs e quadros que todos editam.",
+   "takeaway": "docs e quadros saem da reunião"
+  },
+  {
+   "title": "Dá pra pedir falando?",
+   "body": "Diga: Claude, make a doc. Ou: Claude, make a whiteboard. Qualquer participante pode pedir.",
+   "takeaway": "qualquer um do time pede"
+  },
+  {
+   "title": "E depois da reunião?",
+   "body": "Cada reunião ganha uma página no claude.ai com notas, transcrição e tudo o que foi criado.",
+   "takeaway": "tudo fica numa página"
+  },
+  {
+   "title": "Qual o limite?",
+   "body": "Beta nos planos Team e Enterprise, só no Google Meet. Com convidado externo, só se o admin liberar.",
+   "takeaway": "ainda é beta",
+   "layout": "limite"
+  }
+ ],
+ "closing": {
+  "title": "Você usaria o Claude na reunião?",
+  "body": "Comenta pra que e salva pra testar."
+ },
+ "caption": "O Claude agora pode entrar em reuniões. Em novembro a Anthropic lançou, em beta, o Claude Meetings: ele participa de chamadas no Google Meet, responde no chat, escreve notas e cria docs e quadros que o time edita na hora. Está nos planos Team e Enterprise, e docs e quadros são gratuitos até 10 de fevereiro de 2027. Ele salva a transcrição, não o áudio, então avise todos antes de adicioná-lo.\n\nVocê usaria o Claude na reunião? Comenta pra que e salva pra testar.\n\n#claude #inteligenciaartificial #designdeproduto #productdesign #ferramentasdeia",
+ "sources": [
+  "https://claude.com/resources/articles/claude-meetings",
+  "https://support.claude.com/en/articles/18325154-use-claude-meetings"
+ ],
+ "style": "alternado",
+ "cover_override": {
+  "style": "serie",
+  "source": "testes-capa/serie/capa-meetings.html"
+ }
+}
