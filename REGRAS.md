@@ -58,9 +58,9 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 1. Criar a pasta `AAAA-MM-tema/` com o `post.json` e gerar os slides: `python3 template/render.py AAAA-MM-tema`.
 2. Conferir a folha de contato dos slides antes de subir.
 3. Fazer commit e push. Nos links das imagens, usar o hash do commit, não `main`: `https://raw.githubusercontent.com/urlandesigner/urlan-posts/<commit>/<pasta>/slide-01.png`. Com `main`, o GitHub pode servir uma versão antiga em cache.
-4. Criar o post no Metricool (marca `urlan.design`, rede Instagram, tipo POST), com texto alternativo em cada imagem e `isAiGenerated: false`.
+4. Enviar as mídias e criar o post na mLabs para o perfil `ext_ODYyMzk3MA.7exPeI4iUtJyY-cNYfOl0u`, com texto alternativo quando suportado.
 5. Modo padrão: rascunho. Só publicar direto quando isso estiver combinado.
-6. Depois do horário marcado, conferir no Metricool se o status mudou para "Published" e guardar o link do post no `post.json` (campo `instagramUrl`). Um carrossel pode levar até 5 minutos para processar.
+6. Depois do horário marcado, conferir na mLabs se o status mudou para publicado e guardar o link no `post.json` (campo `instagramUrl`). Um carrossel pode levar alguns minutos para processar.
 
 ## Capas: referência fixa
 
@@ -75,7 +75,7 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 ## Stories
 
 - Um story por post (1080 × 1920): fundo da capa desfocado, selo "POST NOVO", capa num card, uma frase que só descreve o assunto. Sem chamadas tipo "corre no feed".
-- Agendar no Metricool com `type: STORY` e `autoPublish: false` (lembrete), porque o adesivo de link só entra pelo app. Mandar o link do post pro Urlan na hora.
+- Agendar na mLabs em modo lembrete quando o adesivo de link precisar ser incluído manualmente pelo app. Mandar o link do post pro Urlan na hora.
 
 ## Horário
 
