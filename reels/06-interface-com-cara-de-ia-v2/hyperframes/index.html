@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <title>Esta tela tem cara de IA. Onde você tocaria?</title>
+  <script src="assets/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: Anton; src: url("assets/Anton-Regular.ttf"); }
+    @font-face { font-family: Flex; src: url("assets/google-sans-flex-latin-full-normal.woff2"); font-weight: 100 1000; }
+    @font-face { font-family: Code; src: url("assets/google-sans-code-latin-500-normal.woff2"); }
+    :root { --ink:#1b1521; --paper:#f9f2e4; --lilac:#ddbbff; --accent:#6d28d9; --violet:#a855f7; --line:#d7cfc3; }
+    * { box-sizing:border-box; }
+    body, h1, h2, p { margin:0; }
+    body { background:#16121a; color:var(--paper); font-family:Flex, sans-serif; }
+    #film { width:1080px; height:1920px; overflow:hidden; position:relative; isolation:isolate; background:#18131c; }
+    .texture { position:absolute; inset:0; pointer-events:none; background:
+      radial-gradient(ellipse at 10% 74%, #35223d 0%, transparent 49%),
+      radial-gradient(ellipse at 95% 14%, #2c1f33 0%, transparent 44%); }
+    .ring { position:absolute; width:1250px; height:1250px; border:2px solid #4d3c50; border-radius:50%; left:450px; top:980px; opacity:.52; }
+    .ring::before,.ring::after { content:""; position:absolute; inset:30px; border:inherit; border-radius:inherit; }
+    .ring::after { inset:60px; }
+    .mast { position:absolute; left:94px; right:108px; top:208px; height:74px; border-bottom:2px solid #6e5f71; display:flex; justify-content:space-between; align-items:flex-start; }
+    .wordmark { font-size:37px; font-weight:850; letter-spacing:-.065em; line-height:1; }
+    .wordmark i { display:inline-block; width:15px; height:15px; margin-left:5px; border-radius:50%; background:var(--violet); }
+    .handle { font-size:29px; font-weight:500; color:#dccfe0; }
+    .copy { position:absolute; top:313px; left:94px; width:890px; }
+    .copy:not(#hook), #order, #error, #working, #ready, #duo, #focus-line, #press, #cta { visibility:hidden; }
+    .eyebrow, .meta, .stage-tag, .folio { font-family:Code,monospace; text-transform:uppercase; letter-spacing:.065em; }
+    .eyebrow { font-size:25px; color:var(--lilac); margin-bottom:19px; }
+    h1,h2 { font:normal 113px/1.09 Anton,sans-serif; text-transform:uppercase; letter-spacing:-.02em; }
+    .accent { color:var(--lilac); }
+    .copy p { margin-top:13px; font-size:44px; line-height:1.15; color:#eee3ed; font-weight:490; letter-spacing:-.035em; }
+    #desk { position:absolute; top:737px; left:101px; width:834px; height:706px; }
+    .screen { position:absolute; inset:0; border-radius:29px; background:var(--paper); color:var(--ink); box-shadow:0 25px 48px #0d09174d; }
+    .grid-screen { padding:48px; }
+    .appbar { display:flex; justify-content:space-between; align-items:center; height:62px; padding-bottom:19px; border-bottom:2px solid var(--line); }
+    .coado { font:normal 46px/.9 Anton,sans-serif; letter-spacing:-.045em; }
+    .meta { font-size:23px; color:#615764; }
+    .grid-screen h3 { font-size:51px; letter-spacing:-.052em; margin:35px 0 26px; }
+    .cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .option { position:relative; height:157px; display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start; border:2px solid #c6b8d2; border-radius:18px; background:linear-gradient(128deg,#eee4f2,#e2d4f1); padding:21px 26px; font-size:36px; letter-spacing:-.045em; font-weight:650; }
+    .option svg { width:44px; height:44px; color:#63477d; }
+    .option b { position:absolute; right:22px; top:18px; color:#826b91; font-weight:450; }
+    .hint { margin-top:25px; font-size:29px; color:#615865; }
+    #focus-line { position:absolute; inset:-4px; border:5px solid #6223ae; border-radius:20px; }
+    .order { padding:48px; }
+    .order-body { position:absolute; left:48px; right:48px; top:157px; }
+    .stage-tag { font-size:25px; color:#5f4a68; display:flex; gap:14px; align-items:center; }
+    .dot { width:16px; height:16px; background:var(--accent); border-radius:50%; }
+    .order-name { font:normal 88px/1.08 Anton,sans-serif; letter-spacing:-.025em; margin:20px 0 13px; }
+    .description { font-size:34px; line-height:1.2; color:#514857; }
+    .cup { position:absolute; width:246px; height:279px; object-fit:contain; right:-4px; top:-20px; }
+    .seam { position:absolute; top:422px; left:0; width:100%; height:2px; background:repeating-linear-gradient(90deg,transparent 0 9px,#c1b5af 9px 20px); }
+    .seam::before,.seam::after { content:""; width:25px; height:25px; position:absolute; top:-11px; border-radius:50%; background:#241b2a; }
+    .seam::before { left:-13px; } .seam::after { right:-13px; }
+    .actions { position:absolute; left:48px; right:48px; bottom:52px; }
+    .prompt { margin:0 0 18px; font-size:30px; line-height:1.2; color:#514857; }
+    .button { height:103px; padding:0 32px; background:var(--accent); color:white; border-radius:15px; display:flex; justify-content:space-between; align-items:center; font-size:39px; letter-spacing:-.035em; font-weight:690; }
+    .button svg { width:45px; height:45px; }
+    .state { position:absolute; inset:135px 27px 27px; border-radius:18px; background:var(--paper); padding:40px 21px 25px; }
+    .state .actions { left:21px; right:21px; bottom:25px; }
+    .state h3 { font:normal 78px/1.1 Anton,sans-serif; margin:28px 0 15px; }
+    .warning { width:19px; height:19px; transform:rotate(45deg); background:#a85424; }
+    .spinner { display:block; margin:72px auto 28px; width:92px; height:92px; border:9px solid #d9c7e7; border-top-color:var(--accent); border-radius:50%; }
+    #working { text-align:center; font-size:38px; color:#4c3d54; }
+    #ready { text-align:center; padding-top:26px; }
+    #ready .stage-tag { justify-content:center; }
+    .code { font:normal 171px/1 Anton,sans-serif; color:var(--accent); margin:22px 0; letter-spacing:.015em; }
+    .barcode { width:305px; height:50px; margin:22px auto 23px; display:flex; justify-content:center; gap:4px; }
+    .barcode i { flex-shrink:0; background:var(--ink); }
+    #press { position:absolute; top:547px; left:648px; width:74px; height:74px; border-radius:50%; border:5px solid white; background:#ffffff44; pointer-events:none; }
+    #duo { position:absolute; top:723px; left:94px; width:842px; display:flex; gap:20px; }
+    .sample { flex:1; }
+    .sample figcaption { font-family:Code; font-size:27px; letter-spacing:.09em; color:var(--lilac); margin-bottom:19px; text-transform:uppercase; }
+    figure { margin:0; }
+    .mini { height:405px; padding:28px; border-radius:21px; background:var(--paper); color:var(--ink); }
+    .mini .coado { font-size:35px; padding-bottom:18px; border-bottom:1px solid var(--line); }
+    .mini h4 { margin:24px 0 18px; font-size:34px; line-height:1.07; letter-spacing:-.045em; }
+    .mini-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .mini-grid span { border:1px solid #c4b5cf; background:#e6daed; border-radius:9px; font-size:24px; padding:22px 10px; letter-spacing:-.055em; }
+    .mini p { font-size:25px; color:#605365; }
+    .mini .button { margin-top:39px; height:90px; padding:0 17px; font-size:28px; }
+    #cta { position:absolute; left:94px; top:1268px; width:842px; border-top:2px solid #87718c; padding-top:31px; display:flex; gap:22px; align-items:center; font-size:39px; font-weight:600; letter-spacing:-.035em; }
+    #cta svg { width:39px; height:49px; color:var(--lilac); }
+    .footer { position:absolute; top:1514px; left:94px; width:842px; border-top:2px solid #6e5f71; padding-top:17px; display:flex; justify-content:space-between; align-items:center; }
+    .folio { font-size:22px; color:#cbbbcc; }
+    .bars { display:flex; gap:6px; }
+    .bars i { width:25px; height:7px; background:#68596c; }
+    .defs { position:absolute; width:0; height:0; overflow:hidden; }
+    .icon { fill:none; stroke:currentColor; stroke-width:1.65; stroke-linecap:round; stroke-linejoin:round; }
+  </style>
+</head>
+<body>
+<main id="film" data-composition-id="cafe" data-width="1080" data-height="1920" data-duration="24" data-start="0" data-fps="30">
+  <svg class="defs" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="menu-icon" viewBox="0 0 24 24"><path d="m3 5 7 1v15l-7-2zM10 6l11-2v15l-11 2"/></symbol>
+    <symbol id="bag-icon" viewBox="0 0 24 24"><path d="M4 8h16l1 13H3zM8 8V6a4 4 0 0 1 8 0v2"/></symbol>
+    <symbol id="history-icon" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2 7M3 5v6h6M12 7v5l4 2"/></symbol>
+    <symbol id="profile-icon" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 6 0 0 1 16 0v2z"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M3 12h17m-7-7 7 7-7 7"/></symbol>
+    <symbol id="bookmark" viewBox="0 0 24 30"><path d="M3 2h18v25l-9-6-9 6z"/></symbol>
+  </defs></svg>
+  <div class="texture"></div><div class="ring"></div>
+  <header class="mast"><span class="wordmark">UD Labs<i></i></span><span class="handle">@urlan.design</span></header>
+  <section class="copy" id="hook"><div class="eyebrow">IA no design de produto</div><h1>Tela com<br><span class="accent">cara de IA?</span></h1><p>Seu café tá pronto. Onde você tocaria?</p></section>
+  <section class="copy" id="lost"><div class="eyebrow">Primeiro rascunho</div><h2>Tudo tem<br><span class="accent">o mesmo peso.</span></h2><p>Cadê o código de retirada?</p></section>
+  <section class="copy" id="priority"><div class="eyebrow">Revisão de hierarquia</div><h2>Um botão<br><span class="accent">pra retirar.</span></h2><p>O roxo destaca o próximo passo.</p></section>
+  <section class="copy" id="offline"><div class="eyebrow">Teste de conexão</div><h2>E se <span class="accent">a rede cair?</span></h2><p>A pessoa ainda está no balcão.</p></section>
+  <section class="copy" id="retry"><div class="eyebrow">Segunda tentativa</div><h2>O pedido<br><span class="accent">continua aqui.</span></h2><p>Agora dá pra mostrar o código.</p></section>
+  <section class="copy" id="wrap"><div class="eyebrow">Antes e depois</div><h2>Onde você <span class="accent">tocaria?</span></h2><p>Mesmo café. Duas telas de retirada.</p></section>
+  <div id="desk">
+    <div class="screen grid-screen" id="grid">
+      <div class="appbar"><span class="coado">coado.</span><span class="meta">início</span></div>
+      <h3>Seu café tá pronto.</h3>
+      <div class="cards">
+        <div class="option"><svg class="icon"><use href="#menu-icon"/></svg>Cardápio<b>↗</b></div>
+        <div class="option"><svg class="icon"><use href="#bag-icon"/></svg>Meu pedido<b>↗</b><i id="focus-line"></i></div>
+        <div class="option"><svg class="icon"><use href="#history-icon"/></svg>Histórico<b>↗</b></div>
+        <div class="option"><svg class="icon"><use href="#profile-icon"/></svg>Perfil<b>↗</b></div>
+      </div>
+      <div class="hint">Retirada no balcão</div>
+    </div>
+    <div class="screen order" id="order">
+      <div class="appbar"><span class="coado">coado.</span><span class="meta">meu pedido</span></div>
+      <div id="main-order">
+        <div class="order-body"><span class="stage-tag"><i class="dot"></i>Pronto para retirar</span><div class="order-name">Café coado</div><div class="description">Retirada no balcão</div><img class="cup" src="assets/copo.svg" alt=""></div>
+        <div class="seam"></div>
+        <div class="actions"><p class="prompt">Mostre o código no balcão.</p><div class="button">Ver código de retirada<svg class="icon"><use href="#arrow"/></svg></div></div>
+      </div>
+      <div class="state" id="error"><span class="stage-tag"><i class="warning"></i>Conexão interrompida</span><h3>Você está offline.</h3><div class="description">Seu pedido está guardado.</div><div class="actions"><div class="button">Tentar de novo<svg class="icon"><use href="#arrow"/></svg></div></div></div>
+      <div class="state" id="working"><i class="spinner"></i>Buscando seu código…</div>
+      <div class="state" id="ready"><span class="stage-tag">Código de retirada</span><div class="code">C · 07</div><div class="barcode" aria-hidden="true"></div><div class="description">Mostre no balcão para retirar seu café.</div></div>
+    </div>
+    <div id="press"></div>
+  </div>
+  <div id="duo">
+    <figure class="sample"><figcaption>Rascunho</figcaption><div class="mini"><div class="coado">coado.</div><h4>Seu café tá pronto.</h4><div class="mini-grid"><span>Cardápio</span><span>Meu pedido</span><span>Histórico</span><span>Perfil</span></div></div></figure>
+    <figure class="sample"><figcaption>Revisão</figcaption><div class="mini"><div class="coado">coado.</div><h4>Café coado</h4><p>Pronto para retirar</p><div class="button">Ver código de retirada</div></div></figure>
+  </div>
+  <div id="cta"><svg class="icon"><use href="#bookmark"/></svg>Salva pra revisar a próxima tela.</div>
+  <footer class="footer"><span class="folio">Interface ilustrativa</span><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></footer>
+</main>
+<script>
+  const barcode = document.querySelector('.barcode');
+  for (const width of [3,7,4,2,8,3,3,6,2,9,5,2,7,4,3,6,2,4,8,3,5,4,7,3,2,8,3,5,2,6]) {
+    const bar = document.createElement('i');
+    bar.style.width = width + 'px';
+    barcode.appendChild(bar);
+  }
+  const tl = gsap.timeline({paused:true, defaults:{ease:'power3.out'}});
+  const beats = [['#hook',0], ['#lost',3], ['#priority',7], ['#offline',11], ['#retry',15.5], ['#wrap',20]];
+  beats.forEach(([selector,time],index) => {
+    if (index) {
+      tl.to(beats[index-1][0], {autoAlpha:0, y:-14, duration:.14}, time-.14);
+      tl.fromTo(selector,{autoAlpha:0,y:28},{autoAlpha:1,y:0,duration:.30},time);
+    }
+    tl.set(document.querySelectorAll('.bars i')[index], {backgroundColor:'#dab6ff'}, time);
+  });
+  tl.fromTo('#grid',{y:32,rotation:1.6},{y:0,rotation:0,duration:.84},0);
+  tl.to('.ring',{rotation:18,x:-90,y:-130,duration:24,ease:'none'},0);
+  tl.fromTo('#focus-line',{autoAlpha:0,scale:1.10},{autoAlpha:1,scale:1,duration:.4},4.7);
+  tl.to('.option:not(:nth-child(2))',{opacity:.58,duration:.38},5.04);
+  tl.to('#grid',{y:-40,rotation:-2,autoAlpha:0,duration:.32},6.87);
+  tl.fromTo('#order',{y:67,rotation:2.4,autoAlpha:0},{y:0,rotation:0,autoAlpha:1,duration:.46},6.97);
+  tl.from('.cup',{y:-28,rotation:7,duration:.75},7.12);
+  function tap(time) {
+    tl.fromTo('#press',{autoAlpha:0,scale:.22},{autoAlpha:1,scale:.66,duration:.14,immediateRender:false},time);
+    tl.to('#press',{autoAlpha:0,scale:1.43,duration:.32},time+.16);
+  }
+  function changeState(from,to,time) {
+    tl.set(from,{autoAlpha:0},time);
+    tl.set(to,{autoAlpha:1},time);
+    tl.fromTo(to,{y:12},{y:0,duration:.22,immediateRender:false},time);
+  }
+  tap(10.74);
+  changeState('#main-order','#working',11.02);
+  tl.to('.spinner',{rotation:360,duration:.67,ease:'linear'},11.02);
+  changeState('#working','#error',11.69);
+  tap(15.18);
+  changeState('#error','#working',15.49);
+  tl.to('.spinner',{rotation:720,duration:.64,ease:'linear'},15.49);
+  changeState('#working','#ready',16.13);
+  tl.from('.code',{scale:.91,duration:.48},16.13);
+  tl.from('.barcode',{clipPath:'inset(0 100% 0 0)',duration:.48},16.35);
+  tl.to('#desk',{autoAlpha:0,y:-28,duration:.2},19.8);
+  tl.set('#duo',{autoAlpha:1},20);
+  tl.from('#duo figure',{y:43,opacity:0,stagger:.12,duration:.42},20);
+  tl.fromTo('#cta',{autoAlpha:0,y:18},{autoAlpha:1,y:0,duration:.37},20.85);
+  window.__timelines = {cafe:tl};
+</script>
+</body>
+</html>

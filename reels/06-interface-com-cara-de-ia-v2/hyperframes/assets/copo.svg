@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 360" width="320" height="360" role="img" aria-label="Copo de café com tampa escura e cinta roxa da cafeteria fictícia Coado">
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1" y1=".2" y2=".5" gradientUnits="objectBoundingBox">
+      <stop stop-color="#bcaa91"/>
+      <stop offset=".19" stop-color="#efdfc4"/>
+      <stop offset=".42" stop-color="#fff2db"/>
+      <stop offset=".73" stop-color="#f4e7ce"/>
+      <stop offset="1" stop-color="#bbaa93"/>
+    </linearGradient>
+    <linearGradient id="sleeve">
+      <stop stop-color="#5d259c"/>
+      <stop offset=".3" stop-color="#985ce6"/>
+      <stop offset=".58" stop-color="#ad72f6"/>
+      <stop offset=".83" stop-color="#914fdb"/>
+      <stop offset="1" stop-color="#6525a8"/>
+    </linearGradient>
+    <linearGradient id="lid">
+      <stop stop-color="#211a25"/>
+      <stop offset=".36" stop-color="#443848"/>
+      <stop offset=".66" stop-color="#3a313d"/>
+      <stop offset="1" stop-color="#201c22"/>
+    </linearGradient>
+    <pattern id="ribs" width="5.8" height="20" patternUnits="userSpaceOnUse">
+      <path d="M1 0v20" stroke="#c7aebf" stroke-opacity=".35" stroke-width="1.5"/>
+      <path d="M3.7 0v20" stroke="#130e16" stroke-opacity=".75" stroke-width="1.8"/>
+    </pattern>
+    <pattern id="fibers" width="17" height="19" patternUnits="userSpaceOnUse">
+      <path d="m2 7 3 2m8 5 1.8 1.4m-7.6.4 1.2 1" fill="none" stroke="#694b3f" stroke-opacity=".25" stroke-width=".85"/>
+      <path d="m11 3 1.5.9" stroke="#fff6de" stroke-width="1.2"/>
+    </pattern>
+    <pattern id="hatch" width="4.8" height="4.8" patternTransform="rotate(27)" patternUnits="userSpaceOnUse">
+      <path d="M1 0v4.8" stroke="#401466" stroke-width=".8" opacity=".85"/>
+    </pattern>
+    <path id="body" d="M64 77q94 25 187-2l-23 218q-1 17-64 22-61 0-65-13z"/>
+    <path id="band" d="M74 146q86 24 172-4l-11 100q-75 25-145 2z"/>
+    <radialGradient id="shadow">
+      <stop stop-color="#211423" stop-opacity=".42"/>
+      <stop offset=".55" stop-color="#332138" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#322036" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="167" cy="315" rx="104" ry="20" fill="url(#shadow)" transform="rotate(-5 167 315)"/>
+  <g transform="rotate(-9 157 177)">
+    <use href="#body" fill="url(#paper)" stroke="#392a33" stroke-width="2.4" stroke-linejoin="round"/>
+    <use href="#body" fill="url(#fibers)"/>
+    <path d="M65 82q95 28 185-2l-1.4 9q-88 32-181 1z" fill="#513c3c" opacity=".25"/>
+    <path d="M97 293q0 14 47 17 54 4 85-13" fill="none" stroke="#a99579" stroke-width="1.8"/>
+    <path d="M102 300q12 11 50 10" fill="none" stroke="#fff5de" stroke-width="2"/>
+
+    <use href="#band" fill="url(#sleeve)" stroke="#4b245e" stroke-width="1.8"/>
+    <path d="M74 146q14 5 35 8l12 98q-16-1-31-8zm146 4 26-8-11 100q-13 6-31 9z" fill="url(#hatch)" opacity=".48"/>
+    <path d="M78 152q76 21 163-4m-150 91q72 22 141-2" stroke="#d394ff" opacity=".7" stroke-width="1.25" fill="none"/>
+    <path d="M92 247q70 23 143-3" fill="none" stroke="#806d68" stroke-width="2" opacity=".45"/>
+
+    <!-- Custom single-letter mark with a drop-like terminal. -->
+    <path d="M181 183c-7-9-18-13-31-10-15 4-25 16-26 31-.9 14 10 25 26 26 12 1 22-4 30-14l-9-8c-5 6-11 10-18 10-7-.2-13-5-13-13 0-9 6-18 15-21 7-2 13 1 17 7z" fill="#fff3da"/>
+    <circle cx="190" cy="222" r="6.6" fill="#fff3da"/>
+
+    <path d="m61 69 6-19q2-11 26-17 58-15 119-5 28 5 32 16l6 21 7 4 1 10q-1 10-28 17-63 17-131 5-32-5-40-15l-1-10z" fill="url(#lid)" stroke="#1c171e" stroke-width="2.8"/>
+    <path d="m66 53 3-7q7-14 63-19 60-7 101 6 8 3 12 10l2 12q-24 21-95 24-61 3-86-13z" fill="url(#ribs)"/>
+    <ellipse cx="156" cy="48" rx="88" ry="23" transform="rotate(-2 156 48)" fill="#564b58" stroke="#251f28" stroke-width="2"/>
+    <ellipse cx="156" cy="47" rx="74" ry="15.3" fill="#362f38" stroke="#716172" stroke-width="1.4"/>
+    <path d="M90 47q26-16 76-15 34-1 55 7" fill="none" stroke="#ad98a3" stroke-opacity=".7" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M174 49q14-1 27-5 7-2 9 1 1 4-7 6-14 4-27 4-7-.5-2-6z" fill="#0f0c11" stroke="#776a75" stroke-width="1.3"/>
+    <path d="M59 74q27 18 98 15 65-1 98-20m-195 12q34 18 97 15 67-2 98-17" fill="none" stroke="#79677a" stroke-width="1.7" opacity=".85"/>
+    <path d="M71 78q14 6 31 8" stroke="#a18c99" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
