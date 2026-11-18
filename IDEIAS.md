@@ -4,6 +4,13 @@ Fila de temas aprovados ou sugeridos. Ao produzir um, mover para "Feitos" com a 
 
 ## Próximos
 
+### Reel: conectei o Codex ao meu Instagram pelo MCP da mLabs
+- **Formato:** Reel curto, com demonstração real do fluxo.
+- **Gancho:** “Agora eu consigo gerenciar meu Instagram conversando com o Codex.”
+- **Ângulo:** mostrar o Codex consultando o calendário, conferindo publicações, criando um rascunho, enviando imagens e agendando pela mLabs, sem dizer que a conexão é direta com o Instagram.
+- **Fonte oficial:** https://www.mlabs.com.br/funcionalidades/ia-mcp/
+- **Status:** guardado para depois. Não criar roteiro, mídia, rascunho ou agendamento até novo pedido do Urlan.
+
 ### Color combos pra UI (capa aprovada em 29/10/2026)
 - **Capa aprovada:** `testes-capa/color-combos/capa-b4.png` (foto de teclas no Nano Banana Pro, título em Google Sans Flex peso 800, caixa alta, "COLOR" branco e "COMBOS" em #A255FD). Arquivo-fonte: `capa-b4.html` + `teclas.png`.
 - **Pendente:** definir o ângulo (o tema "color combos" já saiu no feed): paletas pra interfaces com IA, combinações que passam no contraste ou paletas de produtos conhecidos. Título e subtítulo da capa são provisórios.
