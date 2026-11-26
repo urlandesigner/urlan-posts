@@ -1,0 +1,51 @@
+{
+  "style": "alternado",
+  "tag": "BLACK FRIDAY",
+  "cover": {
+    "title": "5 truques de design da Black Friday",
+    "subtitle": "Telas que apressam a sua compra. Todos têm nome."
+  },
+  "slides": [
+    {
+      "title": "O contador é real?",
+      "body": "Alguns relógios de oferta voltam ao início quando chegam a zero ou quando você abre outro navegador.",
+      "takeaway": "o nome disso é urgência falsa"
+    },
+    {
+      "title": "Restam mesmo só 2?",
+      "body": "O aviso de últimas unidades pode não ter estoque de verdade por trás. É escassez falsa.",
+      "takeaway": "a Senacon pediu prova às lojas"
+    },
+    {
+      "title": "Quem marcou esse item?",
+      "body": "Garantia estendida ou seguro já vem marcado no carrinho. Se você não desmarca, paga junto.",
+      "takeaway": "confira o carrinho antes de pagar"
+    },
+    {
+      "title": "Por que o preço subiu?",
+      "body": "O preço baixo aparece no anúncio, e o frete e as taxas só surgem no fim da compra.",
+      "takeaway": "compare o valor total"
+    },
+    {
+      "title": "Recusar te faz sentir mal?",
+      "body": "O botão de recusar usa uma frase que faz você se sentir mal, como \"não quero economizar\".",
+      "takeaway": "o nome disso é confirmshaming"
+    }
+  ],
+  "closing": {
+    "title": "Qual desses você já viu?",
+    "body": "Comenta o número. Se você desenha telas, saber esses nomes ajuda a dizer não no time."
+  },
+  "caption": "A Black Friday é nesta sexta, 27. Muitas telas de compra usam truques de design pra apressar a decisão: urgência falsa, escassez falsa, item pré-marcado, custo escondido e confirmshaming.\n\nNo dia 18, a Senacon notificou grandes lojas e plataformas e pediu explicação sobre contadores que reiniciam, avisos de estoque sem prova e serviços incluídos automaticamente.\n\nPra quem desenha produto, saber o nome de cada truque ajuda a argumentar contra eles no time.\n\nQual desses você já viu? Comenta o número e manda pra quem vai comprar na sexta.\n\n#blackfriday #uxdesign #darkpatterns #designdeproduto #productdesign",
+  "sources": [
+    "https://www.deceptive.design/types",
+    "https://www.deceptive.design/types/fake-urgency",
+    "https://portaldocerrado.com/senacon-notifica-plataformas/",
+    "https://www.mpmg.mp.br/portal/menu/comunicacao/noticias/black-friday-2026-tudo-pela-metade-do-dobro-veja-as-dicas-do-procon-mpmg-para-comprar-sem-cair-em-armadilhas.shtml"
+  ],
+  "cover_override": {
+    "style": "serie",
+    "source": "testes-capa/serie/capa-black-friday.html"
+  },
+  "schedule": "2026-11-26T10:00:00-03:00"
+}
