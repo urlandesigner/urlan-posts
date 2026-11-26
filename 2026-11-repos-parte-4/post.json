@@ -1,0 +1,62 @@
+{
+  "style": "editorial",
+  "case": "sentence",
+  "tag": "IA NO DESIGN",
+  "cover": {
+    "lines": ["Repos do", "**GitHub**"],
+    "tag": "(Parte 4)",
+    "subtitle": "Quatro repositórios novos pra quem desenha produto com IA.",
+    "top_right": "Repos novos",
+    "foot_right": ""
+  },
+  "footer": {
+    "left": "GitHub · nov 2026",
+    "right": "Open source\npra designers",
+    "top_right": "Repos novos",
+    "label_what": "O que faz",
+    "label_why": "Por que importa"
+  },
+  "items": [
+    {
+      "name": "Solid Glass",
+      "ref": "deeplethe/solid-glass",
+      "stat": "Criado em 12/10/2026",
+      "what": "Design system pra interfaces de IA, num só arquivo CSS que funciona com shadcn/ui.",
+      "why": "Já traz componentes de interface de agente, como campo de mensagem, passos de ferramenta e anel de contexto."
+    },
+    {
+      "name": "Craft",
+      "ref": "diego3g/craft",
+      "stat": "Criado em 15/11/2026",
+      "what": "Skills pra agentes de IA desenharem telas completas, com todos os estados, a partir do seu design system.",
+      "why": "Funciona com Paper, Figma ou HTML. O adaptador do Figma ainda não foi testado."
+    },
+    {
+      "name": "Open Artifact",
+      "ref": "JimLiu/open-artifact",
+      "stat": "Criado em 17/11/2026",
+      "what": "Deixa agentes de código gerar slides, designs, whiteboards e docs que você abre, edita e comenta num editor local.",
+      "why": "Roda na sua máquina, sem conta, e exporta pra PDF, PPTX, Word ou PNG, conforme o tipo."
+    },
+    {
+      "name": "Design System Workflow Kit",
+      "ref": "masofon/design-system-workflow-kit",
+      "stat": "Criado em 12/10/2026",
+      "what": "Fluxo pro Claude Code organizar um design system, com um documento de referência por componente.",
+      "why": "Tem etapas de checagem antes de marcar o componente do Figma como pronto."
+    }
+  ],
+  "closing": {
+    "lines": ["Qual entra", "no seu **fluxo?**"],
+    "body": "Teste um essa semana e comenta qual foi. Todos funcionam com Claude Code ou com o seu projeto atual."
+  },
+  "caption": "Mais quatro repositórios do GitHub pra quem desenha produto, todos criados entre outubro e novembro de 2026.\n\nO Solid Glass é um design system pra interfaces de IA. O Craft ensina agentes a desenhar telas com todos os estados. O Open Artifact abre slides, designs e docs gerados por agentes num editor local. O Design System Workflow Kit organiza o trabalho de componentes no Claude Code.\n\nSão projetos novos, então confira a licença e a maturidade de cada um antes de usar com cliente.\n\nTeste um essa semana e comenta qual foi.\n\n#github #productdesign #designsystem #inteligenciaartificial #designdeproduto",
+  "sources": [
+    "https://github.com/deeplethe/solid-glass",
+    "https://github.com/diego3g/craft",
+    "https://github.com/JimLiu/open-artifact",
+    "https://github.com/masofon/design-system-workflow-kit"
+  ],
+  "note": "Datas de criação pela busca da API do GitHub em 22/11/2026. Estrelas não confirmadas (leituras divergentes), por isso não aparecem. Licenças: Solid Glass MIT, Open Artifact Apache-2.0, Workflow Kit MIT; Craft aparece como MIT no README e 'other' na API, conferir.",
+  "schedule": "2026-11-26T10:00:00-03:00"
+}

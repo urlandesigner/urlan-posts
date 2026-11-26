@@ -4,6 +4,13 @@ Fila de temas aprovados ou sugeridos. Ao produzir um, mover para "Feitos" com a 
 
 ## Próximos
 
+### Design critique assíncrono com a interface web do Urlan (guardado em 25/11/2026)
+- **Pilar:** Projetos (demonstra capacidade) + IA no Design. **Objetivo:** autoridade e alcance.
+- **Ângulo:** antes, o critique era ao vivo, com cada pessoa comentando no Figma. Agora o protótipo já nasce em código e a interface web que o Urlan criou permite o critique assíncrono, sem agenda. Skills de critique com IA existem, mas nada substitui o olhar humano; o formato novo deixa mais gente participar.
+- **Cuidado:** escrever "no meu fluxo o protótipo já nasce em código", não "protótipos no Figma não são mais usados".
+- **Formato sugerido:** Reel com gravação de tela da ferramenta, ou carrossel de 6 slides.
+- **Pendente:** nome e link da ferramenta, como funciona na prática, se já foi usada com time real e gravação de tela. Não criar roteiro, mídia ou rascunho até o Urlan conseguir gravar a ferramenta.
+
 ### Reel: conectei o Codex ao meu Instagram pelo MCP da mLabs
 - **Formato:** Reel curto, com demonstração real do fluxo.
 - **Gancho:** “Agora eu consigo gerenciar meu Instagram conversando com o Codex.”

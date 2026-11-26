@@ -1,0 +1,48 @@
+{
+  "tag": "IA NO DESIGN",
+  "cover": {
+    "title": "Claude Design muda de endereço",
+    "subtitle": "O site separado fecha em 14 de dezembro. Veja o que fazer antes."
+  },
+  "slides": [
+    {
+      "title": "O que fecha?",
+      "body": "O site claude.ai/design deixa de funcionar em 14 de dezembro de 2026. Até lá, dá pra continuar usando.",
+      "takeaway": "o prazo é 14/12"
+    },
+    {
+      "title": "O Design acabou?",
+      "body": "Não. Novos designs, design systems e slides passam a ser criados dentro do Claude, como artifacts.",
+      "takeaway": "a ferramenta continua"
+    },
+    {
+      "title": "E meu design system?",
+      "body": "Mover copia o design system pro Claude. Depois disso, o original no site antigo vira somente leitura.",
+      "takeaway": "edição nova só no Claude"
+    },
+    {
+      "title": "E os projetos?",
+      "body": "Projeto movido vira artifact e a cópia antiga fica somente leitura. Isso não dá pra desfazer.",
+      "takeaway": "só o dono pode mover"
+    },
+    {
+      "title": "E chats e comentários?",
+      "body": "Chats e comentários não são movidos. O que ficar no site antigo é apagado algum tempo depois do fechamento.",
+      "takeaway": "salve o que importa antes"
+    },
+    {
+      "title": "Dá pra baixar?",
+      "body": "Dá. Em Compartilhar, escolha Project HTML e exporte o .zip do projeto. Não conta no limite de uso.",
+      "takeaway": "exportar é de graça"
+    }
+  ],
+  "closing": {
+    "title": "Você usa o Claude Design?",
+    "body": "Comenta se já moveu seu design system e salva o post pra não perder o prazo."
+  },
+  "caption": "O Claude Design como site separado (claude.ai/design) fecha em 14 de dezembro de 2026. Depois disso, designs, design systems e slides passam a ser criados dentro do Claude, como artifacts.\n\nQuem tem design system ou projeto lá pode mover pro Claude ou baixar o .zip antes da data. Chats e comentários não são movidos.\n\nVocê já moveu o seu? Comenta aqui e salva o post pra lembrar do prazo.\n\n#claudedesign #designsystem #productdesign #inteligenciaartificial #designdeproduto",
+  "sources": [
+    "https://support.claude.com/en/articles/17440474-move-from-standalone-claude-design-to-claude"
+  ],
+  "schedule": "2026-11-23T10:00:00-03:00"
+}

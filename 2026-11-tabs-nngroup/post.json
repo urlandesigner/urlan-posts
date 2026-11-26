@@ -1,0 +1,48 @@
+{
+  "tag": "RECURSOS",
+  "cover": {
+    "title": "6 regras pra usar tabs direito",
+    "subtitle": "Do guia da NN/g, que tem 28 regras no total."
+  },
+  "slides": [
+    {
+      "title": "Quando usar tabs?",
+      "body": "Quando o conteúdo é longo e tem grupos claros. Cada tab mostra uma parte por vez.",
+      "takeaway": "sem grupos claros, não use"
+    },
+    {
+      "title": "Quantas tabs?",
+      "body": "Poucas. Quando elas passam do espaço e viram carrossel, as escondidas ficam mais difíceis de achar.",
+      "takeaway": "menos tabs, melhor"
+    },
+    {
+      "title": "Como mostrar a tab ativa?",
+      "body": "Use pelo menos dois sinais, como sublinhado grosso, negrito, cor ou fundo. Um traço fino de 1 px passa batido.",
+      "takeaway": "dois sinais, não um"
+    },
+    {
+      "title": "Tab ou página?",
+      "body": "Tab muda o conteúdo na mesma página. Tab que leva pra outra página confunde. Não misture os dois tipos.",
+      "takeaway": "todas com o mesmo comportamento"
+    },
+    {
+      "title": "Dá pra comparar?",
+      "body": "Não. Quem precisa comparar entre tabs vai ter que lembrar o que viu na outra. Prefira uma página só.",
+      "takeaway": "comparar pede página única"
+    },
+    {
+      "title": "E o rótulo?",
+      "body": "Use de 1 a 2 palavras, sem caixa alta. Rótulo longo sugere que a escolha é complexa demais pra tabs.",
+      "takeaway": "descreve o que tem dentro"
+    }
+  ],
+  "closing": {
+    "title": "Qual regra você já quebrou?",
+    "body": "Comenta aqui e salva o post pra revisar suas telas."
+  },
+  "caption": "A Nielsen Norman Group tem um guia com 28 regras pra tabs, revisado em setembro de 2026.\n\nEstes slides trazem seis delas: quando usar, quantas tabs mostrar, como marcar a tab ativa, a diferença entre tab e navegação, comparação e rótulos.\n\nVale conferir nas suas telas antes da próxima entrega. Qual regra você já quebrou sem perceber? Comenta aqui e salva o post pra revisar depois.\n\n#uxdesign #uidesign #productdesign #designdeproduto #usabilidade",
+  "sources": [
+    "https://www.nngroup.com/articles/tabs-used-right/"
+  ],
+  "schedule": "2026-11-25T10:00:00-03:00"
+}

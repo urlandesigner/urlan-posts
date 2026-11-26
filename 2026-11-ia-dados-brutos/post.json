@@ -1,0 +1,48 @@
+{
+  "tag": "PESQUISA",
+  "cover": {
+    "title": "IA desenha melhor com pesquisa resumida",
+    "subtitle": "A NN/g comparou comentários brutos de usuários com um resumo deles."
+  },
+  "slides": [
+    {
+      "title": "Como foi o teste?",
+      "body": "A NN/g pediu pra IA desenhar duas telas: remarcar um voo cancelado e finalizar uma compra online.",
+      "takeaway": "duas tarefas reais"
+    },
+    {
+      "title": "O que mudou entre os grupos?",
+      "body": "Um grupo recebeu uns 100 comentários brutos por tarefa. O outro, os mesmos comentários resumidos em achados e recomendações.",
+      "takeaway": "mesmo dado, outro formato"
+    },
+    {
+      "title": "Quantos designs?",
+      "body": "Foram 8 designs por tarefa em cada grupo, 32 no total. Notas dadas às cegas, com uma lista de critérios.",
+      "takeaway": "avaliação às cegas"
+    },
+    {
+      "title": "Qual foi o resultado?",
+      "body": "Com resumo, os designs cumpriram 77,9% dos critérios. Com comentários brutos, 69,5%. Diferença de 8,4 pontos percentuais.",
+      "takeaway": "resumir antes ajudou"
+    },
+    {
+      "title": "Que erro apareceu?",
+      "body": "No voo, nenhum design feito com comentários brutos avisava se o cancelamento afetava milhas. Todos os feitos com resumo avisavam.",
+      "takeaway": "o detalhe importante sumia"
+    },
+    {
+      "title": "Tem limite?",
+      "body": "Os comentários eram mais limpos que os de um projeto real. Com dado bagunçado, a diferença pode ser maior.",
+      "takeaway": "o estudo tem limites"
+    }
+  ],
+  "closing": {
+    "title": "Você resume antes de usar IA?",
+    "body": "Comenta como você faz e salva o post pro próximo projeto."
+  },
+  "caption": "A Nielsen Norman Group testou se a IA desenha melhor com comentários brutos de usuários ou com um resumo deles. Foram 32 designs em duas tarefas.\n\nCom o resumo, feito por um pesquisador com apoio de IA, os designs cumpriram 77,9% dos critérios, contra 69,5% com os comentários brutos.\n\nPra quem usa IA no processo, o teste sugere organizar a pesquisa antes de colocar no prompt. Você faz isso? Comenta aqui e salva o post.\n\n#uxdesign #uxresearch #productdesign #inteligenciaartificial #designdeproduto",
+  "sources": [
+    "https://www.nngroup.com/articles/raw-data-vs-synthesized-data/"
+  ],
+  "schedule": "2026-11-24T10:00:00-03:00"
+}
