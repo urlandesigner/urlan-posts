@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Antes e depois v2</title>
+<style>
+@font-face{font-family:GSF;src:url(fonts/google-sans-flex-latin-full-normal.woff2);font-weight:100 1000}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:DMS;src:url(fonts/dm-sans-latin-700-normal.woff2);font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#15131A}
+#stage{position:relative;width:1080px;height:1920px;background:#15131A;font-family:GSF,Inter,sans-serif;color:#fff;overflow:hidden}
+#glow{position:absolute;left:-200px;top:-200px;width:1000px;height:1000px;border-radius:50%;background:radial-gradient(circle,rgba(113,32,209,.32),rgba(113,32,209,0) 65%)}
+/* zona de texto: y 230 a 450 (fora do cabeçalho do Reels) */
+#hook{position:absolute;left:70px;right:70px;top:236px;opacity:0}
+#hook h1{font-weight:800;font-size:80px;line-height:1.02;letter-spacing:-2px}
+#hook h1 em{font-style:normal;color:#A255FD}
+#lab{position:absolute;left:70px;right:70px;top:236px;height:210px;opacity:0}
+#kick{font-family:Inter,sans-serif;font-weight:500;font-size:32px;letter-spacing:4px;color:#A255FD}
+#kick.ok{color:#3DDC84}
+#row{margin-top:20px;display:flex;align-items:center;gap:26px}
+#bdg{flex:none;width:96px;height:96px;border-radius:50%;background:#A255FD;color:#fff;font-weight:800;font-size:54px;display:flex;align-items:center;justify-content:center}
+#bdg.ok{background:#3DDC84;color:#0E2A18}
+#btxt{font-weight:800;font-size:60px;line-height:1.04;letter-spacing:-1.2px}
+/* tela: x 152 a 928, y 470 a 1440 (fora da coluna de ícones e da legenda) */
+#card{position:absolute;left:152px;top:470px;width:776px;height:970px;border-radius:30px;overflow:hidden;background:#000;box-shadow:0 40px 120px rgba(0,0,0,.55)}
+#scr{position:absolute;left:0;top:0;width:480px;height:600px;transform-origin:0 0}
+.screen{position:absolute;inset:0;overflow:hidden;font-family:Inter,sans-serif}
+/* ANTES */
+#before{background:linear-gradient(135deg,#6a11cb 0%,#2575fc 100%);color:#fff}
+.blob{position:absolute;border-radius:50%;filter:blur(34px)}
+#before .nav{position:absolute;left:24px;right:24px;top:20px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:17px}
+#before .burger{width:22px;height:2px;background:#fff;box-shadow:0 7px 0 #fff,0 -7px 0 #fff}
+#b-pill{position:absolute;left:50%;top:78px;transform:translateX(-50%);padding:7px 14px;border-radius:99px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);font-size:12px;white-space:nowrap;backdrop-filter:blur(6px)}
+#b-h1{position:absolute;left:24px;right:24px;top:122px;text-align:center;font-family:DMS,Inter,sans-serif;font-weight:700;font-size:34px;line-height:1.12;background:linear-gradient(90deg,#fff,#ffd6ff 60%,#a5f3fc);-webkit-background-clip:text;color:transparent}
+#b-sub{position:absolute;left:44px;right:44px;top:224px;text-align:center;font-size:13.5px;line-height:1.45;opacity:.92}
+#b-btn{position:absolute;left:50%;top:288px;transform:translateX(-50%);padding:13px 26px;border-radius:99px;background:linear-gradient(90deg,#f093fb,#f5576c);font-weight:700;font-size:15px;white-space:nowrap;box-shadow:0 0 28px rgba(245,87,108,.85),0 8px 24px rgba(0,0,0,.35)}
+#b-cards{position:absolute;left:20px;right:20px;top:372px;display:flex;gap:10px}
+.bc{flex:1;padding:14px 10px;border-radius:16px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);box-shadow:0 0 22px rgba(255,255,255,.28),0 10px 30px rgba(0,0,0,.25);backdrop-filter:blur(8px);text-align:center}
+.bc .em{font-size:26px;display:block;margin-bottom:6px}
+.bc b{font-size:13px;display:block;margin-bottom:5px}
+.bc span.t{font-size:10px;line-height:1.35;opacity:.9;display:block}
+#b-foot{position:absolute;left:24px;right:24px;top:520px;text-align:center;font-size:12px;opacity:.85}
+/* DEPOIS */
+#after{background:#F7F6F3;color:#14161B}
+#after .nav{position:absolute;left:24px;right:24px;top:22px;display:flex;justify-content:space-between;align-items:center;font-size:15px}
+#after .logo{font-weight:700;font-size:18px;letter-spacing:-.3px;font-family:DMS,Inter,sans-serif}
+#after .nav span{color:#5D6066;font-weight:500}
+#a-h1{position:absolute;left:24px;right:40px;top:78px;font-family:DMS,Inter,sans-serif;font-weight:700;font-size:34px;line-height:1.08;letter-spacing:-.8px}
+#a-sub{position:absolute;left:24px;right:50px;top:182px;font-size:14.5px;line-height:1.5;color:#4A4D54}
+#a-btn{position:absolute;left:24px;top:262px;padding:12px 20px;border-radius:10px;background:#1A56DB;color:#fff;font-weight:500;font-size:14.5px}
+#a-link{position:absolute;left:222px;top:272px;font-size:14px;color:#1A56DB;font-weight:500}
+#a-table{position:absolute;left:24px;right:24px;top:336px;background:#fff;border:1px solid #E4E2DC;border-radius:14px;overflow:hidden}
+#a-table .hd{display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid #ECEAE5;font-weight:500;font-size:13.5px}
+#a-table .hd svg{width:17px;height:17px;stroke:#1A56DB;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#a-table .hd .r{margin-left:auto;color:#6B6E75;font-weight:400}
+#a-table .row{display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid #F1EFEA;font-size:13.5px}
+#a-table .row:last-child{border-bottom:0}
+#a-table .row .n{flex:1;font-weight:500}
+#a-table .row .h{width:86px;color:#4A4D54;font-variant-numeric:tabular-nums}
+#a-table .row .s{font-size:11.5px;padding:3px 9px;border-radius:99px;background:#E8F0FE;color:#1A56DB;font-weight:500}
+#a-table .row .s.ok{background:#E6F4EA;color:#1E7A3C}
+
+.hlbox{position:absolute;border-style:solid;border-color:#A255FD;opacity:0;pointer-events:none}
+.hlbox.ok{border-color:#3DDC84}
+#note{position:absolute;left:60px;right:60px;top:1456px;text-align:center;font-size:27px;color:#8E8999;font-weight:500;font-family:Inter,sans-serif}
+/* final */
+.mini{position:absolute;top:530px;width:440px;height:550px;border-radius:24px;overflow:hidden;opacity:0;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.mini .scr{position:absolute;left:0;top:0;width:480px;height:600px;transform:scale(.91667);transform-origin:0 0}
+.mtag{position:absolute;top:462px;font-weight:800;font-size:44px;opacity:0}
+#cta{position:absolute;left:70px;right:70px;top:1120px;text-align:center;opacity:0}
+#cta h2{font-weight:800;font-size:76px;line-height:1.04;letter-spacing:-1.8px}
+#cta h2 em{font-style:normal;color:#A255FD}
+#cta p{margin-top:22px;font-size:46px;font-weight:500;color:#D5D0E2}
+#ftitle{position:absolute;left:70px;right:70px;top:236px;opacity:0}
+#ftitle h1{font-weight:800;font-size:80px;line-height:1.02;letter-spacing:-2px}
+#ftitle h1 em{font-style:normal;color:#A255FD}
+</style></head><body>
+<div id="stage">
+ <div id="glow"></div>
+ <div id="hook"><h1>5 sinais de que a tela foi <em>feita por IA</em></h1></div>
+ <div id="lab"><div id="kick">SINAL DE IA</div><div id="row"><div id="bdg">1</div><div id="btxt"></div></div></div>
+ <div id="ftitle"><h1>Antes e <em>depois</em></h1></div>
+ <div id="card"><div id="scr">
+<div id="before" class="screen">
+    <div class="blob" id="bl1" style="left:-60px;top:60px;width:240px;height:240px;background:#ff6ec7;opacity:.55"></div>
+    <div class="blob" id="bl2" style="right:-70px;top:320px;width:260px;height:260px;background:#22d3ee;opacity:.5"></div>
+    <div class="nav"><div>✨ Flowly</div><div class="burger"></div></div>
+    <div id="b-pill">🚀 Novo: IA integrada ao seu dia a dia</div>
+    <div id="b-h1">Potencialize seu fluxo de trabalho com IA</div>
+    <div id="b-sub">A solução all-in-one que transforma a forma como você trabalha, de maneira simples e inteligente.</div>
+    <div id="b-btn">Começar agora →</div>
+    <div id="b-cards">
+      <div class="bc"><span class="em">⚡</span><b>Rápido</b><span class="t">Aumente sua produtividade com recursos poderosos.</span></div>
+      <div class="bc"><span class="em">🔒</span><b>Seguro</b><span class="t">Aumente sua produtividade com recursos poderosos.</span></div>
+      <div class="bc"><span class="em">🎯</span><b>Preciso</b><span class="t">Aumente sua produtividade com recursos poderosos.</span></div>
+    </div>
+    <div id="b-foot">Mais de 10.000 equipes confiam na Flowly ✨</div>
+   </div>
+   <div id="after" class="screen" style="clip-path:inset(0 100% 0 0)">
+    <div class="nav"><div class="logo">Flowly</div><span>Entrar</span></div>
+    <div id="a-h1">Controle de horas do time, sem planilha</div>
+    <div id="a-sub">Cada pessoa registra o dia em dois cliques. No fim do mês, o relatório já está pronto.</div>
+    <div id="a-btn">Testar 14 dias grátis</div><div id="a-link">Ver como funciona</div>
+    <div id="a-table">
+      <div class="hd" id="a-hd"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Semana de 23 a 27 nov<span class="r">Horas</span></div>
+      <div class="row"><span class="n">Ana Souza</span><span class="h">38h 20min</span><span class="s ok">Fechado</span></div>
+      <div class="row"><span class="n">Bruno Lima</span><span class="h">40h 05min</span><span class="s ok">Fechado</span></div>
+      <div class="row"><span class="n">Carla Dias</span><span class="h">36h 45min</span><span class="s">Aberto</span></div>
+      <div class="row"><span class="n">Diego Reis</span><span class="h">39h 10min</span><span class="s">Aberto</span></div>
+    </div>
+   </div>
+  
+ </div></div>
+ <div class="mtag" id="tagA" style="left:80px">Antes</div>
+ <div class="mtag" id="tagB" style="left:580px;color:#3DDC84">Depois</div>
+ <div class="mini" id="miniA" style="left:80px"></div>
+ <div class="mini" id="miniB" style="left:560px"></div>
+ <div id="cta"><h2>Qual desses sinais você <em>mais vê?</em></h2><p>Comenta o número</p></div>
+ <div id="note">Tela de exemplo criada para este vídeo</div>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const eo=x=>1-Math.pow(1-clamp(x),3);
+const eio=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const CW=776,CH=970,K=CW/480;
+const STEPS=[
+ {s:'Gradiente roxo com azul', b:['#before'], bz:null, f:'Fundo liso e uma cor só', a:['#after'], az:null},
+ {s:'Emoji no lugar de ícone', b:['#b-pill .x','.bc .em'], bz:{sel:'#b-cards',z:1.2}, f:'Ícone de linha, sem emoji', a:['#a-hd svg'], az:{sel:'#a-hd svg',z:1.7}},
+ {s:'Título que serve pra qualquer produto', b:['#b-h1'], bz:{sel:'#b-h1',z:1.08}, f:'Título diz o que o produto faz', a:['#a-h1'], az:{sel:'#a-h1',z:1.12}},
+ {s:'Três cards iguais', b:['#b-cards'], bz:{sel:'#b-cards',z:1.06}, f:'Mostra o produto em uso', a:['#a-table'], az:{sel:'#a-table',z:1.1}},
+ {s:'Brilho e sombra em tudo', b:['#b-btn'], bz:{sel:'#b-btn',z:2.1}, f:'Botão simples, sem brilho', a:['#a-btn'], az:{sel:'#a-btn',z:2.1}}
+];
+const T0=2.2, SD=3.0, FIN=T0+5*SD, TOTAL=FIN+4.6;
+const FULL={z:1,cx:240,cy:300};
+let R={}, poses=[], keys=[], wipes=[], boxes=[];
+function rectOf(sel){ // em coordenadas da tela (480x600)
+  const scr=$('#scr').getBoundingClientRect();
+  return [...document.querySelectorAll('#scr '+sel)].map(el=>{const r=el.getBoundingClientRect();
+    return {x:(r.left-scr.left)/K,y:(r.top-scr.top)/K,w:r.width/K,h:r.height/K};});
+}
+function poseFor(z){ if(!z) return FULL; const r=rectOf(z.sel)[0]; return {z:z.z,cx:r.x+r.w/2,cy:r.y+r.h/2}; }
+function mkBoxes(list,ok){
+  const out=[];
+  list.forEach(sel=>rectOf(sel).forEach(r=>{
+    const full=sel==='#before'||sel==='#after'; const pad=full?0:5;
+    const d=document.createElement('div'); d.className='hlbox'+(ok?' ok':'');
+    d.style.left=(r.x-pad)+'px'; d.style.top=(r.y-pad)+'px'; d.style.width=(r.w+pad*2)+'px'; d.style.height=(r.h+pad*2)+'px';
+    d.dataset.full=full?1:0; $('#scr').appendChild(d); out.push(d);}));
+  return out;
+}
+function build(){
+  $('#b-pill').innerHTML='<span class="x">🚀</span> Novo: IA integrada ao seu dia a dia';
+  $('#scr').style.transform=`scale(${K})`;
+  boxes=STEPS.map(st=>({b:mkBoxes(st.b,false),a:mkBoxes(st.a,true)}));
+  // câmera: [t, pose]
+  keys.push([0,{z:1,cx:240,cy:300}],[T0,{z:1.04,cx:240,cy:300}]);
+  STEPS.forEach((st,i)=>{const a=T0+i*SD, pb=poseFor(st.bz), pa=poseFor(st.az);
+    keys.push([a+.5,pb],[a+1.45,pb],[a+1.95,pa],[a+SD,pa]);});
+  keys.push([FIN+.6,FULL],[TOTAL,FULL]);
+  // trocas de tela: [início, fim, paraDepois]
+  wipes.push([0.75,1.05,true],[1.35,1.65,false]);
+  STEPS.forEach((st,i)=>{const a=T0+i*SD; wipes.push([a+1.45,a+1.85,true]); if(i<4) wipes.push([a+SD,a+SD+.35,false]);});
+  // miniaturas do final
+  const mA=$('#scr').cloneNode(true), mB=$('#scr').cloneNode(true);
+  [mA,mB].forEach(m=>{m.removeAttribute('id');m.className='scr';m.style.transform='';m.querySelectorAll('.hlbox').forEach(e=>e.remove());});
+  mA.children[1].style.clipPath='inset(0 100% 0 0)'; mB.children[1].style.clipPath='inset(0)';
+  $('#miniA').appendChild(mA); $('#miniB').appendChild(mB);
+}
+function camAt(t){
+  let i=0; while(i<keys.length-1 && keys[i+1][0]<=t) i++;
+  if(i>=keys.length-1) return keys[keys.length-1][1];
+  const [t0,p0]=keys[i],[t1,p1]=keys[i+1]; const e=eio((t-t0)/(t1-t0));
+  const z=Math.exp(Math.log(p0.z)+(Math.log(p1.z)-Math.log(p0.z))*e);
+  return {z,cx:p0.cx+(p1.cx-p0.cx)*e,cy:p0.cy+(p1.cy-p0.cy)*e};
+}
+function afterClip(t){
+  let w=null; for(const x of wipes){ if(x[0]<=t) w=x; }
+  if(!w) return 'inset(0 100% 0 0)';
+  const p=eio((t-w[0])/(w[1]-w[0]));
+  return w[2]? `inset(0 ${(1-p)*100}% 0 0)` : `inset(0 0 0 ${p*100}%)`;
+}
+window.seek=async(t)=>{
+  // câmera
+  const c=camAt(t), s=K*c.z;
+  let tx=CW/2-c.cx*s, ty=CH/2-c.cy*s;
+  tx=Math.min(0,Math.max(CW-480*s,tx)); ty=Math.min(0,Math.max(CH-600*s,ty));
+  $('#scr').style.transform=`translate(${tx}px,${ty}px) scale(${s})`;
+  $('#after').style.clipPath=afterClip(t);
+  // fundo vivo
+  $('#bl1').style.transform=`translate(${Math.sin(t*.9)*18}px,${Math.cos(t*.7)*14}px)`;
+  $('#bl2').style.transform=`translate(${Math.cos(t*.8)*16}px,${Math.sin(t*.6)*18}px)`;
+  $('#glow').style.transform=`translate(${Math.sin(t*.4)*30}px,${Math.cos(t*.35)*24}px)`;
+  // gancho
+  const hk=clamp(t/.25)*clamp((T0-.05-t)/.3);
+  $('#hook').style.opacity=t<.02?1:hk; $('#hook').style.transform=`translateY(${(1-eo(t/.4))*16}px)`;
+  // cartão entra já visível no quadro 0 (capa)
+  const ce=eo((t)/.6); $('#card').style.transform=`scale(${.985+.015*ce})`;
+  // destaques
+  const bw=7/s;
+  boxes.forEach(g=>[...g.b,...g.a].forEach(d=>{d.style.opacity=0;d.style.borderWidth=bw+'px';d.style.borderRadius=(d.dataset.full==1?0:10/c.z)+'px';
+    d.style.boxShadow=`0 0 ${18/s}px ${d.classList.contains('ok')?'rgba(61,220,132,.7)':'rgba(162,85,253,.8)'}`;}));
+  let lab=null;
+  STEPS.forEach((st,i)=>{const a=T0+i*SD;
+    if(t>=a+.45&&t<a+1.45){const o=clamp((t-a-.45)/.2)*clamp((a+1.45-t)/.12); boxes[i].b.forEach(d=>d.style.opacity=o);}
+    if(t>=a+1.95&&t<a+SD){const o=clamp((t-a-1.95)/.2)*clamp((a+SD-t)/.12); boxes[i].a.forEach(d=>d.style.opacity=o);}
+    if(t>=a&&t<a+1.6) lab={k:'SINAL DE IA',n:String(i+1),tx:st.s,ok:false,o:clamp((t-a)/.25)*clamp((a+1.6-t)/.15),t0:a};
+    else if(t>=a+1.6&&t<a+SD) lab={k:'CORREÇÃO',n:'✓',tx:st.f,ok:true,o:clamp((t-a-1.6)/.2)*clamp((a+SD-t)/.15),t0:a+1.6};
+  });
+  if(lab){ $('#lab').style.opacity=lab.o; $('#lab').style.transform=`translateY(${(1-eo((t-lab.t0)/.35))*22}px)`;
+    $('#kick').textContent=lab.k; $('#kick').className=lab.ok?'ok':''; $('#bdg').textContent=lab.n; $('#bdg').className=lab.ok?'ok':''; $('#btxt').textContent=lab.tx;}
+  else $('#lab').style.opacity=0;
+  // final: antes e depois lado a lado
+  const f=eio((t-FIN-.4)/.6);
+  $('#card').style.opacity=1-clamp((t-FIN-.3)/.35);
+  ['#miniA','#miniB'].forEach((id,j)=>{const g=eo((t-FIN-.55-j*.12)/.5); const el=$(id); el.style.opacity=g; el.style.transform=`translateY(${(1-g)*40}px) scale(${.94+.06*g})`;});
+  ['#tagA','#tagB'].forEach((id,j)=>{const g=eo((t-FIN-.8-j*.12)/.4); $(id).style.opacity=g;});
+  const ft=eo((t-FIN-.5)/.4); $('#ftitle').style.opacity=ft; $('#ftitle').style.transform=`translateY(${(1-ft)*18}px)`;
+  const ct=eo((t-FIN-1.1)/.5); $('#cta').style.opacity=ct; $('#cta').style.transform=`translateY(${(1-ct)*24}px)`;
+  // micro deriva no final pra não congelar
+  const dr=Math.max(0,t-FIN-1)*3; $('#miniA').style.marginTop=(-dr*.6)+'px'; $('#miniB').style.marginTop=(-dr*.6)+'px';
+};
+window.TOTAL=TOTAL; window.ready=false;
+document.fonts.ready.then(()=>{build();window.ready=true;});
+</script></body></html>
