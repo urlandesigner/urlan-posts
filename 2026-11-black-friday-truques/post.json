@@ -1,66 +1,37 @@
 {
-  "style": "editorial",
-  "case": "sentence",
+  "style": "texto",
+  "font": "Google Sans Flex",
   "tag": "BLACK FRIDAY",
-  "cover": {
-    "lines": [
-      "Truques da",
-      "**Black Friday**"
-    ],
-    "tag": "",
-    "subtitle": "Telas que apressam a sua compra. Todos têm nome.",
-    "top_right": "Dark patterns",
-    "foot_right": ""
-  },
-  "footer": {
-    "left": "Black Friday · 27 nov",
-    "right": "Truques de\ndesign",
-    "top_right": "Dark patterns",
-    "label_what": "Como funciona",
-    "label_why": "Por que funciona"
-  },
-  "items": [
+  "slides": [
     {
-      "name": "Urgência falsa",
-      "ref": "fake urgency",
-      "stat": "Na lista da Senacon",
-      "what": "Contador de oferta que volta ao início quando chega a zero ou quando você abre outro navegador.",
-      "why": "Com pressa, a pessoa compara menos e decide antes de conferir o preço."
+      "text": "O contador de oferta **reinicia**.",
+      "sub": "Chega a zero e volta ao início. É urgência falsa.",
+      "size": "xl",
+      "ill_top": 705
     },
     {
-      "name": "Escassez falsa",
-      "ref": "fake scarcity",
-      "stat": "Na lista da Senacon",
-      "what": "Aviso de últimas unidades sem estoque de verdade por trás.",
-      "why": "A pessoa compra pra não perder a oferta, não porque comparou."
+      "text": "\"Restam só 2\" pode não ser **verdade**.",
+      "sub": "Aviso de estoque sem estoque por trás. É escassez falsa.",
+      "ill_top": 680
     },
     {
-      "name": "Item pré-marcado",
-      "ref": "preselection",
-      "stat": "Na lista da Senacon",
-      "what": "Garantia estendida ou seguro já vem marcado no carrinho.",
-      "why": "Se a pessoa não desmarca, paga por um serviço que não escolheu."
+      "text": "O seguro já vem **marcado**.",
+      "sub": "Se você não desmarca no carrinho, paga junto.",
+      "ill_top": 610
     },
     {
-      "name": "Custo escondido",
-      "ref": "hidden costs",
-      "stat": "Alerta do Procon-MG",
-      "what": "O anúncio mostra um preço baixo, e o frete e as taxas só aparecem no fim da compra.",
-      "why": "Depois de preencher tudo, desistir parece perda de tempo."
+      "text": "O frete aparece só **no fim**.",
+      "sub": "O preço do anúncio não é o preço que você paga.",
+      "ill_top": 670
     },
     {
-      "name": "Confirmshaming",
-      "ref": "confirmshaming",
-      "stat": "Catálogo deceptive.design",
-      "what": "O botão de recusar usa uma frase que faz você se sentir mal, como \"não quero economizar\".",
-      "why": "A pessoa aceita pra não ter que clicar numa frase contra si mesma."
+      "text": "\"Não, prefiro pagar **mais caro**.\"",
+      "sub": "Botão de recusar que faz você se sentir mal. É confirmshaming.",
+      "ill_top": 640
     }
   ],
   "closing": {
-    "lines": [
-      "Qual desses",
-      "você **já viu?**"
-    ],
+    "title": "Qual desses você **já viu**?",
     "body": "Comenta o número e manda pra quem vai comprar na sexta."
   },
   "caption": "A Black Friday é nesta sexta, 27. Muitas telas de compra usam truques de design pra apressar a decisão: urgência falsa, escassez falsa, item pré-marcado, custo escondido e confirmshaming.\n\nNo dia 18, a Senacon notificou grandes lojas e plataformas e pediu explicação sobre contadores que reiniciam, avisos de estoque sem prova e serviços incluídos automaticamente.\n\nPra quem desenha produto, saber o nome de cada truque ajuda a argumentar contra eles no time.\n\nQual desses você já viu? Comenta o número e manda pra quem vai comprar na sexta.\n\n#blackfriday #uxdesign #darkpatterns #designdeproduto #productdesign",
@@ -74,5 +45,6 @@
     "style": "serie",
     "source": "testes-capa/serie/capa-black-friday.html"
   },
-  "schedule": "2026-11-26T10:00:00-03:00"
+  "schedule": "2026-11-26T10:00:00-03:00",
+  "nota": "Slides gerados por ilustrado.py (texto escuro + mini interface ilustrativa). Não usar render.py direto nesta pasta."
 }
