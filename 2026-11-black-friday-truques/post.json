@@ -1,40 +1,67 @@
 {
-  "style": "alternado",
+  "style": "editorial",
+  "case": "sentence",
   "tag": "BLACK FRIDAY",
   "cover": {
-    "title": "5 truques de design da Black Friday",
-    "subtitle": "Telas que apressam a sua compra. Todos têm nome."
+    "lines": [
+      "Truques da",
+      "**Black Friday**"
+    ],
+    "tag": "",
+    "subtitle": "Telas que apressam a sua compra. Todos têm nome.",
+    "top_right": "Dark patterns",
+    "foot_right": ""
   },
-  "slides": [
+  "footer": {
+    "left": "Black Friday · 27 nov",
+    "right": "Truques de\ndesign",
+    "top_right": "Dark patterns",
+    "label_what": "Como funciona",
+    "label_why": "Por que funciona"
+  },
+  "items": [
     {
-      "title": "O contador é real?",
-      "body": "Alguns relógios de oferta voltam ao início quando chegam a zero ou quando você abre outro navegador.",
-      "takeaway": "o nome disso é urgência falsa"
+      "name": "Urgência falsa",
+      "ref": "fake urgency",
+      "stat": "Na lista da Senacon",
+      "what": "Contador de oferta que volta ao início quando chega a zero ou quando você abre outro navegador.",
+      "why": "Com pressa, a pessoa compara menos e decide antes de conferir o preço."
     },
     {
-      "title": "Restam mesmo só 2?",
-      "body": "O aviso de últimas unidades pode não ter estoque de verdade por trás. É escassez falsa.",
-      "takeaway": "a Senacon pediu prova às lojas"
+      "name": "Escassez falsa",
+      "ref": "fake scarcity",
+      "stat": "Na lista da Senacon",
+      "what": "Aviso de últimas unidades sem estoque de verdade por trás.",
+      "why": "A pessoa compra pra não perder a oferta, não porque comparou."
     },
     {
-      "title": "Quem marcou esse item?",
-      "body": "Garantia estendida ou seguro já vem marcado no carrinho. Se você não desmarca, paga junto.",
-      "takeaway": "confira o carrinho antes de pagar"
+      "name": "Item pré-marcado",
+      "ref": "preselection",
+      "stat": "Na lista da Senacon",
+      "what": "Garantia estendida ou seguro já vem marcado no carrinho.",
+      "why": "Se a pessoa não desmarca, paga por um serviço que não escolheu."
     },
     {
-      "title": "Por que o preço subiu?",
-      "body": "O preço baixo aparece no anúncio, e o frete e as taxas só surgem no fim da compra.",
-      "takeaway": "compare o valor total"
+      "name": "Custo escondido",
+      "ref": "hidden costs",
+      "stat": "Alerta do Procon-MG",
+      "what": "O anúncio mostra um preço baixo, e o frete e as taxas só aparecem no fim da compra.",
+      "why": "Depois de preencher tudo, desistir parece perda de tempo."
     },
     {
-      "title": "Recusar te faz sentir mal?",
-      "body": "O botão de recusar usa uma frase que faz você se sentir mal, como \"não quero economizar\".",
-      "takeaway": "o nome disso é confirmshaming"
+      "name": "Confirmshaming",
+      "ref": "confirmshaming",
+      "stat": "Catálogo deceptive.design",
+      "what": "O botão de recusar usa uma frase que faz você se sentir mal, como \"não quero economizar\".",
+      "why": "A pessoa aceita pra não ter que clicar numa frase contra si mesma."
     }
   ],
   "closing": {
-    "title": "Qual desses você já viu?",
-    "body": "Comenta o número. Se você desenha telas, saber esses nomes ajuda a dizer não no time."
+    "lines": [
+      "Qual desses",
+      "você **já viu?**"
+    ],
+    "body": "Comenta o número e manda pra quem vai comprar na sexta."
   },
   "caption": "A Black Friday é nesta sexta, 27. Muitas telas de compra usam truques de design pra apressar a decisão: urgência falsa, escassez falsa, item pré-marcado, custo escondido e confirmshaming.\n\nNo dia 18, a Senacon notificou grandes lojas e plataformas e pediu explicação sobre contadores que reiniciam, avisos de estoque sem prova e serviços incluídos automaticamente.\n\nPra quem desenha produto, saber o nome de cada truque ajuda a argumentar contra eles no time.\n\nQual desses você já viu? Comenta o número e manda pra quem vai comprar na sexta.\n\n#blackfriday #uxdesign #darkpatterns #designdeproduto #productdesign",
   "sources": [
