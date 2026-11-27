@@ -51,5 +51,10 @@
   "cover_override": {
     "style": "serie",
     "source": "testes-capa/serie/capa-maior-erro.html"
+  },
+  "mlabs": {
+    "scheduleId": "ext_MzcxNzQ3NTg4.gvWLoAL1n89T7jFiE77P5m",
+    "status": "draft",
+    "url": "https://publish.mlabs.io/schedule/371747588/edit"
   }
 }
