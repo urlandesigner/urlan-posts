@@ -1,7 +1,7 @@
 # Reel: referências iguais (Dribbble não é produto real)
 
-Status: rascunho, 27/11/2026. Não agendado. Custo: zero (animação em código, render Playwright + ffmpeg).
-Formato: 1080 × 1920, 29,8 s, sem áudio (música pela mLabs). Template visual do Reel 08.
+Status: rascunho na mLabs para 28/11/2026. Narração por IA: voz Mark (ElevenLabs via Higgsfield text2speech_v2), 1,35 crédito.
+Formato: 1080 × 1920, 31,2 s, narração + legenda sincronizada. Roteiro feito com a skill-instagram (ig-reel: hookscore, beats.py, ig-human).
 
 Origem: análise de concorrentes de 26/11. O tema "suas referências estão iguais" foi outlier em dois perfis
 (@brotherdsgn 5x a mediana, @filatov.design 6x).

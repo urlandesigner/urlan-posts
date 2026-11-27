@@ -15,33 +15,33 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#15131A}
 .pill .lb{position:relative}
 .scene{position:absolute;left:70px;width:780px;opacity:0}
 .big{font-weight:800;font-size:104px;line-height:1.0;letter-spacing:-3px}
-.big em{font-style:normal;color:#A255FD}
+.big em{font-style:normal;color:#A255FD;white-space:nowrap}
 .kick{font-family:Inter,sans-serif;font-weight:500;font-size:30px;letter-spacing:4px;color:#A255FD}
 .name{font-weight:800;font-size:132px;line-height:1;letter-spacing:-4px;margin-top:14px}
 .desc{font-weight:500;font-size:50px;line-height:1.14;color:#CFCAD8;margin-top:26px;letter-spacing:-.5px}
 .mask{overflow:hidden;padding-bottom:10px}
 .mask > *{display:block}
-.card{position:absolute;left:70px;top:880px;width:780px;height:500px;border-radius:30px;background:#fff;color:#15131A;font-family:Inter,sans-serif;opacity:0;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.45)}
+.card{position:absolute;left:70px;top:800px;width:780px;height:440px;border-radius:30px;background:#fff;color:#15131A;font-family:Inter,sans-serif;opacity:0;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.45)}
 .card .in{position:absolute;inset:0;padding:42px}
 .lbl{font-size:24px;color:#6E6A77;font-weight:500;margin-bottom:14px}
 .chip{display:inline-block;padding:14px 22px;border-radius:14px;background:#F1E5FF;color:#7120D1;font-weight:500;font-size:28px;margin:0 10px 12px 0}
 /* gancho: "shot" de vitrine */
-#shot{position:absolute;left:150px;top:1010px;width:620px;height:400px;border-radius:30px;overflow:hidden;opacity:0;
+#shot{position:absolute;left:150px;top:760px;width:620px;height:400px;border-radius:30px;overflow:hidden;opacity:0;
   background:linear-gradient(135deg,#A255FD,#7120D1 55%,#2B0B5C);box-shadow:0 30px 90px rgba(0,0,0,.5)}
 #shot .o1{position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.18)}
 #shot .o2{position:absolute;left:46px;top:60px;width:260px;height:30px;border-radius:15px;background:rgba(255,255,255,.85)}
 #shot .o3{position:absolute;left:46px;top:110px;width:180px;height:22px;border-radius:11px;background:rgba(255,255,255,.45)}
 #shot .o4{position:absolute;left:46px;bottom:52px;width:528px;height:150px;border-radius:22px;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.3)}
-#stamp{position:absolute;left:300px;top:1180px;padding:16px 30px;border:5px solid #fff;border-radius:16px;font-family:Inter,sans-serif;font-weight:500;font-size:40px;letter-spacing:3px;color:#fff;opacity:0;transform:rotate(-8deg)}
+#stamp{position:absolute;left:330px;top:930px;padding:16px 30px;border:5px solid #fff;border-radius:16px;font-family:Inter,sans-serif;font-weight:500;font-size:40px;letter-spacing:3px;color:#fff;opacity:0;transform:rotate(-8deg)}
 /* Mobbin: telas */
 .phones{display:flex;gap:22px;margin-top:6px}
-.ph{flex:1;height:330px;border-radius:26px;background:#F6F4F9;border:2px solid #ECE8F2;padding:22px 18px;position:relative}
+.ph{flex:1;height:290px;border-radius:26px;background:#F6F4F9;border:2px solid #ECE8F2;padding:22px 18px;position:relative}
 .ph .b{height:16px;border-radius:8px;background:#E3DCF0;margin-bottom:12px}
 .ph .btn{position:absolute;left:18px;right:18px;bottom:22px;height:48px;border-radius:14px;background:#7120D1}
 .ph .cap{position:absolute;left:0;right:0;bottom:-46px;text-align:center;font-size:24px;font-weight:500;color:#15131A}
 /* Page Flows: player */
-#player{height:250px;border-radius:22px;background:#15131A;position:relative;overflow:hidden}
-#player .scr{position:absolute;top:28px;width:150px;height:200px;border-radius:16px;background:#2A2633;border:2px solid #3A3545}
+#player{height:220px;border-radius:22px;background:#15131A;position:relative;overflow:hidden}
+#player .scr{position:absolute;top:20px;width:150px;height:180px;border-radius:16px;background:#2A2633;border:2px solid #3A3545}
 #play{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
 #prog{margin-top:22px;height:12px;border-radius:6px;background:#EEEBF3;overflow:hidden}
 #prog i{display:block;height:100%;width:0;background:#7120D1}
@@ -52,17 +52,24 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#15131A}
 #caret{display:inline-block;width:3px;height:40px;background:#7120D1;vertical-align:middle;margin-left:2px}
 .res{display:flex;gap:16px;margin-top:22px}
 .res div{flex:1;height:120px;border-radius:16px;background:#F3F1F6}
-#note{position:absolute;left:70px;width:780px;top:1400px;font-family:Inter,sans-serif;font-size:24px;color:#6E6A77;opacity:0}
+#note{position:absolute;left:70px;width:780px;top:1254px;font-family:Inter,sans-serif;font-size:24px;color:#6E6A77;opacity:0}
+.cap{position:absolute;left:70px;width:780px;top:1300px;height:130px;display:flex;align-items:flex-end;font-family:GSF,sans-serif;font-weight:700;font-size:46px;line-height:1.15;color:#fff;letter-spacing:-.5px}
+.cap span{background:rgba(21,19,26,.82);padding:6px 14px;border-radius:12px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.grid{position:absolute;left:70px;top:760px;width:780px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;opacity:0}
+.grid div{height:200px;border-radius:22px;background:linear-gradient(135deg,#A255FD,#7120D1 60%,#2B0B5C);opacity:.9}
+.mcp{display:inline-block;margin-top:44px;padding:20px 34px;border-radius:20px;background:#7120D1;font-family:Inter,sans-serif;font-weight:500;font-size:40px;letter-spacing:2px}
 </style></head><body>
 <div id="stage">
  <div id="glow"></div>
  <div id="track"></div>
 
- <div class="scene" id="s-hook" style="top:420px"><div class="big">Ninguém te conta: Dribbble não é <em>produto real.</em></div></div>
+ <div class="scene" id="s-hook" style="top:420px"><div class="big">Dribbble não é <em>produto.</em></div></div>
  <div id="shot"><div class="o1"></div><div class="o2"></div><div class="o3"></div><div class="o4"></div></div>
- <div id="stamp">CONCEITO</div>
-
- <div class="scene" id="s-ctx" style="top:560px"><div class="big">Por isso as referências ficam <em>iguais.</em></div><div class="desc" style="margin-top:40px">Pra produto, olhe telas que já estão no ar.</div></div>
+ <div id="stamp">VITRINE</div>
+ <div class="scene" id="s-vit" style="top:420px"><div class="big">É <em>vitrine.</em></div></div>
+ <div class="scene" id="s-igual" style="top:420px"><div class="big">Tudo fica <em>igual.</em></div></div>
+ <div class="grid" id="grid"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+ <div class="scene" id="s-ar" style="top:520px"><div class="big">Procure app <em>no ar.</em></div></div>
 
  <div class="scene" id="s-step" style="top:400px">
    <div class="kick" id="kick">FONTE 1 DE 3</div>
@@ -70,9 +77,9 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#15131A}
    <div class="desc" id="desc"></div>
  </div>
 
- <div class="scene" id="s-ai" style="top:600px"><div class="big">Mobbin e Refero já conectam na <em>sua IA.</em></div><div class="desc" style="margin-top:40px">O Refero tem MCP. O Mobbin tem API pra agentes.</div></div>
- <div class="scene" id="s-end1" style="top:700px"><div class="big">Referência boa é <em>produto real.</em></div></div>
- <div class="scene" id="s-end2" style="top:640px"><div class="big">Qual dessas você <em>já usa?</em></div><div class="desc" style="margin-top:40px">Comenta aqui.</div></div>
+ <div class="scene" id="s-ai" style="top:520px"><div class="big">Refero na <em>sua IA.</em></div><div class="mcp">MCP</div></div>
+ <div class="scene" id="s-end2" style="top:560px"><div class="big">Qual você <em>já usa?</em></div><div class="desc" style="margin-top:40px">Comenta aqui.</div></div>
+ <div class="cap" id="cap"><span id="capt"></span></div>
 
  <!-- Mobbin -->
  <div class="card" id="c0"><div class="in">
@@ -106,33 +113,42 @@ const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
 const eo=x=>1-Math.pow(1-clamp(x),3);
 const eio=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
 const SRC=[
- ['Mobbin','Telas e fluxos de apps que já estão no ar.'],
- ['Page Flows','O fluxo inteiro, gravado em vídeo.'],
- ['Refero','Busca por tipo de página, padrão e até fonte.']
+ ['Mobbin','Telas e fluxos de apps lançados.'],
+ ['Page Flows','O fluxo gravado em vídeo.'],
+ ['Refero','Busca por página, padrão e fonte.']
 ];
-const T_CTX=3.0, T_S=6.4, SD=4.6, T_AI=T_S+3*SD, T_E1=T_AI+3.6, T_E2=T_E1+2.6, TOTAL=T_E2+3.4;
+// tempos tirados das pausas da narração (narracao.mp3, voz Mark/ElevenLabs, 29,8 s)
+const CAPS=[[0,'Ninguém te conta:'],[1.25,'Dribbble não é produto.'],[3.0,'É vitrine.'],[4.15,'Tela feita pra ganhar curtida.'],[6.25,'Aí sua referência sai igual à do Pinterest.'],
+ [9.05,'Procura em app que já tá no ar,'],[10.68,'com gente usando de verdade.'],[12.45,'Mobbin:'],[13.3,'telas e fluxos de apps lançados.'],
+ [15.8,'Page Flows:'],[16.9,'o fluxo gravado em vídeo.'],[18.5,'Do onboarding até o checkout.'],[20.75,'Refero:'],
+ [21.6,'busca por tipo de página e até por fonte.'],[24.25,'E tem MCP,'],[25.3,'então liga na sua IA.'],
+ [26.95,'Qual desses você usa pra produto?'],[28.6,'Comenta.']];
+const T_VIT=3.0, T_IG=6.2, T_AR=9.0, T_S=12.4, ST=[12.4,15.8,20.7,24.2], T_AI=24.2, T_E2=26.9, TOTAL=31.2;
 const tr=$('#track');
 SRC.forEach((s,i)=>{const d=document.createElement('div');d.className='pill';d.innerHTML=`<div class="fill"></div><span class="lb">${i+1}</span>`;tr.appendChild(d);});
 const pills=[...document.querySelectorAll('.pill')];
 const QUERY='página de preços';
 function sceneIO(el,a,b,dy=40){
-  const t=window._t; const o=clamp((t-a)/.3)*clamp((b-t)/.25);
-  el.style.opacity=o; el.style.transform=`translateY(${(1-eo((t-a)/.5))*dy - (t>b-.25?eo((t-(b-.25))/.25)*20:0)}px)`;
+  const t=window._t; const o=clamp((t-a)/.25)*clamp((b-t)/.2);
+  el.style.opacity=o; el.style.transform=`translateY(${(1-eo((t-a)/.4))*dy - (t>b-.2?eo((t-(b-.2))/.2)*20:0)}px)`;
   return o;
 }
 window.seek=async(t)=>{
   window._t=t;
   $('#glow').style.transform=`translate(${Math.sin(t*.4)*40}px,${Math.cos(t*.33)*30}px)`;
-  // gancho: texto já no quadro 1, shot sobe e leva o carimbo
-  sceneIO($('#s-hook'),0,T_CTX); if(t<.05){$('#s-hook').style.opacity=1;$('#s-hook').style.transform='none';}
-  const sh=$('#shot'); const si=t<.05?1:eo(t/.5), so=clamp((t-(T_CTX-.3))/.3);
-  sh.style.opacity=(t<T_CTX)?Math.max(.35,si)*(1-so):0; sh.style.transform=`translateY(${(1-si)*60 + Math.sin(t*2)*6}px) rotate(${-2+Math.sin(t*1.5)}deg)`;
-  const sp=eo((t-1.1)/.25); $('#stamp').style.opacity=(t<T_CTX)?sp*(1-so):0; $('#stamp').style.transform=`rotate(-8deg) scale(${1.6-.6*sp})`;
-  sceneIO($('#s-ctx'),T_CTX,T_S);
-  // trilha das fontes
-  $('#track').style.opacity=clamp((t-T_S)/.3)*clamp((T_AI-t)/.25);
+  sceneIO($('#s-hook'),-1,T_VIT);
+  sceneIO($('#s-vit'),T_VIT,T_IG);
+  const sh=$('#shot'); const si=1, so=clamp((t-(T_IG-.25))/.25);
+  sh.style.opacity=(t<T_IG)?Math.max(.4,si)*(1-so):0; sh.style.transform=`translateY(${(1-si)*60 + Math.sin(t*2)*6}px) rotate(${-2+Math.sin(t*1.5)}deg)`;
+  const sp=eo((t-T_VIT-.1)/.2); $('#stamp').style.opacity=(t<T_IG)?sp*(1-so):0; $('#stamp').style.transform=`rotate(-8deg) scale(${1.6-.6*sp})`;
+  sceneIO($('#s-igual'),T_IG,T_AR);
+  const g=$('#grid'); g.style.opacity=(t>=T_IG&&t<T_AR)?clamp((t-T_IG)/.25)*clamp((T_AR-t)/.2):0;
+  g.querySelectorAll('div').forEach((d,j)=>{const k=eo((t-T_IG-.1-j*.12)/.3);d.style.transform=`scale(${.6+.4*k})`;d.style.opacity=k*.9;});
+  sceneIO($('#s-ar'),T_AR,T_S);
+  $('#track').style.opacity=clamp((t-T_S)/.25)*clamp((T_AI-t)/.2);
+  const k=t<ST[1]?0:t<ST[2]?1:2;
   pills.forEach((p,i)=>{
-    const k=Math.floor((t-T_S)/SD); let f = i<k?1: i===k? eo((t-T_S-k*SD)/.4):0; const lit=i===k;
+    let f = i<k?1: i===k? eo((t-ST[k])/.4):0; const lit=i===k;
     p.querySelector('.fill').style.transform=`scaleX(${f})`;
     p.querySelector('.fill').style.opacity=(!lit&&f===1)?.45:1;
     p.querySelector('.lb').textContent= lit? SRC[i][0] : String(i+1);
@@ -142,35 +158,38 @@ window.seek=async(t)=>{
   });
   const st=$('#s-step');
   if(t>=T_S&&t<T_AI){
-    const k=Math.floor((t-T_S)/SD), lt=t-T_S-k*SD;
-    st.style.opacity=clamp((t-T_S)/.3)*clamp((T_AI-t)/.25);
+    const lt=t-ST[k];
+    st.style.opacity=clamp((t-T_S)/.25)*clamp((T_AI-t)/.2);
     $('#kick').textContent=`FONTE ${k+1} DE 3`;
     $('#name').textContent=SRC[k][0];
-    $('#name').style.transform=`translateY(${(1-eo(lt/.45))*105}%)`;
+    $('#name').style.transform=`translateY(${(1-eo(lt/.4))*105}%)`;
     $('#desc').textContent=SRC[k][1];
-    $('#desc').style.opacity=eo((lt-.25)/.4); $('#desc').style.transform=`translateY(${(1-eo((lt-.25)/.5))*24}px)`;
+    $('#desc').style.opacity=eo((lt-.2)/.35); $('#desc').style.transform=`translateY(${(1-eo((lt-.2)/.45))*24}px)`;
   } else st.style.opacity=0;
   for(let i=0;i<3;i++){
-    const c=$('#c'+i), a=T_S+i*SD, b=a+SD;
+    const c=$('#c'+i), a=ST[i], b=ST[i+1], D=b-a;
     if(t>=a-.05&&t<b){ const lt=t-a;
-      const inn=eo((lt-.15)/.5), out=clamp((lt-(SD-.35))/.35);
+      const inn=eo((lt-.1)/.4), out=clamp((lt-(D-.3))/.3);
       c.style.opacity=inn*(1-out);
       c.style.transform=`translate(${(1-inn)*90 - eio(out)*90}px,0) rotate(${(1-inn)*2}deg)`;
-      if(i===0) c.querySelectorAll('.ph').forEach((ph,j)=>{const g=eo((lt-.6-j*.35)/.4);ph.style.opacity=g;ph.style.transform=`translateY(${(1-g)*30}px)`;});
-      if(i===1){const g=clamp((lt-.7)/3.2); $('#prog i').style.width=(g*100)+'%';
+      if(i===0) c.querySelectorAll('.ph').forEach((ph,j)=>{const g=eo((lt-.4-j*.25)/.35);ph.style.opacity=g;ph.style.transform=`translateY(${(1-g)*30}px)`;});
+      if(i===1){const g=clamp((lt-.5)/3.2); $('#prog i').style.width=(g*100)+'%';
         c.querySelectorAll('.steps span').forEach((s,j)=>s.classList.toggle('on',g>j/3+.02));
         c.querySelectorAll('.scr').forEach((s,j)=>s.style.borderColor=(g>j/3+.02)?'#A255FD':'#3A3545');
-        $('#play').style.opacity=1-clamp((lt-.5)/.3);}
-      if(i===2){const n=Math.floor(clamp((lt-.6)/1.3)*QUERY.length); $('#typed').textContent=QUERY.slice(0,n);
+        $('#play').style.opacity=1-clamp((lt-.4)/.3);}
+      if(i===2){const n=Math.floor(clamp((lt-.3)/1.0)*QUERY.length); $('#typed').textContent=QUERY.slice(0,n);
         $('#caret').style.opacity=(Math.floor(lt*2.5)%2)?1:0;
-        c.querySelectorAll('.f').forEach((f,j)=>{const g=eo((lt-2.0-j*.3)/.35);f.style.opacity=g;f.style.transform=`translateY(${(1-g)*14}px)`;});
-        c.querySelectorAll('.res div').forEach((r,j)=>{const g=eo((lt-3.0-j*.15)/.35);r.style.opacity=g;});}
+        c.querySelectorAll('.f').forEach((f,j)=>{const g=eo((lt-0.9-j*.5)/.3);f.style.opacity=g;f.style.transform=`translateY(${(1-g)*14}px)`;});
+        c.querySelectorAll('.res div').forEach((r,j)=>{const g=eo((lt-2.3-j*.12)/.3);r.style.opacity=g;});}
     } else c.style.opacity=0;
   }
-  $('#note').style.opacity=(t>=T_S+.4&&t<T_AI-.2)?1:0;
-  sceneIO($('#s-ai'),T_AI,T_E1);
-  sceneIO($('#s-end1'),T_E1,T_E2);
-  const e2=$('#s-end2'); const o2=clamp((t-T_E2)/.3); e2.style.opacity=o2; e2.style.transform=`translateY(${(1-eo((t-T_E2)/.5))*40}px)`;
+  $('#note').style.opacity=(t>=T_S+.3&&t<T_AI-.15)?1:0;
+  sceneIO($('#s-ai'),T_AI,T_E2);
+  const e2=$('#s-end2'); const o2=clamp((t-T_E2)/.25); e2.style.opacity=o2; e2.style.transform=`translateY(${(1-eo((t-T_E2)/.4))*40}px)`;
+  // legenda sincronizada
+  let cur=''; for(const [a,txt] of CAPS){ if(t>=a) cur=txt; }
+  if(t>30.6) cur='';
+  $('#capt').textContent=cur; $('#cap').style.opacity=cur?1:0;
 };
 window.TOTAL=TOTAL; window.ready=false;
 document.fonts.ready.then(()=>{window.ready=true;});

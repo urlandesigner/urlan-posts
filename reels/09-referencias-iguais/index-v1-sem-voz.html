@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Referências iguais</title>
+<style>
+@font-face{font-family:GSF;src:url(fonts/google-sans-flex-latin-full-normal.woff2);font-weight:100 1000}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-500-normal.woff2);font-weight:500}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#15131A}
+#stage{position:relative;width:1080px;height:1920px;background:#15131A;font-family:GSF,sans-serif;color:#fff;overflow:hidden}
+#glow{position:absolute;left:-260px;top:-260px;width:1100px;height:1100px;border-radius:50%;background:radial-gradient(circle,rgba(113,32,209,.30),rgba(113,32,209,0) 65%)}
+/* área segura: x 70 a 850, y 240 a 1430 */
+#track{position:absolute;left:70px;top:250px;width:780px;height:84px;display:flex;gap:12px;opacity:0}
+.pill{flex:1;border-radius:16px;border:2px dashed rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-family:Inter,sans-serif;font-weight:500;font-size:24px;color:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.pill .fill{position:absolute;inset:0;background:#7120D1;transform-origin:0 50%;transform:scaleX(0)}
+.pill .lb{position:relative}
+.scene{position:absolute;left:70px;width:780px;opacity:0}
+.big{font-weight:800;font-size:104px;line-height:1.0;letter-spacing:-3px}
+.big em{font-style:normal;color:#A255FD}
+.kick{font-family:Inter,sans-serif;font-weight:500;font-size:30px;letter-spacing:4px;color:#A255FD}
+.name{font-weight:800;font-size:132px;line-height:1;letter-spacing:-4px;margin-top:14px}
+.desc{font-weight:500;font-size:50px;line-height:1.14;color:#CFCAD8;margin-top:26px;letter-spacing:-.5px}
+.mask{overflow:hidden;padding-bottom:10px}
+.mask > *{display:block}
+.card{position:absolute;left:70px;top:880px;width:780px;height:500px;border-radius:30px;background:#fff;color:#15131A;font-family:Inter,sans-serif;opacity:0;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.45)}
+.card .in{position:absolute;inset:0;padding:42px}
+.lbl{font-size:24px;color:#6E6A77;font-weight:500;margin-bottom:14px}
+.chip{display:inline-block;padding:14px 22px;border-radius:14px;background:#F1E5FF;color:#7120D1;font-weight:500;font-size:28px;margin:0 10px 12px 0}
+/* gancho: "shot" de vitrine */
+#shot{position:absolute;left:150px;top:1010px;width:620px;height:400px;border-radius:30px;overflow:hidden;opacity:0;
+  background:linear-gradient(135deg,#A255FD,#7120D1 55%,#2B0B5C);box-shadow:0 30px 90px rgba(0,0,0,.5)}
+#shot .o1{position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.18)}
+#shot .o2{position:absolute;left:46px;top:60px;width:260px;height:30px;border-radius:15px;background:rgba(255,255,255,.85)}
+#shot .o3{position:absolute;left:46px;top:110px;width:180px;height:22px;border-radius:11px;background:rgba(255,255,255,.45)}
+#shot .o4{position:absolute;left:46px;bottom:52px;width:528px;height:150px;border-radius:22px;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.3)}
+#stamp{position:absolute;left:300px;top:1180px;padding:16px 30px;border:5px solid #fff;border-radius:16px;font-family:Inter,sans-serif;font-weight:500;font-size:40px;letter-spacing:3px;color:#fff;opacity:0;transform:rotate(-8deg)}
+/* Mobbin: telas */
+.phones{display:flex;gap:22px;margin-top:6px}
+.ph{flex:1;height:330px;border-radius:26px;background:#F6F4F9;border:2px solid #ECE8F2;padding:22px 18px;position:relative}
+.ph .b{height:16px;border-radius:8px;background:#E3DCF0;margin-bottom:12px}
+.ph .btn{position:absolute;left:18px;right:18px;bottom:22px;height:48px;border-radius:14px;background:#7120D1}
+.ph .cap{position:absolute;left:0;right:0;bottom:-46px;text-align:center;font-size:24px;font-weight:500;color:#15131A}
+/* Page Flows: player */
+#player{height:250px;border-radius:22px;background:#15131A;position:relative;overflow:hidden}
+#player .scr{position:absolute;top:28px;width:150px;height:200px;border-radius:16px;background:#2A2633;border:2px solid #3A3545}
+#play{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+#prog{margin-top:22px;height:12px;border-radius:6px;background:#EEEBF3;overflow:hidden}
+#prog i{display:block;height:100%;width:0;background:#7120D1}
+.steps{display:flex;justify-content:space-between;margin-top:22px;font-size:26px;font-weight:500;color:#8E8999}
+.steps span.on{color:#7120D1}
+/* Refero: busca */
+#search{display:flex;align-items:center;gap:18px;height:92px;border-radius:20px;border:3px solid #7120D1;padding:0 26px;font-size:34px}
+#caret{display:inline-block;width:3px;height:40px;background:#7120D1;vertical-align:middle;margin-left:2px}
+.res{display:flex;gap:16px;margin-top:22px}
+.res div{flex:1;height:120px;border-radius:16px;background:#F3F1F6}
+#note{position:absolute;left:70px;width:780px;top:1400px;font-family:Inter,sans-serif;font-size:24px;color:#6E6A77;opacity:0}
+</style></head><body>
+<div id="stage">
+ <div id="glow"></div>
+ <div id="track"></div>
+
+ <div class="scene" id="s-hook" style="top:420px"><div class="big">Ninguém te conta: Dribbble não é <em>produto real.</em></div></div>
+ <div id="shot"><div class="o1"></div><div class="o2"></div><div class="o3"></div><div class="o4"></div></div>
+ <div id="stamp">CONCEITO</div>
+
+ <div class="scene" id="s-ctx" style="top:560px"><div class="big">Por isso as referências ficam <em>iguais.</em></div><div class="desc" style="margin-top:40px">Pra produto, olhe telas que já estão no ar.</div></div>
+
+ <div class="scene" id="s-step" style="top:400px">
+   <div class="kick" id="kick">FONTE 1 DE 3</div>
+   <div class="mask"><div class="name" id="name">Mobbin</div></div>
+   <div class="desc" id="desc"></div>
+ </div>
+
+ <div class="scene" id="s-ai" style="top:600px"><div class="big">Mobbin e Refero já conectam na <em>sua IA.</em></div><div class="desc" style="margin-top:40px">O Refero tem MCP. O Mobbin tem API pra agentes.</div></div>
+ <div class="scene" id="s-end1" style="top:700px"><div class="big">Referência boa é <em>produto real.</em></div></div>
+ <div class="scene" id="s-end2" style="top:640px"><div class="big">Qual dessas você <em>já usa?</em></div><div class="desc" style="margin-top:40px">Comenta aqui.</div></div>
+
+ <!-- Mobbin -->
+ <div class="card" id="c0"><div class="in">
+   <div class="lbl">Telas de apps no ar</div>
+   <div class="phones">
+     <div class="ph"><div class="b" style="width:60%"></div><div class="b"></div><div class="b"></div><div class="btn"></div><div class="cap">Login</div></div>
+     <div class="ph"><div class="b" style="width:70%"></div><div class="b" style="height:70px;border-radius:12px"></div><div class="b" style="width:50%"></div><div class="btn"></div><div class="cap">Checkout</div></div>
+     <div class="ph"><div class="b" style="width:50%"></div><div class="b" style="height:90px;border-radius:12px;background:#F1E5FF"></div><div class="b"></div><div class="btn"></div><div class="cap">Paywall</div></div>
+   </div>
+ </div></div>
+ <!-- Page Flows -->
+ <div class="card" id="c1"><div class="in">
+   <div id="player">
+     <div class="scr" style="left:40px"></div><div class="scr" style="left:273px"></div><div class="scr" style="left:506px"></div>
+     <div id="play"><svg width="36" height="36" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z" fill="#7120D1"/></svg></div>
+   </div>
+   <div id="prog"><i></i></div>
+   <div class="steps"><span>Onboarding</span><span>Checkout</span><span>Upgrade</span></div>
+ </div></div>
+ <!-- Refero -->
+ <div class="card" id="c2"><div class="in">
+   <div id="search"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#7120D1" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span><span id="typed"></span><span id="caret"></span></span></div>
+   <div style="margin-top:24px"><span class="chip f">Tipo: preços</span><span class="chip f">Padrão: comparação</span><span class="chip f">Fonte: Inter</span></div>
+   <div class="res"><div></div><div></div><div></div></div>
+ </div></div>
+ <div id="note">Interfaces ilustrativas</div>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const eo=x=>1-Math.pow(1-clamp(x),3);
+const eio=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const SRC=[
+ ['Mobbin','Telas e fluxos de apps que já estão no ar.'],
+ ['Page Flows','O fluxo inteiro, gravado em vídeo.'],
+ ['Refero','Busca por tipo de página, padrão e até fonte.']
+];
+const T_CTX=3.0, T_S=6.4, SD=4.6, T_AI=T_S+3*SD, T_E1=T_AI+3.6, T_E2=T_E1+2.6, TOTAL=T_E2+3.4;
+const tr=$('#track');
+SRC.forEach((s,i)=>{const d=document.createElement('div');d.className='pill';d.innerHTML=`<div class="fill"></div><span class="lb">${i+1}</span>`;tr.appendChild(d);});
+const pills=[...document.querySelectorAll('.pill')];
+const QUERY='página de preços';
+function sceneIO(el,a,b,dy=40){
+  const t=window._t; const o=clamp((t-a)/.3)*clamp((b-t)/.25);
+  el.style.opacity=o; el.style.transform=`translateY(${(1-eo((t-a)/.5))*dy - (t>b-.25?eo((t-(b-.25))/.25)*20:0)}px)`;
+  return o;
+}
+window.seek=async(t)=>{
+  window._t=t;
+  $('#glow').style.transform=`translate(${Math.sin(t*.4)*40}px,${Math.cos(t*.33)*30}px)`;
+  // gancho: texto já no quadro 1, shot sobe e leva o carimbo
+  sceneIO($('#s-hook'),0,T_CTX); if(t<.05){$('#s-hook').style.opacity=1;$('#s-hook').style.transform='none';}
+  const sh=$('#shot'); const si=t<.05?1:eo(t/.5), so=clamp((t-(T_CTX-.3))/.3);
+  sh.style.opacity=(t<T_CTX)?Math.max(.35,si)*(1-so):0; sh.style.transform=`translateY(${(1-si)*60 + Math.sin(t*2)*6}px) rotate(${-2+Math.sin(t*1.5)}deg)`;
+  const sp=eo((t-1.1)/.25); $('#stamp').style.opacity=(t<T_CTX)?sp*(1-so):0; $('#stamp').style.transform=`rotate(-8deg) scale(${1.6-.6*sp})`;
+  sceneIO($('#s-ctx'),T_CTX,T_S);
+  // trilha das fontes
+  $('#track').style.opacity=clamp((t-T_S)/.3)*clamp((T_AI-t)/.25);
+  pills.forEach((p,i)=>{
+    const k=Math.floor((t-T_S)/SD); let f = i<k?1: i===k? eo((t-T_S-k*SD)/.4):0; const lit=i===k;
+    p.querySelector('.fill').style.transform=`scaleX(${f})`;
+    p.querySelector('.fill').style.opacity=(!lit&&f===1)?.45:1;
+    p.querySelector('.lb').textContent= lit? SRC[i][0] : String(i+1);
+    p.querySelector('.lb').style.color=f>.5?'#fff':'rgba(255,255,255,.4)';
+    p.style.borderStyle=f>.5?'solid':'dashed'; p.style.borderColor=f>.5?'#7120D1':'rgba(255,255,255,.22)';
+    p.style.flex=lit?'2.4':'1';
+  });
+  const st=$('#s-step');
+  if(t>=T_S&&t<T_AI){
+    const k=Math.floor((t-T_S)/SD), lt=t-T_S-k*SD;
+    st.style.opacity=clamp((t-T_S)/.3)*clamp((T_AI-t)/.25);
+    $('#kick').textContent=`FONTE ${k+1} DE 3`;
+    $('#name').textContent=SRC[k][0];
+    $('#name').style.transform=`translateY(${(1-eo(lt/.45))*105}%)`;
+    $('#desc').textContent=SRC[k][1];
+    $('#desc').style.opacity=eo((lt-.25)/.4); $('#desc').style.transform=`translateY(${(1-eo((lt-.25)/.5))*24}px)`;
+  } else st.style.opacity=0;
+  for(let i=0;i<3;i++){
+    const c=$('#c'+i), a=T_S+i*SD, b=a+SD;
+    if(t>=a-.05&&t<b){ const lt=t-a;
+      const inn=eo((lt-.15)/.5), out=clamp((lt-(SD-.35))/.35);
+      c.style.opacity=inn*(1-out);
+      c.style.transform=`translate(${(1-inn)*90 - eio(out)*90}px,0) rotate(${(1-inn)*2}deg)`;
+      if(i===0) c.querySelectorAll('.ph').forEach((ph,j)=>{const g=eo((lt-.6-j*.35)/.4);ph.style.opacity=g;ph.style.transform=`translateY(${(1-g)*30}px)`;});
+      if(i===1){const g=clamp((lt-.7)/3.2); $('#prog i').style.width=(g*100)+'%';
+        c.querySelectorAll('.steps span').forEach((s,j)=>s.classList.toggle('on',g>j/3+.02));
+        c.querySelectorAll('.scr').forEach((s,j)=>s.style.borderColor=(g>j/3+.02)?'#A255FD':'#3A3545');
+        $('#play').style.opacity=1-clamp((lt-.5)/.3);}
+      if(i===2){const n=Math.floor(clamp((lt-.6)/1.3)*QUERY.length); $('#typed').textContent=QUERY.slice(0,n);
+        $('#caret').style.opacity=(Math.floor(lt*2.5)%2)?1:0;
+        c.querySelectorAll('.f').forEach((f,j)=>{const g=eo((lt-2.0-j*.3)/.35);f.style.opacity=g;f.style.transform=`translateY(${(1-g)*14}px)`;});
+        c.querySelectorAll('.res div').forEach((r,j)=>{const g=eo((lt-3.0-j*.15)/.35);r.style.opacity=g;});}
+    } else c.style.opacity=0;
+  }
+  $('#note').style.opacity=(t>=T_S+.4&&t<T_AI-.2)?1:0;
+  sceneIO($('#s-ai'),T_AI,T_E1);
+  sceneIO($('#s-end1'),T_E1,T_E2);
+  const e2=$('#s-end2'); const o2=clamp((t-T_E2)/.3); e2.style.opacity=o2; e2.style.transform=`translateY(${(1-eo((t-T_E2)/.5))*40}px)`;
+};
+window.TOTAL=TOTAL; window.ready=false;
+document.fonts.ready.then(()=>{window.ready=true;});
+</script></body></html>
