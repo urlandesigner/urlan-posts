@@ -14,7 +14,7 @@ Todo post novo usa um destes quatro templates, escolhido pelo tipo de post. Exem
 | Paleta de cores | **Combos** | `combos` | `python3 template/combos.py <pasta>` |
 
 - **Capa:** sempre a capa "série" (seção "Capas: referência fixa"), em `slide-01.png`, com `cover_override` no post.json.
-- **Fechamento:** um só para todos os templates, o do Combos: fundo escuro com brilho roxo, ícone de salvar, título grande e card de perfil. No post.json: `"closing": {"lines": ["Você já caiu", "nesse **erro**?"]}`. O fechamento não tem texto de apoio; o complemento da CTA vai na legenda.
+- **Fechamento:** um só para todos os templates, o do Combos: fundo escuro com brilho roxo, ícone de salvar, título grande e card de perfil, tudo em Google Sans Flex 800 (decisão de 27/11/2026, pra acompanhar o peso dos slides de conteúdo). No post.json: `"closing": {"lines": ["Você já caiu", "nesse **erro**?"]}`. O fechamento não tem texto de apoio; o complemento da CTA vai na legenda.
 - **Aposentados:** Padrão roxo, Padrão claro e Alternado. Ficam só para refazer posts antigos (`"legado": true` no post.json). O `render.py` recusa esses estilos em post novo.
 - Mudança de template, fechamento ou capa se faz no código do template e vale para todos. Não criar estilo novo por post.
 

@@ -28,7 +28,7 @@ def font_faces():
     css = []
     latin = "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
     ext = "U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
-    for fam, slug, weights in (("DM Sans", "dm-sans", (500, 700)), ("Inter", "inter", (400, 500))):
+    for fam, slug, weights in (("DM Sans", "dm-sans", (500, 700, 800, 900)), ("Inter", "inter", (400, 500))):
         for w in weights:
             for sub, rng in (("latin", latin), ("latin-ext", ext)):
                 f = TPL / "fonts" / f"{slug}-{sub}-{w}-normal.woff2"
@@ -414,12 +414,12 @@ def closing_oficial(p):
         txt = "<br>".join(rich(l) for l in c["lines"])
     else:
         txt = rich(c["title"])
-    ff = "font-family:'DM Sans',sans-serif !important"
-    return f'''<style>.fo,.fo *{{font-family:'DM Sans',sans-serif !important}}</style><div class="s fo" style="background:#151219">
+    ff = "font-family:'Google Sans Flex',sans-serif !important"
+    return f'''<style>{font_faces()}.fo,.fo *{{font-family:'Google Sans Flex',sans-serif !important}}</style><div class="s fo" style="background:#151219">
   <div style="position:absolute;inset:0;background:radial-gradient(70% 55% at 95% 35%,rgba(110,40,210,.85),rgba(80,25,160,.45) 45%,rgba(21,18,25,0) 75%),radial-gradient(60% 45% at 85% 105%,rgba(90,30,180,.6),rgba(21,18,25,0) 70%)"></div>
   <svg style="position:absolute;left:96px;top:120px" width="58" height="80" viewBox="0 0 58 80"><path d="M6 0h46a6 6 0 0 1 6 6v74L29 60 0 80V6a6 6 0 0 1 6-6z" fill="#fff"/></svg>
   <div style="position:absolute;left:96px;right:80px;top:200px;height:858px;display:flex;align-items:center">
-    <div style="{ff};color:#fff;font-weight:{c.get("weight", 900)};font-size:{c.get("size", 146)}px;line-height:0.89;letter-spacing:-3px">{txt}</div></div>
+    <div style="{ff};color:#fff;font-weight:{c.get("weight", 800)};font-size:{c.get("size", 146)}px;line-height:0.89;letter-spacing:-3px">{txt}</div></div>
   <div style="position:absolute;left:96px;right:96px;bottom:96px;height:196px;border-radius:28px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.10);display:flex;align-items:center;padding:0 40px;gap:36px;box-sizing:border-box">
     <img src="{av}" style="width:130px;height:130px;border-radius:50%;object-fit:cover">
     <div style="{ff};flex:1;color:#EADDFF;font-weight:500;font-size:36px;line-height:1.35">@urlan.design<br>AI Product Designer</div>
