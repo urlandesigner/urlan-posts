@@ -1,0 +1,55 @@
+{
+  "tag": "IA NO DESIGN",
+  "cover": {
+    "title": "O maior erro de quem começa a usar IA no design",
+    "subtitle": "Um teste da Nielsen Norman Group com ferramentas de prototipagem com IA."
+  },
+  "slides": [
+    {
+      "title": "Qual é o erro?",
+      "body": "Pedir a tela pronta pra IA com um prompt curto, antes de decidir o que a tela precisa mostrar.",
+      "takeaway": "a IA decide no seu lugar",
+      "layout": "definicao",
+      "destaque": "antes de decidir o que a tela precisa mostrar"
+    },
+    {
+      "title": "Quem testou isso?",
+      "body": "A Nielsen Norman Group refez uma página de perfil com IA e comparou com a versão dos designers.",
+      "takeaway": "teste com um projeto real"
+    },
+    {
+      "title": "O que deu errado?",
+      "body": "Com prompt curto, várias ferramentas entenderam perfil como rede social e destacaram contato, não os cursos do usuário.",
+      "takeaway": "o que faltou no pedido, ela supôs"
+    },
+    {
+      "title": "E com um pedido melhor?",
+      "body": "Com prompt detalhado e um link do Figma anexado, o resultado ficou bem mais parecido com o dos designers.",
+      "takeaway": "contexto muda o resultado"
+    },
+    {
+      "title": "Então resolveu?",
+      "body": "Não. Mesmo os melhores tinham falhas de hierarquia, contraste e espaçamento. A NN/g resumiu: bonito de longe, longe de bom.",
+      "takeaway": "ainda precisa da sua revisão"
+    },
+    {
+      "title": "O que fazer antes?",
+      "body": "Decida o que a tela mostra e pra quem. Mande isso no prompt, com rascunho ou dados reais.",
+      "takeaway": "o pedido sai do seu raciocínio"
+    }
+  ],
+  "closing": {
+    "title": "Você já caiu nesse erro?",
+    "body": "Comenta como foi e manda pra quem tá começando a usar IA."
+  },
+  "caption": "Pedir a tela pronta pra IA com um prompt de uma linha parece o jeito mais rápido de começar um projeto.\n\nA Nielsen Norman Group testou isso num caso real. Quando o pedido é vago, a ferramenta completa o que falta com suposições e pode escolher o padrão errado pra tela. Por isso, decidir o conteúdo e a hierarquia continua sendo trabalho de quem desenha, e é isso que o prompt precisa levar.\n\nVocê já caiu nesse erro? Comenta como foi.\n\n#uxdesign #productdesign #inteligenciaartificial #designdeproduto #prototipagem",
+  "sources": [
+    "https://www.nngroup.com/articles/ai-prototyping/",
+    "https://www.nngroup.com/articles/vague-prototyping/"
+  ],
+  "style": "alternado",
+  "cover_override": {
+    "style": "serie",
+    "source": "testes-capa/serie/capa-maior-erro.html"
+  }
+}
