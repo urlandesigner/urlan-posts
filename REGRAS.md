@@ -2,15 +2,41 @@
 
 Regras fixas para todo carrossel gerado neste repositório. Valem junto com o documento de marca do projeto Instagram (`CONTEXTO_marca_urlan_design_resumido.md`). Se houver conflito, este arquivo vale para produção e publicação; o documento de marca vale para posicionamento e tom.
 
+## Templates oficiais (decisão de 27/11/2026)
+
+Todo post novo usa um destes quatro templates, escolhido pelo tipo de post. Exemplos aprovados em `templates-oficiais/`.
+
+| Tipo de post | Template | `style` no post.json | Como gerar |
+|---|---|---|---|
+| Explicativo: pesquisa, novidade, erro, como fazer, opinião, história | **Texto escuro** | `texto` | `python3 template/render.py <pasta>` |
+| Explicativo que precisa mostrar uma interface (golpe, padrão de tela, antes e depois) | **Ilustrado** | `ilustrado` | `python3 template/ilustrado.py <pasta>` |
+| Lista de recursos: repositórios, ferramentas, sites | **Editorial** | `editorial` | `python3 template/render.py <pasta>` |
+| Paleta de cores | **Combos** | `combos` | `python3 template/combos.py <pasta>` |
+
+- **Capa:** sempre a capa "série" (seção "Capas: referência fixa"), em `slide-01.png`, com `cover_override` no post.json.
+- **Fechamento:** um só para todos os templates, o do Combos: fundo escuro com brilho roxo, ícone de salvar, título grande e card de perfil. No post.json: `"closing": {"lines": ["Você já caiu", "nesse **erro**?"]}`. O fechamento não tem texto de apoio; o complemento da CTA vai na legenda.
+- **Aposentados:** Padrão roxo, Padrão claro e Alternado. Ficam só para refazer posts antigos (`"legado": true` no post.json). O `render.py` recusa esses estilos em post novo.
+- Mudança de template, fechamento ou capa se faz no código do template e vale para todos. Não criar estilo novo por post.
+
+### Texto escuro e Ilustrado: regras do texto
+
+- Uma ideia por slide, de 5 a 7 slides de conteúdo.
+- `text`: frase principal, de 4 a 10 palavras, com uma palavra ou trecho em `**lilás**`.
+- `sub`: frase de apoio, até 16 palavras, no máximo 3 linhas.
+- `pos`: alternar entre `top`, `middle` e `bottom`. O primeiro slide pode usar `"size": "xl"`.
+- No Ilustrado, o texto fica no topo e o mockup (HTML na pasta do post, campo `mockup`) logo abaixo, com o aviso "Exemplo ilustrativo".
+
 ## Estrutura do post
 
-- 1 capa + 4 a 6 slides de conteúdo + 1 fechamento. Máximo de 10 imagens.
+- 1 capa + 4 a 7 slides de conteúdo + 1 fechamento. Máximo de 10 imagens.
 - Capa: selo do pilar (ex.: "IA NO DESIGN"), título que é o hook, subtítulo de uma frase.
-- Conteúdo: número grande (o item, não a página), título, texto curto e uma frase-resumo com seta.
-- Fechamento: selo "PRA FECHAR", título com a CTA, uma frase de apoio e o card de perfil com "Seguir".
+- Conteúdo: segue o template escolhido (tabela acima).
+- Fechamento: o fechamento oficial, com a CTA no título e o card de perfil com "Seguir".
 - A CTA segue o objetivo do post: alcance pede comentar, salvar ou compartilhar. Link na bio só em post de cliente.
 
 ## Texto dos slides
+
+(As medidas abaixo valem para os templates aposentados e para o Editorial. Texto escuro e Ilustrado seguem as regras da seção deles.)
 
 - Título do slide: de 2 a 5 palavras, de preferência como pergunta ("Funciona mesmo?").
 - Texto do slide: de 12 a 20 palavras, no máximo 3 linhas.
@@ -41,7 +67,7 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 
 ## Visual
 
-- O template é `template/render.py`. Ele reproduz o padrão do Figma "Redes sociais" (frame "Roxa"): capa roxa, conteúdo claro, fechamento roxo com card de perfil.
+- Os templates oficiais estão na seção "Templates oficiais". O padrão roxo do Figma "Redes sociais" (frame "Roxa") está aposentado desde 27/11/2026.
 - Tokens: roxo `#7120D1`, lilás `#A255FD`, texto `#15131A`, texto secundário `#6E6A77`, fundo claro `#FAFAFA`.
 - Fontes: DM Sans (títulos, selo, @) e Inter (texto corrido), arquivos em `template/fonts/`.
 - Formato 1080 × 1350 px, margem lateral de 96 px.
@@ -51,7 +77,7 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 - **Imagem de capa (Higgsfield):** modelo padrão Nano Banana Pro (`nano_banana_pro`, 2k, 3:4, cerca de 2 créditos), gerado do zero sem imagem de referência, com a metade de cima do fundo vazia pro título. Uma geração por capa; segunda só se a primeira não servir. Z Image só pra rascunho barato. Baixar o resultado direto com `curl` do `result_url` (domínio `d8j0ntlcm91z4.cloudfront.net` liberado em 28/10/2026); o Chrome só como plano B.
 - **Fontes da marca:** DM Sans + Inter (template roxo), Google Sans Flex (posts de texto e editorial) e Google Sans Code (só textos técnicos pequenos do editorial). Não introduzir outra família sem aprovação.
 - **Assinatura @urlan.design** sempre em fonte sem serifa da marca (Google Sans Flex ou DM Sans), nunca em fonte de código.
-- Estilo único por enquanto: todos os posts usam este padrão (capa roxa flat). Os outros estilos de capa do documento de marca (aurora escura, citação, foto) não estão em uso até o Urlan liberar.
+- Os outros estilos de capa do documento de marca (aurora escura, citação, foto) não estão em uso até o Urlan liberar.
 
 ## Publicação
 
@@ -69,7 +95,7 @@ Antes de subir qualquer imagem, reler o texto com estas perguntas e corrigir o q
 - Template da capa: `testes-capa/serie/capa.tpl.html`. Exemplos aprovados: `capa-repos`, `capa-cd`, `capa1` (color combos), `capa-dia-design-3d`.
 - **Posição do título: igual em todas as capas da série.** Bloco do título (`.mid`) em `top:50%` com `translateY(-54%)`, título em 210px. Não usar `style` inline para subir, descer ou reduzir o título. Se o texto não couber, encurtar o texto, não mover o bloco. Motivo: no feed as capas aparecem lado a lado, e uma capa com o título mais alto parece desalinhada (feedback do Urlan em 12/11/2026, capa "Apps no Claude" estava em 40% e 190px).
 - Antes de agendar uma capa nova, comparar lado a lado com a capa anterior da série (mesma altura do título, mesmo tamanho).
-- Posts de opinião continuam no estilo escuro de texto.
+- Posts de opinião e explicativos usam o Texto escuro (ver "Templates oficiais").
 - Fundo gerado não pode vir com borda de papel/moldura; se vier, gerar de novo em vez de cortar (cortar perde qualidade).
 
 ## Stories

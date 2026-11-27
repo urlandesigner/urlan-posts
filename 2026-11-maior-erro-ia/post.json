@@ -6,48 +6,49 @@
   },
   "slides": [
     {
-      "title": "Qual é o erro?",
-      "body": "Pedir a tela pronta pra IA com um prompt curto, antes de decidir o que a tela precisa mostrar.",
-      "takeaway": "a IA decide no seu lugar",
-      "layout": "definicao",
-      "destaque": "antes de decidir o que a tela precisa mostrar"
+      "text": "O maior erro é pedir a **tela pronta** pra IA.",
+      "sub": "Antes de decidir o que ela precisa mostrar.",
+      "pos": "bottom",
+      "size": "xl"
     },
     {
-      "title": "Quem testou isso?",
-      "body": "A Nielsen Norman Group refez uma página de perfil com IA e comparou com a versão dos designers.",
-      "takeaway": "teste com um projeto real"
+      "text": "A Nielsen Norman Group **testou** isso.",
+      "sub": "Refez uma página de perfil com IA e comparou com a versão dos designers.",
+      "pos": "top"
     },
     {
-      "title": "O que deu errado?",
-      "body": "Com prompt curto, várias ferramentas entenderam perfil como rede social e destacaram contato, não os cursos do usuário.",
-      "takeaway": "o que faltou no pedido, ela supôs"
+      "text": "Com prompt curto, a IA **supôs** o resto.",
+      "sub": "Várias trataram o perfil como rede social e destacaram o contato, não os cursos.",
+      "pos": "middle"
     },
     {
-      "title": "E com um pedido melhor?",
-      "body": "Com prompt detalhado e um link do Figma anexado, o resultado ficou bem mais parecido com o dos designers.",
-      "takeaway": "contexto muda o resultado"
+      "text": "Com mais **contexto**, melhorou.",
+      "sub": "Prompt detalhado e link do Figma deixaram o resultado parecido com o dos designers.",
+      "pos": "bottom"
     },
     {
-      "title": "Então resolveu?",
-      "body": "Não. Mesmo os melhores tinham falhas de hierarquia, contraste e espaçamento. A NN/g resumiu: bonito de longe, longe de bom.",
-      "takeaway": "ainda precisa da sua revisão"
+      "text": "Mas ainda não ficou **bom**.",
+      "sub": "Faltou hierarquia, contraste e espaçamento. A NN/g resumiu: bonito de longe, longe de bom.",
+      "pos": "top"
     },
     {
-      "title": "O que fazer antes?",
-      "body": "Decida o que a tela mostra e pra quem. Mande isso no prompt, com rascunho ou dados reais.",
-      "takeaway": "o pedido sai do seu raciocínio"
+      "text": "Decida a tela **antes** do prompt.",
+      "sub": "O que ela mostra e pra quem. Mande isso com rascunho ou dados reais.",
+      "pos": "middle"
     }
   ],
   "closing": {
-    "title": "Você já caiu nesse erro?",
-    "body": "Comenta como foi e manda pra quem tá começando a usar IA."
+    "lines": [
+      "Você já caiu",
+      "nesse **erro**?"
+    ]
   },
   "caption": "Pedir a tela pronta pra IA com um prompt de uma linha parece o jeito mais rápido de começar um projeto.\n\nA Nielsen Norman Group testou isso num caso real. Quando o pedido é vago, a ferramenta completa o que falta com suposições e pode escolher o padrão errado pra tela. Por isso, decidir o conteúdo e a hierarquia continua sendo trabalho de quem desenha, e é isso que o prompt precisa levar.\n\nVocê já caiu nesse erro? Comenta como foi.\n\n#uxdesign #productdesign #inteligenciaartificial #designdeproduto #prototipagem",
   "sources": [
     "https://www.nngroup.com/articles/ai-prototyping/",
     "https://www.nngroup.com/articles/vague-prototyping/"
   ],
-  "style": "alternado",
+  "style": "texto",
   "cover_override": {
     "style": "serie",
     "source": "testes-capa/serie/capa-maior-erro.html"
@@ -56,5 +57,6 @@
     "scheduleId": "ext_MzcxNzQ3NTg4.gvWLoAL1n89T7jFiE77P5m",
     "status": "draft",
     "url": "https://publish.mlabs.io/schedule/371747588/edit"
-  }
+  },
+  "nota": "Refeito no template Texto escuro em 27/11/2026, depois da definição dos templates oficiais."
 }

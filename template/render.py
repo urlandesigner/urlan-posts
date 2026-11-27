@@ -196,7 +196,11 @@ def text_slide(s, last=False):
 </div>"""
 
 
-def text_closing(p):
+def text_closing(p):  # legado; ilustrado usa closing_oficial via alias abaixo
+    return closing_oficial(p)
+
+
+def _text_closing_legado(p):
     c = p["closing"]
     hd = TPL / "assets" / "avatar-hd.webp"
     avatar = (hd if hd.exists() else TPL / "assets" / "avatar.png").as_uri()
@@ -399,6 +403,35 @@ def alt_content(p, i, s):
     return alt_frame(p, th, inner, take)
 
 
+# ---------- Fechamento oficial (decisão de 27/11/2026) ----------
+# Um só fechamento para todos os templates: o do Combos de cor. Fundo escuro com brilho roxo,
+# ícone de salvar, título grande e card de perfil. post.json: "closing": {"lines": ["Linha 1", "Linha 2"]}
+# ou "closing": {"title": "..."} (quebra automática). "body" não aparece no slide: vai pra legenda.
+def closing_oficial(p):
+    c = p["closing"]
+    av = (TPL / "assets" / "avatar-hd.webp").as_uri()
+    if c.get("lines"):
+        txt = "<br>".join(rich(l) for l in c["lines"])
+    else:
+        txt = rich(c["title"])
+    ff = "font-family:'DM Sans',sans-serif !important"
+    return f'''<style>.fo,.fo *{{font-family:'DM Sans',sans-serif !important}}</style><div class="s fo" style="background:#151219">
+  <div style="position:absolute;inset:0;background:radial-gradient(70% 55% at 95% 35%,rgba(110,40,210,.85),rgba(80,25,160,.45) 45%,rgba(21,18,25,0) 75%),radial-gradient(60% 45% at 85% 105%,rgba(90,30,180,.6),rgba(21,18,25,0) 70%)"></div>
+  <svg style="position:absolute;left:96px;top:120px" width="58" height="80" viewBox="0 0 58 80"><path d="M6 0h46a6 6 0 0 1 6 6v74L29 60 0 80V6a6 6 0 0 1 6-6z" fill="#fff"/></svg>
+  <div style="position:absolute;left:96px;right:80px;top:200px;height:858px;display:flex;align-items:center">
+    <div style="{ff};color:#fff;font-weight:{c.get("weight", 900)};font-size:{c.get("size", 146)}px;line-height:0.89;letter-spacing:-3px">{txt}</div></div>
+  <div style="position:absolute;left:96px;right:96px;bottom:96px;height:196px;border-radius:28px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.10);display:flex;align-items:center;padding:0 40px;gap:36px;box-sizing:border-box">
+    <img src="{av}" style="width:130px;height:130px;border-radius:50%;object-fit:cover">
+    <div style="{ff};flex:1;color:#EADDFF;font-weight:500;font-size:36px;line-height:1.35">@urlan.design<br>AI Product Designer</div>
+    <span style="{ff};background:#fff;color:#A255FD;font-weight:700;font-size:36px;height:88px;padding:0 44px;border-radius:999px;display:flex;align-items:center">Seguir</span>
+  </div>
+</div>'''
+
+
+# Estilos oficiais para posts novos. Os demais só renderizam com "legado": true no post.json.
+OFICIAIS = {"texto", "editorial"}  # combos e ilustrado têm script próprio em template/ e usam closing_oficial
+
+
 p_foot = {}
 
 # Reduz o tamanho da fonte de títulos marcados até caberem na largura disponível (888 px).
@@ -418,14 +451,21 @@ def main(folder):
     start = 1
     folder = pathlib.Path(folder).resolve()
     p = json.loads((folder / "post.json").read_text())
+    if p.get("style") not in OFICIAIS and not p.get("legado"):
+        sys.exit(f"Estilo '{p.get('style', 'padrão')}' não é oficial. Use texto, editorial, combos (template/combos.py) "
+                 "ou ilustrado (template/ilustrado.py). Ver REGRAS.md, seção Templates oficiais.")
     if p.get("style") == "texto":
-        pages = [text_slide(s) for s in p["slides"]] + [text_closing(p)]
+        pages = [text_slide(s) for s in p["slides"]] + [closing_oficial(p)]
         if p.get("cover_override"):
             start = 2  # slide-01.png é a capa da série, renderizada à parte
     elif p.get("style") == "editorial":
         p_foot.update(p.get("footer", {}))
         items = p["items"]
-        pages = [ed_cover(p, folder)] + [ed_item(i, it, len(items)) for i, it in enumerate(items, 1)] + [ed_closing(p)]
+        pages = [ed_item(i, it, len(items)) for i, it in enumerate(items, 1)] + [closing_oficial(p)]
+        if p.get("cover_override"):
+            start = 2  # slide-01.png é a capa da série, renderizada à parte
+        else:
+            pages = [ed_cover(p, folder)] + pages
     elif p.get("style") == "alternado":
         pages = [alt_content(p, i, sl) for i, sl in enumerate(p["slides"], 1)] + [closing(p)]
         start = 2  # slide-01.png é a capa da série, renderizada à parte
