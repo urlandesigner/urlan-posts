@@ -40,7 +40,7 @@
       "**depois**"
     ]
   },
-  "caption": "Desde 13 de novembro dá pra mudar a cara do Claude Code no app desktop. A Anthropic liberou temas com cores e fundo animado, e publicou um plugin com 38 cenas prontas pra começar.\n\nPra quem desenha produto, a parte boa é a última: você descreve o visual e o próprio Claude monta o tema. Dá pra testar com as cores do design system que você já usa.\n\nAs telas são ilustrativas.\n\nSalva pra instalar depois.\n\n#claudecode #designdeproduto #inteligenciaartificial",
+  "caption": "Desde 13 de novembro dá pra mudar a cara do Claude Code no app desktop. A Anthropic liberou temas com cores e fundo animado, e publicou um plugin com 38 cenas prontas pra começar.\n\nPra quem desenha produto, a parte boa é a última: você descreve o visual e o próprio Claude monta o tema. Dá pra testar com as cores do design system que você já usa.\n\nAs cenas dos slides são do plugin oficial theme-examples, da Anthropic. A janela é ilustrativa.\n\nSalva pra instalar depois.\n\n#claudecode #designdeproduto #inteligenciaartificial",
   "sources": [
     "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/theme-examples (README: 38 cenas)",
     "https://claude.com/marketplace/plugins/theme-examples",
@@ -51,6 +51,7 @@
   "cover_override": {
     "style": "serie",
     "source": "testes-capa/serie/capa-claude-code-temas.html",
-    "bg": "bg-claude-code-temas.png (gerado em código, único)"
-  }
+    "bg": "bg-claude-code-temas-nightreef.png: cena Night Reef do plugin oficial (Apache 2.0), gerada a partir do código-fonte"
+  },
+  "cenas_oficiais": "Geradas de anthropics/claude-plugins-official@0fbfda5 plugins/theme-examples (Apache 2.0), funções *Svg() renderizadas com Playwright."
 }
