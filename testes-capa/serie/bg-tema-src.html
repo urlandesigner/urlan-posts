@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0}
+.c{position:relative;width:1080px;height:1350px;overflow:hidden;background:#0E0C12}
+.sky{position:absolute;inset:0;background:radial-gradient(60% 40% at 20% 100%,rgba(162,85,253,.55),transparent 70%),radial-gradient(50% 35% at 85% 95%,rgba(255,122,182,.35),transparent 70%),radial-gradient(70% 30% at 50% 0%,rgba(113,32,209,.45),transparent 70%)}
+.win{position:absolute;left:110px;right:110px;bottom:-60px;height:470px;border-radius:34px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.6);border:2px solid rgba(255,255,255,.18)}
+.scene{position:absolute;inset:0;background:linear-gradient(180deg,#2B0B5C 0%,#7120D1 45%,#FF7AB6 78%,#FFC48A 100%)}
+.sun{position:absolute;left:50%;top:150px;width:280px;height:280px;margin-left:-140px;border-radius:50%;background:linear-gradient(#FFD9A0,#FF7AB6);opacity:.9}
+.grid{position:absolute;left:-200px;right:-200px;bottom:0;height:190px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.35) 0 2px,transparent 2px 80px),repeating-linear-gradient(0deg,rgba(255,255,255,.35) 0 2px,transparent 2px 38px);transform:perspective(300px) rotateX(55deg);transform-origin:bottom}
+.bar{position:absolute;left:0;right:0;top:0;height:64px;background:rgba(15,12,20,.55);backdrop-filter:blur(8px);display:flex;align-items:center;gap:14px;padding:0 26px}
+.bar i{width:18px;height:18px;border-radius:50%;display:block;background:rgba(255,255,255,.5)}
+.panel{position:absolute;left:40px;top:96px;width:430px;height:120px;border-radius:22px;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.3);backdrop-filter:blur(10px)}
+.panel2{position:absolute;right:40px;top:240px;width:380px;height:90px;border-radius:22px;background:rgba(15,12,20,.4);border:2px solid rgba(255,255,255,.25)}
+.top{position:absolute;right:-80px;top:-60px;width:420px;height:300px;border-radius:30px;border:2px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);transform:rotate(12deg)}
+</style></head><body><div class="c"><div class="sky"></div><div class="top"></div>
+<div class="win"><div class="scene"><div class="sun"></div><div class="grid"></div></div><div class="bar"><i></i><i></i><i></i></div><div class="panel"></div><div class="panel2"></div></div>
+</div></body></html>

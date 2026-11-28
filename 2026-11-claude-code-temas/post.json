@@ -1,0 +1,20 @@
+{
+  "style": "ilustrado",
+  "tag": "IA NO DESIGN",
+  "slides": [
+    {"text": "O app desktop do Claude Code agora aceita **temas**.", "sub": "Cores novas e um fundo animado atrás do chat.", "mockup": "mockups/janela.html", "mockup_top": 640},
+    {"text": "Instala os temas **oficiais**.", "sub": "Na aba Code, com um comando. São 20 cenas prontas.", "mockup": "mockups/comando.html", "mockup_top": 640},
+    {"text": "Escolhe uma **cena**.", "sub": "/custom-theme e o nome aplica o tema no projeto.", "mockup": "mockups/lista.html", "mockup_top": 640},
+    {"text": "Ou pede o **seu**.", "sub": "Descreve o visual pro Claude e manda as cores do seu design system junto.", "mockup": "mockups/pedido.html", "mockup_top": 640},
+    {"text": "Onde funciona **hoje**.", "sub": "No app desktop, em sessão local. Pra nuvem, a Anthropic diz que vem em breve.", "mockup": "mockups/onde.html", "mockup_top": 640}
+  ],
+  "closing": {"lines": ["Salva pra", "instalar", "**depois**"]},
+  "caption": "Desde 13 de novembro dá pra mudar a cara do Claude Code no app desktop. A Anthropic liberou temas com cores e fundo animado, e publicou um plugin com 20 cenas prontas pra começar.\n\nPra quem desenha produto, a parte boa é a última: você descreve o visual e o próprio Claude monta o tema. Dá pra testar com as cores do design system que você já usa.\n\nAs telas são ilustrativas.\n\nSalva pra instalar depois.\n\n#claudecode #designdeproduto #inteligenciaartificial",
+  "sources": [
+    "https://claude.com/marketplace/plugins/theme-examples",
+    "https://claudefolio.com/blog/claude-code-themes-animated-backgrounds-desktop",
+    "https://hermes-ai.net/news/anthropic-s-claude-code-lets-developers-theme-their-ai-coding-desktop/"
+  ],
+  "referencia": "Ideia vista em @thejplabs (instagram.com/p/Df9-2IEk5Ja), 20/11/2026. Fórmula adaptada, texto e imagens próprios.",
+  "cover_override": {"style": "serie", "source": "testes-capa/serie/capa-claude-code-temas.html", "bg": "bg-claude-code-temas.png (gerado em código, único)"}
+}
